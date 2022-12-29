@@ -12,7 +12,7 @@ class DatabaseHelper{
     }
 
     public function getPosts(){
-        $stmt = $this->db->prepare("SELECT immagine, testo, nLike, nCommenti, dataPost, nickname,  FROM POST");
+        $stmt = $this->db->prepare("SELECT immagine, testo, n_like, n_commenti, data_post, nickname,  FROM post");
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
