@@ -13,14 +13,18 @@
 <body>
     <div class="container-fluid p-0 overflow-hidden">
         <div class="desktop d-none d-md-block">
+            <header class="bg-dark py-3 text-center">
 
+                <!--TESTO CENTRALE FOOTTER ⚽️⚽️-->
+                <a class= "text-decoration-none text-white fs-4"href="#">Footter</a>
+
+            </header>
         </div>
         <div class="mobile d-block d-md-none">
 
-
             <header class="bg-dark text-white py-3">
                 <!--NAVBAR-->
-                <nav class="navbar navbar-dark bg-dark fixed-top">
+                <nav class="navbar navbar-dark bg-dark fixed-top py-3">
                     <!--PULSANTE UTENTE-->
                     <button class="btn btn-link text-dark" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -31,7 +35,7 @@
                         </svg>
                     </button>
                     <!--TESTO CENTRALE FOOTTER ⚽️⚽️-->
-                    <a class="navbar-brand" href="#">Footter</a>
+                    <a class= "text-decoration-none text-white fs-4" href="#">Footter</a>
 
                     <!--PULSANTE PERSONALIZZA-->
                     <button class="btn btn-link text-dark" type="button" data-bs-toggle="offcanvas"
@@ -45,7 +49,7 @@
                     <!--MENU UTENTE-->
                     <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasNavbar">
                         <div class="offcanvas-header">
-                            <button class="btn btn-link text-white text-decoration-none" type="button">PasoLuca</button>
+                            <a class= "text-decoration-none text-white fs-4"href="#">PasoLuca</a>
                             <button type="button" class="btn-close btn-close btn-close-white"
                                 data-bs-dismiss="offcanvas" aria-label="Close"></button>
 
@@ -88,35 +92,34 @@
                         <div class="offcanvas-body pt-0">
                             <hr class="d-lg-none text-white-50">
 
-                            <h6 class = "text-center">Filtra per</h6>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="filtra" id="filtra_tutti">
-                                        <label class="form-check-label" for="filtra_tutti">
-                                            Tutti
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="filtra" id="filtra_preferiti"
-                                            checked>
-                                        <label class="form-check-label" for="filtra_preferiti">
-                                            Preferiti
-                                        </label>
-                                    </div>
-                                <hr class="d-lg-none text-white-50">
-                                <h6 class = "text-center">Ordina per</h6>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="ordina" id="ordina_recenti">
-                                        <label class="form-check-label" for="ordina_recenti">
-                                            Recenti
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="ordina" id="ordina_popolari"
-                                            checked>
-                                        <label class="form-check-label" for="ordina_popolari">
-                                            Popolari
-                                        </label>
-                                    </div>
+                            <h6 class="text-center">Filtra per</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="filtra" id="filtra_tutti">
+                                <label class="form-check-label" for="filtra_tutti">
+                                    Tutti
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="filtra" id="filtra_preferiti"
+                                    checked>
+                                <label class="form-check-label" for="filtra_preferiti">
+                                    Preferiti
+                                </label>
+                            </div>
+                            <hr class="d-lg-none text-white-50">
+                            <h6 class="text-center">Ordina per</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="ordina" id="ordina_recenti">
+                                <label class="form-check-label" for="ordina_recenti">
+                                    Recenti
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="ordina" id="ordina_popolari" checked>
+                                <label class="form-check-label" for="ordina_popolari">
+                                    Popolari
+                                </label>
+                            </div>
                         </div>
                     </div>
 
@@ -128,31 +131,31 @@
 
             <nav class="navbar navbar-dark bg-dark fixed-bottom px-5">
                 <!--PULSANTE HOME-->
-                <button class="btn btn-link text-dark" type="button">
+                <a class= "text-decoration-none text-white fs-4"href="#"> 
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-house text-white" viewBox="0 0 16 16">
                         <path
                             d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
                     </svg>
-                </button>
+                </a>
                 <!--PULSANTE SEARCH-->
-                <button class="btn btn-link text-dark" type="button">
+                <a class= "text-decoration-none text-white fs-4"href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-search text-white" viewBox="0 0 16 16">
                         <path
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
-                </button>
+                </a>
                 <!--PULSANTE NOTIFICHE-->
-                <button class="btn btn-link text-dark" type="button">
+                <a class= "text-decoration-none text-white fs-4"href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-bell text-white" viewBox="0 0 16 16">
                         <path
                             d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
                     </svg>
-                </button>
+                </a>
                 <!--PULSANTE CREA-->
-                <button class="btn btn-link text-dark" type="button">
+                <a class= "text-decoration-none text-white fs-4"href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-pencil-square text-white" viewBox="0 0 16 16">
                         <path
@@ -160,7 +163,7 @@
                         <path fill-rule="evenodd"
                             d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                     </svg>
-                </button>
+                </a>
 
 
             </nav>
