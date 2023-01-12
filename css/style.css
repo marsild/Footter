@@ -1,4 +1,18 @@
- img{
+ aside img{
+    max-height: 30px;
+}
+
+article img{
+    max-height: 30px;
+
+}
+
+article section img{
+   
+    max-height: 200px;
+}
+
+header img{
     max-height: 30px;
 }
 
