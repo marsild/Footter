@@ -2,15 +2,11 @@
     max-height: 30px;
 }
 
-article img{
-    max-height: 30px;
-
-}
-
+/*
 article section img{
    
-    max-height: 200px;
-}
+    max-height: 500px;
+}*/
 
 header img{
     max-height: 30px;
@@ -19,6 +15,17 @@ header img{
 a{
     text-decoration: none;
 }
+
+.image { float:left;
+    max-height: 50px;  }
+
+.alignme {
+	margin:10px 0;
+}
+/*
+.nav-link{
+    padding-right: 0;
+}*/
 
 /* 
 
