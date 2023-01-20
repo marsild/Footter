@@ -23,12 +23,8 @@ create table commento (
      data_commento date not null,
      testo char(255) not null,
      nickname char(20) not null,
-     constraint IDCOMMENTO primary key (id));
-
-create table commento_del_post (
      id_post int not null,
-     id_commento int not null,
-     constraint IDdel primary key (id_commento, id_post));
+     constraint IDCOMMENTO primary key (id));
 
 create table piace (
      id int not null,
@@ -94,11 +90,7 @@ alter table commento add constraint FKscrive
      foreign key (nickname)
      references utente (nickname);
 
-alter table commento_del_post add constraint FKdel_COM
-     foreign key (id_commento)
-     references commento (id);
-
-alter table commento_del_post add constraint FKdel_POS
+alter table commento add constraint FKin
      foreign key (id_post)
      references post (id);
 
