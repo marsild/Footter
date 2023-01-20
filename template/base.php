@@ -195,118 +195,13 @@
             <div class="col-12 col-sm-6 px-0">
 
                 <main class="overflow-auto mx-2 vh-100">
-                    <div class="my-5">
-                        <article class="bg-white border-top border-bottom border-2 border-dark">
-                            <header class="pt-3">
-                                <div class="px-4">
-                                    <div>
-                                        <img class="image rounded-circle border border-1" src="./upload/pfp.png" alt="">
-                                        <div class="float-end">
-                                            <img src="./upload/milan.png" alt="">
-                                            <img src="./upload/inter.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="alignme">
-                                        <a class="text-black px-2" href="#">gianmariacasamenti22</a>
-                                        <br />
-                                        <span class="small text-black px-2">10 min fa</span>
-                                    </div>
-                                </div>
-                            </header>
-                            <section class="px-5">
-                                <p>aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa
-                                    aaaaaaaaa
-                                </p>
-                                <div class="w-100 text-center">
-                                    <img class="border border-3 img-fluid" src="./upload/pfp.png" alt="" />
-                                </div>
-                            </section>
-                            <footer class="px-3 pb-3">
-                                <button type="button float-start" class="btn">
-                                    <em class="bi bi-heart fs-4"></em> 57
-                                </button>
-
-                                <a href="#" class="btn float-end" role="button">
-                                    24 <em class="bi bi-chat-dots fs-4"></em>
-                                </a>
-                            </footer>
-                        </article>
-
-
-                        <article class="bg-white border-top border-bottom border-2 border-dark">
-                            <header class="pt-3">
-
-                                <div class="px-4">
-                                    <div>
-                                        <img class="image rounded-circle border border-1" src="./upload/pfp.png" alt="">
-                                        <div class="float-end">
-                                            <img src="./upload/milan.png" alt="">
-                                            <img src="./upload/inter.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="alignme">
-                                        <a class="text-black px-2" href="#">gianmariacasamenti22</a>
-                                        <br />
-                                        <span class="small text-black px-2">10 min fa</span>
-                                    </div>
-                                </div>
-                            </header>
-                            <section class="px-5">
-                                <p>aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa
-                                    aaaaaaaaa
-                                </p>
-                                <div class="w-100 text-center">
-                                    <img class="border border-3 img-fluid" src="./upload/pfp.png" alt="" />
-                                </div>
-                            </section>
-                            <footer class="px-3 pb-3">
-                                <button type="button float-start" class="btn">
-                                    <em class="bi bi-heart fs-4"></em> 57
-                                </button>
-
-                                <a href="#" class="btn float-end" role="button">
-                                    24 <em class="bi bi-chat-dots fs-4"></em>
-                                </a>
-                            </footer>
-                        </article>
-
-                        <article class="bg-white border-top border-bottom border-2 border-dark">
-                            <header class="pt-3">
-
-                                <div class="px-4">
-                                    <div>
-                                        <img class="image rounded-circle border border-1" src="./upload/pfp.png" alt="">
-                                        <div class="float-end">
-                                            <img src="./upload/milan.png" alt="">
-                                            <img src="./upload/inter.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="alignme">
-                                        <a class="text-black px-2" href="#">gianmariacasamenti22</a>
-                                        <br />
-                                        <span class="small text-black px-2">10 min fa</span>
-                                    </div>
-                                </div>
-                            </header>
-                            <section class="px-5">
-                                <p>aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa
-                                    aaaaaaaaa
-                                </p>
-                                <div class="w-100 text-center">
-                                    <img class="border border-3 img-fluid" src="./upload/pfp.png" alt="" />
-                                </div>
-                            </section>
-                            <footer class="px-3 pb-3">
-                                <button type="button float-start" class="btn">
-                                    <em class="bi bi-heart fs-4"></em> 57
-                                </button>
-
-                                <a href="#" class="btn float-end" role="button">
-                                    24 <em class="bi bi-chat-dots fs-4"></em>
-                                </a>
-                            </footer>
-                        </article>
-                    </div>
+                <div class="my-5">
+                    <?php
+                    if(isset($templateParams["nome"])){
+                        require($templateParams["nome"]);
+                    }
+                    ?>
+                </div>
                 </main>
             </div>
 
