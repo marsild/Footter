@@ -1,7 +1,14 @@
- aside img{
-    max-height: 30px;
+.nav-link{
+  color: gray;
 }
 
+.active{
+  color: white;
+}
+
+aside img{
+    max-height: 30px;
+}
 
 article section img{
    
