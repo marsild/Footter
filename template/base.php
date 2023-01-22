@@ -31,7 +31,7 @@
                                 data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body pt-0">
-                            <hr class="d-lg-none text-white-50">
+                            <hr class="text-white-50">
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li class="nav-item">
                                     <a class="nav-link<?php if($templateParams["active"]=="Profilo"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-person-circle"></em> Profilo</a>
