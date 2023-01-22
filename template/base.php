@@ -55,6 +55,8 @@
                     <?php
                     if(isset($templateParams["pulsante_offcanvas"])){
                         require($templateParams["pulsante_offcanvas"]);
+                    } else {
+                        echo '<button class="btn" type="button" disabled><em class="bi bi-stars"></em></button>';
                     }
                     ?>
                 </nav>
