@@ -41,7 +41,7 @@
                 <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64px;"></div><div class="form-notch-trailing"></div></div></div>
         
                 <!-- 2 column grid layout for inline styling -->
-                <div class="row mb-4">
+                <div class="row">
                   <div class="col d-flex justify-content-start">
                     <!-- Checkbox -->
                     <div class="form-check">
@@ -50,9 +50,15 @@
                     </div>
                   </div>
                 </div>
-        
+                <div class="col-12 mt-4 text-center text-danger">
+                <?php
+                if(isset($templateParams["errorelogin"])){
+                  echo $templateParams["errorelogin"];
+                }
+                ?>
+              </div>
                 <!-- Submit button -->
-                <div class="d-grid col-5 mx-auto">
+                <div class="d-grid col-5 mx-auto mt-4">
                   <input type="submit" value="Accedi" class="btn btn-primary btn-block w-20">
                 </div>
                 
@@ -64,7 +70,10 @@
                   
                   <a href="#" role="button" class="btn btn-info btn-block my-4" >Registrati</a>
                 </div>
+                
               </form>
+              
+              
             </section>
       </div>
   </div>
