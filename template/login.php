@@ -70,10 +70,7 @@
                   
                   <a href="#" role="button" class="btn btn-info btn-block my-4" >Registrati</a>
                 </div>
-                
               </form>
-              
-              
             </section>
       </div>
   </div>

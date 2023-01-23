@@ -2,6 +2,9 @@
 function registerLoggedUser($user){
     $_SESSION["username"] = $user["username"];
 }
+function isUserLoggedIn(){
+    return !empty($_SESSION["username"]);
+}
 /*
 function isActive($pagename){
     if(basename($_SERVER['PHP_SELF'])==$pagename){
@@ -13,9 +16,7 @@ function getIdFromName($name){
     return preg_replace("/[^a-z]/", '', strtolower($name));
 }
 
-function isUserLoggedIn(){
-    return !empty($_SESSION['idautore']);
-}
+
 
 function getEmptyArticle(){
     return array("idarticolo" => "", "titoloarticolo" => "", "imgarticolo" => "", "testoarticolo" => "", "anteprimaarticolo" => "", "categorie" => array());
