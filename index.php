@@ -23,7 +23,7 @@ if(isUserLoggedIn()){
     //Login ok
     require("template/base.php");
 } else {
-    require("template/login.php");
+    require("login.php");
 }
 
 ?>
