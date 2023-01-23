@@ -27,17 +27,17 @@
         </div>
           <section class="w-100 p-4 d-flex justify-content-center pb-4">
         
-              <form style="width: 22rem;">
-                <!-- Email input -->
+              <form style="width: 22rem;" action="index.php" method="POST">
+                <!-- Username input -->
                 <div class="form-outline mb-4">
-                  <input type="email" id="form2Example1" class="form-control" placeholder="Username">
-                  <label class="form-label" for="form2Example1" style="margin-left: 0px;" hidden>Email address</label>
+                  <input type="text" id="username" name="username" class="form-control" placeholder="Username">
+                  <label class="form-label" for="username" style="margin-left: 0px;" hidden>Username</label>
                 <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 88px;"></div><div class="form-notch-trailing"></div></div></div>
         
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                  <input type="password" id="form2Example2" class="form-control" placeholder="Password">
-                  <label class="form-label" for="form2Example2" style="margin-left: 0px;" hidden>Password</label>
+                  <input type="password" id="password" class="form-control" placeholder="Password" name="password">
+                  <label class="form-label" for="password" style="margin-left: 0px;" hidden>Password</label>
                 <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64px;"></div><div class="form-notch-trailing"></div></div></div>
         
                 <!-- 2 column grid layout for inline styling -->
@@ -53,7 +53,7 @@
         
                 <!-- Submit button -->
                 <div class="d-grid col-5 mx-auto">
-                  <a href="home.php" role="button" class="btn btn-primary btn-block w-20">Accedi</a>
+                  <input type="submit" value="Accedi" class="btn btn-primary btn-block w-20">
                 </div>
                 
                 <hr class="text-dark">
@@ -62,7 +62,7 @@
                 </div> 
                 <div class="col d-flex justify-content-center">
                   
-                  <a href="#" role="button" class="btn btn-info btn-block my-4">Registrati</a>
+                  <a href="#" role="button" class="btn btn-info btn-block my-4" >Registrati</a>
                 </div>
               </form>
             </section>
