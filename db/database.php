@@ -35,12 +35,19 @@ class DatabaseHelper{
 
     public function checkLogin($username, $password){
         $stmt = $this->db->prepare("SELECT nickname as username FROM utente WHERE nickname = ? AND psw = ?");
-        $stmt->bind_param("ss", $username, $password);
         $stmt->execute();
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
     } 
+    public function getComments($id_post){
+        $stmt = $this->db->prepare("SELECT c.data_commento, c.nickname, c.testo, u.immagine FROM commento as c, utente as u WHERE id_post=? and c.nickname=u.nickname ORDER BY c.data_commento desc");
+        $stmt->bind_param("i", $id_post);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
 }
 
 ?>

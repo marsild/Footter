@@ -29,3 +29,7 @@ INSERT INTO `post` (`id`, `immagine`, `testo`, `n_like`, `n_commenti`, `data_pos
 INSERT INTO `riguarda` (`squadra`, `id_post`) VALUES
 ('Milan', 1),
 ('Sassuolo', 1);
+
+INSERT INTO `commento` (`data_commento`,`testo`,`nickname`,`id_post`) VALUES
+    ('2022-12-29','wmoveinvwoinvoienvo','marsild',1);
+

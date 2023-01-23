@@ -29,7 +29,7 @@
                 <em class="bi bi-heart fs-4"></em> <?php echo $post["n_like"];?>
             </button>
 
-            <a href="#" class="btn float-end" role="button">
+            <a href="commenti.php?idpost=<?php echo $post["id"]?>" class="btn float-end" role="button">
             <?php echo $post["n_commenti"];?> <em class="bi bi-chat-dots fs-4"></em>
             </a>
         </footer>
