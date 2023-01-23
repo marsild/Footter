@@ -19,7 +19,7 @@
             </div>
         </header>
         <section class="px-5">
-        <?php echo $post["testo"];?>
+            <p class="text-break"><?php echo $post["testo"];?></p>
             <div class="w-100 text-center">
                 <img class="border border-3 img-fluid" src="<?php echo UPLOAD_DIR.$post["ImmaginePost"];?>" alt="Immagine Post" />
             </div>
