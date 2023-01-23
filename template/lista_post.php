@@ -7,7 +7,7 @@
                     <img class="image rounded-circle border border-1" src="<?php echo UPLOAD_DIR.$post["ImmagineUtente"];?>" alt="Immagine Profilo">
                     <div class="float-end">
                         <?php foreach( $dbh->getSquadreTaggate($post["id"]) as $squadra):?>
-                            <img src="<?php echo UPLOAD_DIR.$squadra["logo"];?>" alt="">
+                            <img src="<?php echo UPLOAD_DIR.$squadra["logo"];?>" alt="<?php echo $squadra["nome"];?>">
                          <?php endforeach; ?>
                     </div>
                 </div>

@@ -1,14 +1,12 @@
-<form>
+<form style="width: 22rem;">
     <!-- Nome Cognome input -->
-    <div class="input-group mb-4 col-12">
-        <div class="col-5">
+    <div class="mb-4 row g-3">
+        <div class="col">
             <input type="text" class="form-control" placeholder="Nome" aria-label="Nome">
         </div>
-        <div class="col-1"></div>
-        <div class="col-6">
+        <div class="col">
             <input type="text" class="form-control" placeholder="Cognome" aria-label="Cognome">
         </div>
-
     </div>
     <!-- Email input -->
     <div class="form-outline mb-4">

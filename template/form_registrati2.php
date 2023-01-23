@@ -1,148 +1,16 @@
 <form style="width: 22rem;">
-    <div class="col-12">
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                <img src="./upload/inter.png" alt="" style="max-height: 30px; ">
-                Inter
+    <div class="row col-12 mx-auto">
+    <div style="font-size:medium;" class="text-center mb-3 col-12"> Supporta le tue squadre preferite! </div>
+    <?php foreach($dbh->getSquads() as $squadra):?>
+        <div class="form-check form-check-inline mx-0 my-1 col-6 ">
+            <input class="form-check-input" type="checkbox" value="<?php echo $squadra["nome"];?>" id="checkbox<?php echo $squadra["nome"];?>">
+            <label style="font-size:small" class="form-check-label" for="checkbox<?php echo $squadra["nome"];?>">
+                <img src="<?php echo UPLOAD_DIR.$squadra["logo"];?>" alt="<?php echo $squadra["nome"];?>" style="max-height: 20px; ">
+                <?php echo $squadra["nome"];?>
             </label>
         </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-            <label class="form-check-label" for="flexCheckDefault2">
-                <img src="./upload/milan.png" alt="" style="max-height: 30px;">
-                Milan
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                <img src="./upload/salernitana.png" alt="" style="max-height: 30px;">
-                Salernitana
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-            <label class="form-check-label" for="flexCheckDefault2">
-                <img src="./upload/cremonese.png" alt="" style="max-height: 30px;">
-                Cremonese
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-            <label class="form-check-label" for="flexCheckDefault2">
-                <img src="./upload/cremonese.png" alt="" style="max-height: 30px;">
-                Cremonese
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                <img src="./upload/inter.png" alt="" style="max-height: 30px; ">
-                Inter
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-            <label class="form-check-label" for="flexCheckDefault2">
-                <img src="./upload/milan.png" alt="" style="max-height: 30px;">
-                Milan
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                <img src="./upload/salernitana.png" alt="" style="max-height: 30px;">
-                Salernitana
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-            <label class="form-check-label" for="flexCheckDefault2">
-                <img src="./upload/cremonese.png" alt="" style="max-height: 30px;">
-                Cremonese
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-            <label class="form-check-label" for="flexCheckDefault2">
-                <img src="./upload/cremonese.png" alt="" style="max-height: 30px;">
-                Cremonese
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                <img src="./upload/inter.png" alt="" style="max-height: 30px; ">
-                Inter
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-            <label class="form-check-label" for="flexCheckDefault2">
-                <img src="./upload/milan.png" alt="" style="max-height: 30px;">
-                Milan
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                <img src="./upload/salernitana.png" alt="" style="max-height: 30px;">
-                Salernitana
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-            <label class="form-check-label" for="flexCheckDefault2">
-                <img src="./upload/cremonese.png" alt="" style="max-height: 30px;">
-                Cremonese
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-            <label class="form-check-label" for="flexCheckDefault2">
-                <img src="./upload/cremonese.png" alt="" style="max-height: 30px;">
-                Cremonese
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                <img src="./upload/inter.png" alt="" style="max-height: 30px; ">
-                Inter
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-            <label class="form-check-label" for="flexCheckDefault2">
-                <img src="./upload/milan.png" alt="" style="max-height: 30px;">
-                Milan
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                <img src="./upload/salernitana.png" alt="" style="max-height: 30px;">
-                Salernitana
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-            <label class="form-check-label" for="flexCheckDefault2">
-                <img src="./upload/cremonese.png" alt="" style="max-height: 30px;">
-                Cremonese
-            </label>
-        </div>
-        <div class="form-check form-check-inline mx-0 col-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-            <label class="form-check-label" for="flexCheckDefault2">
-                <img src="./upload/cremonese.png" alt="" style="max-height: 30px;">
-                Cremonese
-            </label>
-        </div>
+    <?php endforeach; ?>
     </div>
-
-
     <!-- Submit button -->
     <div class="d-grid col-5 mt-4">
         <a href="#" role="button" class="btn btn-primary btn-block w-20">Registrati</a>

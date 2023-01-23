@@ -10,7 +10,7 @@ class DatabaseHelper{
         }
     }
     public function getSquadreTaggate($idPost){
-        $stmt = $this->db->prepare("SELECT s.logo FROM riguarda as r, squadra as s WHERE r.id_post = ? and  r.squadra = s.nome");
+        $stmt = $this->db->prepare("SELECT s.logo, s.nome FROM riguarda as r, squadra as s WHERE r.id_post = ? and  r.squadra = s.nome");
         $stmt->bind_param("i",$idPost);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -45,6 +45,14 @@ class DatabaseHelper{
         $stmt->bind_param("i", $id_post);
         $stmt->execute();
         $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getSquads(){
+        $stmt = $this->db->prepare("SELECT nome, logo FROM squadra");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
