@@ -43,7 +43,7 @@
                                     <a class="nav-link<?php if($templateParams["active"]=="Impostazioni"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-gear"></em> Impostazioni</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link<?php if($templateParams["active"]=="Esci"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-box-arrow-left"></em> Esci</a>
+                                    <a class="nav-link" href="logout.php"><em class="bi bi-box-arrow-left"></em> Esci</a>
                                 </li>
                             </ul>
                         </div>
@@ -122,7 +122,7 @@
                             <a class="nav-link<?php if($templateParams["active"]=="Impostazioni"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-gear"></em> Impostazioni</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Esci"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-box-arrow-left"></em> Esci</a>
+                            <a class="nav-link" href="logout.php"><em class="bi bi-box-arrow-left"></em> Esci</a>
                         </li>
                     </ul>
                 </aside>
