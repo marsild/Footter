@@ -35,3 +35,6 @@ INSERT INTO `commento` (`data_commento`,`testo`,`nickname`,`id_post`) VALUES
 
 INSERT INTO `segue` (`nickname_segue`, `nickname_seguito`) VALUES
 ('lucapaso', 'marsild');
+
+INSERT INTO `preferiti` (`squadra`, `nickname`) VALUES
+('Sassuolo', 'lucapaso');
