@@ -1,4 +1,4 @@
-<form style="width: 22rem;" action="processa-iscrizione.php" method="POST">
+<form style="width: 22rem;" action="index.php" method="POST">
     <input type="hidden" id="reg_nome" name="reg_nome" value="<?php echo $_POST["reg_nome"]?>">
     <input type="hidden" id="reg_cognome" name="reg_cognome" value="<?php echo $_POST["reg_cognome"]?>">
     <input type="hidden" id="reg_email" name="reg_email" value="<?php echo $_POST["reg_email"]?>">
