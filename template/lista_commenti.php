@@ -1,9 +1,9 @@
 <section class="w-100 p-4 d-flex justify-content-center pb-4">
-                            <form style="width: 22rem;">
+                            <form style="width: 22rem;"action="commenti.php?idpost=<?php echo $_GET["idpost"]?>" method="POST">
                                 <!-- Password input -->
                                 <div class="form-outline mb-2">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Inserisci il tuo commento" aria-label="Recipient's username" aria-describedby="button-addon2" required>
+                                        <input type="text" class="form-control" id="textcommento" name="textcommento" placeholder="Inserisci il tuo commento" aria-label="Recipient's username" aria-describedby="button-addon2" required>
                                         <input value="invia" class="btn btn-outline-primary" type="submit" id="button-addon2">
                                       </div>
 

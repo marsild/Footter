@@ -56,6 +56,13 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+       public function insertComment($testo,$username,$id_post){
+        $dataattuale = date("Y-m-d");
+        $stmt = $this->db->prepare("INSERT INTO commento (data_commento,testo,nickname,id_post) VALUES (?,?,?,?)");
+        $stmt->bind_param("sssi",$dataattuale, $testo, $username, $id_post);
+        return $stmt->execute();
+    }
+
 }
 
 ?>
