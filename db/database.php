@@ -95,7 +95,13 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    
+    public function increaseCommentsNumber($id_post){
+        $stmt = $this->db->prepare("UPDATE post  SET n_commenti=n_commenti + 1 WHERE id=?");
+        $stmt->bind_param("i", $id_post);
+        return $stmt->execute();
 
+    }
 }
 
 ?>

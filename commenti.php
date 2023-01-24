@@ -4,7 +4,7 @@ require_once("bootstrap.php");
 
 if(isset($_POST["textcommento"])){
     $dbh->insertComment($_POST["textcommento"],$_SESSION["username"],$_GET["idpost"]);
-
+    $dbh->increaseCommentsNumber($_GET["idpost"]);
 
 }
 
