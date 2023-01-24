@@ -5,6 +5,14 @@ function registerLoggedUser($user){
 function isUserLoggedIn(){
     return !empty($_SESSION["username"]);
 }
+function flatArray($array_in){
+    $i = 0;
+    foreach($array_in as $user){
+        $array_out[$i] = $user["nickname_seguito"];
+        $i = $i + 1;
+    }
+    return $array_out;
+}
 /*
 function isActive($pagename){
     if(basename($_SERVER['PHP_SELF'])==$pagename){

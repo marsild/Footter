@@ -33,3 +33,5 @@ INSERT INTO `riguarda` (`squadra`, `id_post`) VALUES
 INSERT INTO `commento` (`data_commento`,`testo`,`nickname`,`id_post`) VALUES
     ('2022-12-29','wmoveinvwoinvoienvo','marsild',1);
 
+INSERT INTO `segue` (`nickname_segue`, `nickname_seguito`) VALUES
+('lucapaso', 'marsild');

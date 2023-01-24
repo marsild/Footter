@@ -1,6 +1,6 @@
-
 <?php foreach($templateParams["getPosts"] as $post):?>
-    <article class="bg-white border-top border-bottom border-2 border-dark">
+    <?php if(in_array($post["nickname"], flatArray($dbh->getSeguiti($_SESSION["username"])))){ ?>
+        <article class="bg-white border-top border-bottom border-2 border-dark">
         <header class="pt-3">
             <div class="px-4">
                 <div>
@@ -33,7 +33,8 @@
             <?php echo $post["n_commenti"];?> <em class="bi bi-chat-dots fs-4"></em>
             </a>
         </footer>
-    </article>     
+    </article>    
+    <?php } ?> 
 <?php endforeach; ?>
                         
                     

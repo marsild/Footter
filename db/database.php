@@ -78,6 +78,15 @@ class DatabaseHelper{
         return $stmt->execute();
     }
 
+    public function getSeguiti($username){
+        $stmt = $this->db->prepare("SELECT nickname_seguito FROM segue WHERE nickname_segue = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
 }
 
 ?>
