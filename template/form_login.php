@@ -48,6 +48,6 @@
         oppure
     </div>
     <div class="col d-flex justify-content-center">
-        <a href="registrati1.php" role="button" class="btn btn-info btn-block my-4">Registrati</a>
+        <a href="registrati.php" role="button" class="btn btn-info btn-block my-4">Registrati</a>
     </div>
 </form>

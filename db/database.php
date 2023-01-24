@@ -63,6 +63,21 @@ class DatabaseHelper{
         return $stmt->execute();
     }
 
+    public function insertUtente($nickname, $nome, $cognome, $psw, $email){
+        $pfp = "pfp.png";
+        $query = "INSERT INTO utente (nickname, nome, cognome, psw, email, immagine, n_follower, n_seguiti) VALUES (?, ?, ?, ?, ?, ?, 0, 0)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssssss',$nickname, $nome, $cognome, $psw, $email, $pfp);
+        return $stmt->execute();
+    }
+
+    public function insertPreferiti($squadra, $nickname){
+        $query = "INSERT INTO preferiti (squadra, nickname) VALUES (?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss', $squadra, $nickname);
+        return $stmt->execute();
+    }
+
 }
 
 ?>
