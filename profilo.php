@@ -4,18 +4,23 @@ require_once("bootstrap.php");
     /*Se è stato premuto il pulsante Segui oppure Smetti di seguire*/
     if(isset($_POST["un_follow"])){
         if($_POST["un_follow"]=="Segui"){
-            //INSERT in segue
-            $dbh->insertSegue($_SESSION["username"], $_GET["usr"]);
-            //UPDATE incrementa n_seguiti in profilo 1 e 2 n_follower in profilo
-            $dbh->increaseFollowerSeguiti($_SESSION["username"], $_GET["usr"]);
-            /* NOTIFICA */
+            if (!in_array($_GET["usr"], flatArray($dbh->getSeguiti($_SESSION["username"]), "nickname_seguito"))){
+                //INSERT in segue
+                $dbh->insertSegue($_SESSION["username"], $_GET["usr"]);
+                //UPDATE incrementa n_seguiti in profilo 1 e 2 n_follower in profilo
+                $dbh->increaseFollowerSeguiti($_SESSION["username"], $_GET["usr"]);
+                /* NOTIFICA */
+            }
         }
         if($_POST["un_follow"]=="Smetti di seguire"){
-            //DELETE from segue
-            $dbh->deleteSegue($_SESSION["username"], $_GET["usr"]);
-            //UPDATE decrementa n_seguiti in profilo 1 n_seguiti e n_follower in profilo 2
-            $dbh->decreaseFollowerSeguiti($_SESSION["username"], $_GET["usr"]);
+            if (in_array($_GET["usr"], flatArray($dbh->getSeguiti($_SESSION["username"]), "nickname_seguito"))){
+                //DELETE from segue
+                $dbh->deleteSegue($_SESSION["username"], $_GET["usr"]);
+                //UPDATE decrementa n_seguiti in profilo 1 n_seguiti e n_follower in profilo 2
+                $dbh->decreaseFollowerSeguiti($_SESSION["username"], $_GET["usr"]);
+            }
         }
+        unset($_POST["un_follow"]);
     }
     /*Se l'username non è quello del profilo che ha effettuato il login*/
     if(isset($_GET["usr"]) &&  $_GET["usr"] != $_SESSION["username"]){

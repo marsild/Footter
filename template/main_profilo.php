@@ -13,10 +13,10 @@
 <hr class="text-dark mt-0">
 <div class="row mx-2 g-1">
     <div class="col text-center">
-        <p><?php echo $templateParams["profilo"]["n_follower"] ;?> <br /> follower </p>
+        <a href="#"><?php echo $templateParams["profilo"]["n_follower"] ;?> <br /> follower </a>
     </div>
     <div class="col text-center">
-        <p><?php echo $templateParams["profilo"]["n_seguiti"] ;?> <br /> seguiti </p>
+        <a href="#"><?php echo $templateParams["profilo"]["n_seguiti"] ;?> <br /> seguiti </a>
     </div>
     <div class="col text-center">
         <p><?php echo $templateParams["n_post"]["total"];?> <br /> post </p>
