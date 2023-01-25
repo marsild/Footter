@@ -100,7 +100,66 @@ class DatabaseHelper{
         $stmt = $this->db->prepare("UPDATE post  SET n_commenti=n_commenti + 1 WHERE id=?");
         $stmt->bind_param("i", $id_post);
         return $stmt->execute();
+    }
+    
+    public function getUtente($username){
+        $stmt = $this->db->prepare("SELECT nome, cognome, email, immagine, n_follower, n_seguiti, nickname FROM utente WHERE nickname=?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getNrOfPost($username){
+        $stmt = $this->db->prepare("SELECT count(*) as total FROM post WHERE nickname=?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function insertSegue($nickname_segue, $nickname_seguito){
+        $query = "INSERT INTO segue (nickname_segue, nickname_seguito) VALUES (?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss', $nickname_segue, $nickname_seguito);
+        return $stmt->execute();
+    }
+    public function deleteSegue($nickname_segue, $nickname_seguito){
+        $query = "DELETE FROM segue WHERE nickname_segue=? AND nickname_seguito=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss', $nickname_segue, $nickname_seguito);
+        return $stmt->execute();
+    }
+    public function increaseFollowerSeguiti($nickname_segue, $nickname_seguito){
+        $stmt = $this->db->prepare("UPDATE utente SET n_seguiti=n_seguiti + 1 WHERE nickname=?");
+        $stmt->bind_param("s", $nickname_segue);
+        $stmt->execute();
+        $stmt1 = $this->db->prepare("UPDATE utente SET n_follower=n_follower + 1 WHERE nickname=?");
+        $stmt1->bind_param("s", $nickname_seguito);
+        return $stmt1->execute();
+    }
+    public function decreaseFollowerSeguiti($nickname_segue, $nickname_seguito){
+        $stmt = $this->db->prepare("UPDATE utente SET n_seguiti=n_seguiti - 1 WHERE nickname=?");
+        $stmt->bind_param("s", $nickname_segue);
+        $stmt->execute();
+        $stmt1 = $this->db->prepare("UPDATE utente SET n_follower=n_follower - 1 WHERE nickname=?");
+        $stmt1->bind_param("s", $nickname_seguito);
+        return $stmt1->execute();
+    }
+    public function getUtentiSeguiti($username){
+        $stmt = $this->db->prepare("SELECT s.nickname_seguito, u.immagine FROM segue as s, utente as u WHERE s.nickname_segue = ? AND s.nickname_seguito = u.nickname");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    public function getFollowers($username){
+        $stmt = $this->db->prepare("SELECT s.nickname_segue, u.immagine FROM segue as s, utente as u WHERE s.nickname_seguito = ? AND s.nickname_segue = u.nickname");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 }
 
