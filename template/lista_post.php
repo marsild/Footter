@@ -37,7 +37,7 @@
                             <p class="text-break px-0 mt-1"><?php echo $post["testo"]; ?></p>
                         </div>
                         <div class="row text-center">
-                            <img class="border border-3 mx-auto img-fluid" src="<?php echo UPLOAD_DIR . $post["ImmaginePost"]; ?>" alt="Immagine post"/>
+                            <img class="border border-3 mx-auto img-fluid" style="max-height:500px; object-fit:contain" src="<?php echo UPLOAD_DIR . $post["ImmaginePost"]; ?>" alt="Immagine post"/>
                         </div>
                         <div class="row">
                             <div class="col text-start ps-0">
