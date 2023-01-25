@@ -2,9 +2,11 @@
     <!-- Nome Cognome input -->
     <div class="mb-4 row g-3">
         <div class="col">
+            <label for="reg_nome" hidden>Nome:</label> 
             <input type="text" class="form-control" id="reg_nome" name="reg_nome" placeholder="Nome" aria-label="Nome" required>
         </div>
         <div class="col">
+            <label for="reg_cognome" hidden>Cognome:</label> 
             <input type="text" class="form-control" id="reg_cognome" name="reg_cognome" placeholder="Cognome" aria-label="Cognome" required>
         </div>
     </div>
@@ -20,6 +22,7 @@
     </div>
     <!-- Username input -->
     <div class="input-group mb-4">
+        <label for="reg_username" hidden>Username:</label> 
         <span class="input-group-text" id="basic-addon1">@</span>
         <input type="text" class="form-control" id="reg_username" name="reg_username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
     </div>
