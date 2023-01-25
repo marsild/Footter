@@ -161,6 +161,28 @@ class DatabaseHelper{
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    public function insertPost($immagine, $testo, $nickname){
+        $dataattuale = date("Y-m-d");
+        $query = "INSERT INTO post (immagine, testo, n_like, n_commenti, data_post, nickname) VALUES (?, ?, 0, 0, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssss',$immagine, $testo, $dataattuale, $nickname);
+        $stmt->execute();
+        return $stmt->insert_id;
+    }
+    public function insertSquadsPost($id_post,$squadra1,$squadra2){
+        $query = "INSERT INTO riguarda (squadra, id_post) VALUES (?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('si',$squadra1,$id_post);
+        if(isset($squadra2)){
+            $query1 = "INSERT INTO riguarda (squadra, id_post) VALUES (?, ?)";
+            $stmt1 = $this->db->prepare($query1);
+            $stmt1->bind_param('si',$squadra2,$id_post);
+            $stmt1->execute();
+        }
+        $stmt->execute();
+
+    }
+
 }
 
 ?>
