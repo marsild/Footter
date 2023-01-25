@@ -148,14 +148,14 @@ class DatabaseHelper{
         return $stmt1->execute();
     }
     public function getUtentiSeguiti($username){
-        $stmt = $this->db->prepare("SELECT s.nickname_seguito, u.immagine FROM segue as s, utente as u WHERE s.nickname_segue = ? AND s.nickname_seguito = u.nickname");
+        $stmt = $this->db->prepare("SELECT s.nickname_seguito as username, u.immagine FROM segue as s, utente as u WHERE s.nickname_segue = ? AND s.nickname_seguito = u.nickname");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     public function getFollowers($username){
-        $stmt = $this->db->prepare("SELECT s.nickname_segue, u.immagine FROM segue as s, utente as u WHERE s.nickname_seguito = ? AND s.nickname_segue = u.nickname");
+        $stmt = $this->db->prepare("SELECT s.nickname_segue as username, u.immagine FROM segue as s, utente as u WHERE s.nickname_seguito = ? AND s.nickname_segue = u.nickname");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
