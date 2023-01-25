@@ -50,7 +50,7 @@
                     </div>
 
                     <!--TESTO CENTRALE FOOTTER ⚽️⚽️-->
-                    <a class="text-decoration-none text-white fs-4" href="#">Footter</a>
+                    <a class="text-decoration-none text-white fs-4" href="index.php">Footter</a>
 
                     <?php
                     if(isset($templateParams["pulsante_offcanvas"])){
@@ -68,7 +68,7 @@
             <div class="mobile d-block d-sm-none col-12">
                 <nav class="z-1 fixed-bottom navbar navbar-dark bg-dark px-5 ">
                     <!--PULSANTE HOME-->
-                    <a class="nav-link<?php if($templateParams["active"]=="Home"){echo ' active" aria-current="page';}?>" href="#" title="home">
+                    <a class="nav-link<?php if($templateParams["active"]=="Home"){echo ' active" aria-current="page';}?>" href="index.php" title="home">
                         <em class="bi bi-house"></em>
                     </a>
                     <!--PULSANTE SEARCH-->
@@ -80,7 +80,7 @@
                         <em class="bi bi-bell"></em>
                     </a>
                     <!--PULSANTE CREA-->
-                    <a class="nav-link<?php if($templateParams["active"]=="Crea"){echo ' active" aria-current="page';}?>" href="#" title="crea">
+                    <a class="nav-link<?php if($templateParams["active"]=="Crea"){echo ' active" aria-current="page';}?>" href="crea.php" title="crea">
                         <em class="bi bi-pencil-square"></em>
                     </a>
                 </nav>
@@ -91,7 +91,7 @@
         <div class="desktop d-none d-sm-block col-sm-12">
             <header class="bg-dark py-2 fixed-top text-center">
                 <!--TESTO CENTRALE FOOTTER ⚽️⚽️-->
-                <a class="text-decoration-none text-white fs-4" href="#">Footter</a>
+                <a class="text-decoration-none text-white fs-4" href="index.php">Footter</a>
             </header>
         </div>
 
@@ -104,7 +104,7 @@
                             <a class="nav-link<?php if($templateParams["active"]=="Profilo"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-person-circle"></em> Profilo</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Home"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-house"></em> Home</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Home"){echo ' active" aria-current="page';}?>" href="index.php"><em class="bi bi-house"></em> Home</a>
                         </li>
                         <li class="nav-item w-100">
                             <a class="nav-link<?php if($templateParams["active"]=="Cerca"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-search"></em> Cerca</a>
@@ -113,7 +113,7 @@
                             <a class="nav-link<?php if($templateParams["active"]=="Notifiche"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-bell"></em> Notifiche</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Crea"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-pencil-square"></em> Crea</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Crea"){echo ' active" aria-current="page';}?>" href="crea.php"><em class="bi bi-pencil-square"></em> Crea</a>
                         </li>
                         <li class="nav-item w-100">
                             <a class="nav-link<?php if($templateParams["active"]=="Preferiti"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-star"></em> Preferiti</a>
