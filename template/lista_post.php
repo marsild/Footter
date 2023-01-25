@@ -24,7 +24,7 @@
                             </div>
                         </div>
                         <div class="alignme">
-                            <a class="text-black px-2" href="#"><?php echo $post["nickname"]; ?></a>
+                            <a class="text-black px-2" href="profilo.php?usr=<?php echo $post["nickname"]; ?>"><?php echo $post["nickname"]; ?></a>
                             <br />
                             <span class="small text-black px-2"><?php echo $post["data_post"]; ?></span>
                         </div>

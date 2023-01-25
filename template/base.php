@@ -34,7 +34,7 @@
                             <hr class="text-white-50">
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li class="nav-item">
-                                    <a class="nav-link<?php if($templateParams["active"]=="Profilo"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-person-circle"></em> Profilo</a>
+                                    <a class="nav-link<?php if($templateParams["active"]=="Profilo"){echo ' active" aria-current="page';}?>" href="profilo.php"><em class="bi bi-person-circle"></em> Profilo</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link<?php if($templateParams["active"]=="Preferiti"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-star"></em> Preferiti</a>
@@ -101,7 +101,7 @@
                 <aside class="mt-5">
                     <ul class="nav">
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Profilo"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-person-circle"></em> Profilo</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Profilo"){echo ' active" aria-current="page';}?>" href="profilo.php"><em class="bi bi-person-circle"></em> Profilo</a>
                         </li>
                         <li class="nav-item w-100">
                             <a class="nav-link<?php if($templateParams["active"]=="Home"){echo ' active" aria-current="page';}?>" href="index.php"><em class="bi bi-house"></em> Home</a>
