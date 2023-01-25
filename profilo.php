@@ -1,6 +1,17 @@
 <?php
  
 require_once("bootstrap.php");
+    /*Se si sta tentando di eliminare un post */
+    if(isset($_POST["eliminazione_post"])){
+        // elimina commenti
+        $dbh->deleteComments(intval($_POST["eliminazione_post"]));
+        /*ELIMINA MI PIACE*/
+        $dbh->deleteLikes(intval($_POST["eliminazione_post"]));
+        // elimina riguarda
+        $dbh->deleteTeamTags(intval($_POST["eliminazione_post"]));
+        // elimina post 
+        $dbh->deletePost(intval($_POST["eliminazione_post"]));
+    }
     /*Se è stato premuto il pulsante Segui oppure Smetti di seguire*/
     if(isset($_POST["un_follow"])){
         if($_POST["un_follow"]=="Segui"){
@@ -53,7 +64,7 @@ require_once("bootstrap.php");
         $templateParams["actionPulsante"]="#";
         $templateParams["active"]="Profilo";
     }
-    
+    $templateParams["getPosts"]= $dbh->getPosts();
     $templateParams["nome"]="main_profilo.php";
 
     require("template/base.php");

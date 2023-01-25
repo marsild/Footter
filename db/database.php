@@ -180,7 +180,30 @@ class DatabaseHelper{
             $stmt1->execute();
         }
         $stmt->execute();
-
+    }
+    public function deleteComments($id_post){
+        $query = "DELETE FROM commento WHERE id_post=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $id_post);
+        return $stmt->execute();
+    }
+    public function deleteLikes($id_post){
+        $query = "DELETE FROM piace WHERE id=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $id_post);
+        return $stmt->execute();
+    }
+    public function deleteTeamTags($id_post){
+        $query = "DELETE FROM riguarda WHERE id_post=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $id_post);
+        return $stmt->execute();
+    }
+    public function deletePost($id_post){
+        $query = "DELETE FROM post WHERE id=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $id_post);
+        return $stmt->execute();
     }
 
 }
