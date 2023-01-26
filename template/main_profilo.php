@@ -23,6 +23,7 @@
     </div>
 </div>
 <hr class="text-dark my-0">
+<?php $count = 0; ?>
 <?php foreach ($templateParams["getPosts"] as $post) : ?>
     <?php if ($post["nickname"] == $templateParams["profilo"]["nickname"]) { ?>
         <article class="bg-white">
@@ -102,6 +103,18 @@
                 </div>
             </div>
         </article>
+        <?php $count = $count + 1;?>
         <hr class="text-dark">
     <?php } ?>
 <?php endforeach; ?>
+<?php if ($count == 0) { ?>
+    <div class="row mx-2">
+        <div class="col-12 mt-4 text-center">
+        <?php if ($templateParams["testoPulsante"] == "Modifica") { ?>
+            <a href="crea.php" class="text-break">Crea il tuo primo post.</a>
+        <?php } else { ?>
+            <p>Ancora nessun post pubblicato.</p>
+        <?php } ?>
+        </div>
+    </div>
+<?php } ?>

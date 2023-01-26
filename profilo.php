@@ -61,7 +61,7 @@ require_once("bootstrap.php");
             $templateParams["n_post"]= 0;
         }
         $templateParams["testoPulsante"]="Modifica";
-        $templateParams["actionPulsante"]="#";
+        $templateParams["actionPulsante"]="impostazioni.php";
         $templateParams["active"]="Profilo";
     }
     $templateParams["getPosts"]= $dbh->getPosts();

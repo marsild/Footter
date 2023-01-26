@@ -1,3 +1,4 @@
+<?php $count = 0; ?>
 <?php foreach ($templateParams["getPosts"] as $post) : ?>
     <?php if (in_array($post["nickname"], flatArray($dbh->getSeguiti($_SESSION["username"]), "nickname_seguito"))) { ?>
         <?php
@@ -59,7 +60,19 @@
                     </div>
                 </div>
             </article>
+            <?php $count = $count + 1;?>
             <hr class="text-dark">
         <?php } ?>
     <?php } ?>
 <?php endforeach; ?>
+<?php if ($count == 0) { ?>
+    <div class="row mx-2">
+        <div class="col-12 mt-4 text-center">
+            <?php if (isset($_GET["filtra"]) && $_GET["filtra"] == "preferiti") { ?>
+                <a href="cerca.php" class="text-break">Nessun utente che segui ha pubblicato nulla sui tuoi preferiti! Segui di più</a>
+            <?php } else { ?>
+                <a href="cerca.php" class="text-break">Inizia a seguire utenti per vedere post!</a>
+            <?php } ?>
+        </div>
+    </div>
+<?php } ?>
