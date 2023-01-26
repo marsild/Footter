@@ -33,25 +33,20 @@
                     <div class="col-1">
                     </div>
                     <div class="col-10">
-                        <div class="row">
-                            <p class="text-break px-0 mt-1"><?php echo $post["testo"]; ?></p>
+                        <div class="row mt-2">
+                            <p class="text-break px-0 my-2"><?php echo $post["testo"]; ?></p>
                         </div>
+                        <?php if(!empty($post["ImmaginePost"])){ ?>
                         <div class="row text-center">
                             <img class="border border-3 mx-auto img-fluid" style="max-height:500px; object-fit:contain" src="<?php echo UPLOAD_DIR . $post["ImmaginePost"]; ?>" alt="Immagine post"/>
                         </div>
+                        <?php } ?>
                         <div class="row">
                             <div class="col text-start ps-0">
                                 <button type="button" class="btn px-0">
                                     <em class="bi bi-heart fs-4"></em> <?php echo $post["n_like"]; ?>
                                 </button>
                             </div>
-                            <!--
-                            <div class="col text-center">
-                                <a href="#" class="btn" role="button">
-                                    <em class="bi bi-trash3 fs-4 text-danger"></em>
-                                </a>
-                            </div>
-                            -->
                             <div class="col text-end pe-0">
                                 <a href="commenti.php?idpost=<?php echo $post["id"] ?>" class="btn px-0" role="button">
                                     <?php echo $post["n_commenti"]; ?> <em class="bi bi-chat-dots fs-4"></em>
