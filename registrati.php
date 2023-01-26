@@ -1,13 +1,10 @@
 <?php
 require_once("bootstrap.php");
-if(!isUserLoggedIn()){
-    header('Location: ./index.php');
-}
-require_once("bootstrap.php");
 if(isset($_POST["reg_email"])){
     //controlla il formato email
     $correttezza_email = true;
     $correttezza_password = true;
+    $correttezza_username = true;
     if(!filter_var($_POST["reg_email"], FILTER_VALIDATE_EMAIL)){
         $templateParams["messaggio_errore_email"]="Formato email non valido.";
         $correttezza_email = false;
@@ -21,7 +18,13 @@ if(isset($_POST["reg_email"])){
         $templateParams["messaggio_errore_password"]="Formato password non corretto (Minimo 8 caratteri di cui: 1 maiuscola, 1 numero e 1 carattere speciale.)";
         $correttezza_password = false;
     }
-    if($correttezza_email == true && $correttezza_password == true){
+    //controlla username già preso
+    if (in_array($_POST["reg_username"], flatArray($dbh->getUsernames(), "nickname"))) {
+        $templateParams["messaggio_errore_username"]="Username già utilizzato.";
+        $correttezza_username = false;
+    }
+    //se va tutto bene passa oltre
+    if($correttezza_email == true && $correttezza_password == true && $correttezza_username == true){
         $templateParams["intestazione_loginregistrati"]="Crea il tuo account (2/2)";
         $templateParams["form_loginregistrati"]="form_registrati2.php";
     } else {

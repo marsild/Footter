@@ -40,9 +40,15 @@
         <?php
         if(isset($templateParams["messaggio_errore_email"])){
             echo $templateParams["messaggio_errore_email"];
+            echo "<br/>";
         }
         if(isset($templateParams["messaggio_errore_password"])){
             echo $templateParams["messaggio_errore_password"];
+            echo "<br/>";
+        }
+        if(isset($templateParams["messaggio_errore_username"])){
+            echo $templateParams["messaggio_errore_username"];
+            echo "<br/>";
         }
         ?>
     </div>

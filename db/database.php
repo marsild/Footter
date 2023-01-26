@@ -216,8 +216,12 @@ class DatabaseHelper{
         else{
             return;
         }
-        
-
+    }
+    public function getUsernames(){
+        $stmt = $this->db->prepare("SELECT nickname FROM utente");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
 }
