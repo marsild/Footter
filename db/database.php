@@ -57,7 +57,7 @@ class DatabaseHelper{
     }
 
        public function insertComment($testo,$username,$id_post){
-        $dataattuale = date("Y-m-d");
+        $dataattuale = date("Y-m-d h:i:s");
         $stmt = $this->db->prepare("INSERT INTO commento (data_commento,testo,nickname,id_post) VALUES (?,?,?,?)");
         $stmt->bind_param("sssi",$dataattuale, $testo, $username, $id_post);
         return $stmt->execute();
@@ -162,7 +162,7 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     public function insertPost($immagine, $testo, $nickname){
-        $dataattuale = date("Y-m-d");
+        $dataattuale = date("Y-m-d h:i:s");
         $query = "INSERT INTO post (immagine, testo, n_like, n_commenti, data_post, nickname) VALUES (?, ?, 0, 0, ?, ?)";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ssss',$immagine, $testo, $dataattuale, $nickname);
@@ -204,6 +204,14 @@ class DatabaseHelper{
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i', $id_post);
         return $stmt->execute();
+    }
+    public function createNotify($messaggio,$nickname_riceve,$nickname_causa,$id_post){
+        $dataattuale = date("Y-m-d h:i:s");
+        $query = "INSERT INTO notifica (data_notifica, messaggio, visualizzato, nickname_riceve, nickname_causa, id_post) VALUES (?, ?, false, ?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssssi',$dataattuale, $messaggio, $nickname_riceve, $nickname_causa,$id_post);
+        return $stmt->execute();
+
     }
 
 }

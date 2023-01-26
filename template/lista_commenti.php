@@ -3,6 +3,7 @@
                                 <!-- Password input -->
                                 <div class="form-outline mb-2">
                                     <div class="input-group mb-3">
+                                        <input type="hidden" id="usr" name="usr" value="<?php echo $_POST["usr"]; ?>">
                                         <label hidden for="textcommento">commento</label>
                                         <input type="text" class="form-control" id="textcommento" name="textcommento" placeholder="Inserisci il tuo commento" aria-label="Recipient's username" aria-describedby="button-addon2" required>
                                         <input value="invia" class=" z-1btn btn-outline-primary" type="submit" id="button-addon2">
