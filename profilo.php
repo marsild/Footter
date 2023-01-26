@@ -18,6 +18,7 @@ require_once("bootstrap.php");
             if (!in_array($_GET["usr"], flatArray($dbh->getSeguiti($_SESSION["username"]), "nickname_seguito"))){
                 //INSERT in segue
                 $dbh->insertSegue($_SESSION["username"], $_GET["usr"]);
+                $dbh->createNotify("ha iniziato a seguirti.",$_GET["usr"],$_SESSION["username"],null );
                 //UPDATE incrementa n_seguiti in profilo 1 e 2 n_follower in profilo
                 $dbh->increaseFollowerSeguiti($_SESSION["username"], $_GET["usr"]);
                 /* NOTIFICA */

@@ -13,8 +13,24 @@ if (isset($_POST["textarea"])) {
     } else {
         $dbh->insertSquadsPost($id_post, $_POST["first-squad"], null);
     }
-
     $templateParams["creato"] = "post creato con successo";
+    //per ogni follower 
+    foreach($dbh->getFollowers($_SESSION["username"]) as $utente){
+        $notifica = false;
+        
+        //per ogni sua suqdra preferita
+        foreach($dbh->getPreferiti($utente["username"]) as $squadraPreferita){
+            foreach($dbh->getSquadreTaggate($id_post) as $squadraTaggata){
+                if($squadraPreferita["squadra"]==$squadraTaggata["nome"]){
+                    $notifica = true;
+                }
+            }
+        }
+        if($notifica==true){
+            $dbh->createNotify("ha caricato un post su una delle tue squadre preferite.",$utente["username"],$_SESSION["username"],$id_post);
+        }
+    }
+    
 }
 $templateParams["active"] = "Crea";
 $templateParams["nome"] = "form_creaPost.php";

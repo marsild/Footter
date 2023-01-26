@@ -206,11 +206,17 @@ class DatabaseHelper{
         return $stmt->execute();
     }
     public function createNotify($messaggio,$nickname_riceve,$nickname_causa,$id_post){
+        if($nickname_causa!=$nickname_riceve){
         $dataattuale = date("Y-m-d h:i:s");
         $query = "INSERT INTO notifica (data_notifica, messaggio, visualizzato, nickname_riceve, nickname_causa, id_post) VALUES (?, ?, false, ?, ?, ?)";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ssssi',$dataattuale, $messaggio, $nickname_riceve, $nickname_causa,$id_post);
         return $stmt->execute();
+        }
+        else{
+            return;
+        }
+        
 
     }
 
