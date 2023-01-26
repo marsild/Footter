@@ -2,6 +2,9 @@
 function registerLoggedUser($user){
     $_SESSION["username"] = $user["username"];
 }
+function registerFilter($filtro){
+    $_SESSION["filtra"] = $filtro;
+}
 function isUserLoggedIn(){
     return !empty($_SESSION["username"]);
 }
