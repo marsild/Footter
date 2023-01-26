@@ -217,6 +217,14 @@ class DatabaseHelper{
             return;
         }
     }
+    public function createNotificaIniziale($messaggio,$nickname){
+        $id_post = null;
+        $dataattuale = date("Y-m-d h:i:s");
+        $query = "INSERT INTO notifica (data_notifica, messaggio, visualizzato, nickname_riceve, nickname_causa, id_post) VALUES (?, ?, false, ?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssssi',$dataattuale, $messaggio, $nickname, $nickname, $id_post);
+        return $stmt->execute();
+    }
     public function getUsernames(){
         $stmt = $this->db->prepare("SELECT nickname FROM utente");
         $stmt->execute();

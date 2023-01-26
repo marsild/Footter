@@ -11,7 +11,7 @@ if(isset($_POST["reg_username"])){
             $dbh->insertPreferiti($squadra["nome"],$_POST["reg_username"]);
         }
     }
-
+    $dbh->createNotificaIniziale("Benvenuto su Footter!", $_POST["reg_username"]);
     $login_result = $dbh->checkLogin($_POST["reg_username"], $_POST["reg_password"]);
     
     if(count($login_result)==0){
