@@ -38,7 +38,7 @@
                         </div>
                         <?php if(!empty($post["ImmaginePost"])){ ?>
                         <div class="row text-center">
-                            <img class="border border-3 mx-auto img-fluid" style="max-height:500px; object-fit:contain" src="<?php echo UPLOAD_DIR . $post["ImmaginePost"]; ?>" alt="Immagine post"/>
+                            <img class="border border-3 mx-auto img-fluid mt-2" style="max-height:500px; object-fit:contain" src="<?php echo UPLOAD_DIR . $post["ImmaginePost"]; ?>" alt="Immagine post"/>
                         </div>
                         <?php } ?>
                         <div class="row">

@@ -46,12 +46,14 @@
                 <div class="col-1">
                 </div>
                 <div class="col-10">
-                    <div class="row">
-                        <p class="text-break px-0 mt-1"><?php echo $post["testo"]; ?></p>
+                    <div class="row mt-2">
+                        <p class="text-break px-0 my-2"><?php echo $post["testo"]; ?></p>
                     </div>
+                    <?php if(!empty($post["ImmaginePost"])){ ?>
                     <div class="row text-center">
-                        <img class="border border-3 mx-auto img-fluid" style="max-height:500px; object-fit:contain" src="<?php echo UPLOAD_DIR . $post["ImmaginePost"]; ?>" alt="Immagine post" />
+                        <img class="border border-3 mx-auto img-fluid mt-2" style="max-height:500px; object-fit:contain" src="<?php echo UPLOAD_DIR . $post["ImmaginePost"]; ?>" alt="Immagine post" />
                     </div>
+                    <?php } ?>
                     <div class="row">
                         <div class="col text-start ps-0">
                             <button type="button" class="btn px-0">
