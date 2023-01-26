@@ -76,7 +76,7 @@
                         <em class="bi bi-search"></em>
                     </a>
                     <!--PULSANTE NOTIFICHE-->
-                    <a class="nav-link<?php if($templateParams["active"]=="Notifiche"){echo ' active" aria-current="page';}?>" href="#" title="notifiche">
+                    <a class="nav-link<?php if($templateParams["active"]=="Notifiche"){echo ' active" aria-current="page';}?>" href="notifiche.php" title="notifiche">
                         <em class="bi bi-bell"></em>
                     </a>
                     <!--PULSANTE CREA-->
@@ -110,7 +110,7 @@
                             <a class="nav-link<?php if($templateParams["active"]=="Cerca"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-search"></em> Cerca</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Notifiche"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-bell"></em> Notifiche</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Notifiche"){echo ' active" aria-current="page';}?>" href="notifiche.php"><em class="bi bi-bell"></em> Notifiche</a>
                         </li>
                         <li class="nav-item w-100">
                             <a class="nav-link<?php if($templateParams["active"]=="Crea"){echo ' active" aria-current="page';}?>" href="crea.php"><em class="bi bi-pencil-square"></em> Crea</a>
@@ -132,7 +132,7 @@
             <div class="col-12 col-sm-6 px-0">
 
                 <main class="overflow-auto mx-2 vh-100 bg-white">
-                <div class="my-5">
+                <div class="my-5 overflow-hidden">
                     <?php
                     if(isset($templateParams["nome"])){
                         require($templateParams["nome"]);

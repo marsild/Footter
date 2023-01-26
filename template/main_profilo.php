@@ -81,7 +81,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                                            <form action="<?php echo $templateParams["actionPulsante"]; ?>" method="POST">
+                                            <form action="profilo.php" method="POST">
                                                 <input type="hidden" id="eliminazione_post" name="eliminazione_post" value="<?php echo $post["id"];?>">
                                                 <input type="submit" value="Conferma" class="btn btn-primary">
                                             </form>

@@ -6,6 +6,8 @@ if(!isUserLoggedIn()){
 
     /*Se si sta tentando di eliminare un post */
     if(isset($_POST["eliminazione_post"])){
+        //elimina notifiche
+        $dbh->deleteNotificheDiPost(intval($_POST["eliminazione_post"]));
         // elimina commenti
         $dbh->deleteComments(intval($_POST["eliminazione_post"]));
         /*ELIMINA MI PIACE*/

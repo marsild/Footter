@@ -199,6 +199,12 @@ class DatabaseHelper{
         $stmt->bind_param('i', $id_post);
         return $stmt->execute();
     }
+    public function deleteNotificheDiPost($id_post){
+        $query = "DELETE FROM notifica WHERE id_post=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $id_post);
+        return $stmt->execute();
+    }
     public function deletePost($id_post){
         $query = "DELETE FROM post WHERE id=?";
         $stmt = $this->db->prepare($query);
@@ -230,6 +236,18 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    public function getNotifiche($username){
+        $stmt = $this->db->prepare("SELECT data_notifica, messaggio, nickname_causa, visualizzato, id_post FROM notifica WHERE nickname_riceve=? ORDER BY data_notifica desc");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    public function updateNotificheVisualizzate($username){
+        $stmt = $this->db->prepare("UPDATE notifica SET visualizzato=1 WHERE nickname_riceve=?");
+        $stmt->bind_param("s", $username);
+        return $stmt->execute();
     }
 
 }
