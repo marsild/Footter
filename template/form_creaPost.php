@@ -10,7 +10,7 @@
             <input type="file" class=" form-control btn btn-outline-dark" name="imgpost" id="imgpost" value="Inserisci un'immagine..">
         </div>
     </div>
-    <div class="row mx-3">
+    <div class="row mx-3 mb-2">
         <div class="col-12 ">
             <select class="form-select form-select-sm" name="first-squad" aria-label="Default select example" required>
                 <option selected disabled value="">Inserisci una squadra</option>
