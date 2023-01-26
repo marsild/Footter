@@ -48,9 +48,10 @@
                                 </button>
                             </div>
                             <div class="col text-end pe-0">
-                                <a href="commenti.php?idpost=<?php echo $post["id"] ?>" class="btn px-0" role="button">
-                                    <?php echo $post["n_commenti"]; ?> <em class="bi bi-chat-dots fs-4"></em>
-                                </a>
+                                <form action="commenti.php?idpost=<?php echo $post["id"] ?>" method="POST" id="commenti_post">
+                                <input type="hidden" id="usr" name="usr" value="<?php echo $post["nickname"]; ?>">
+                                </form>
+                                <button type="submit" class="btn px-0" form="commenti_post" value="Submit"><?php echo $post["n_commenti"]; ?> <em class="bi bi-chat-dots fs-4"></em></button>
                             </div>
                         </div>
                     </div>

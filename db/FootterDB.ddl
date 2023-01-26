@@ -20,7 +20,7 @@ create database footter;
 
 create table commento (
      id int not null AUTO_INCREMENT,
-     data_commento date not null,
+     data_commento datetime not null,
      testo char(255) not null,
      nickname char(20) not null,
      id_post int not null,
@@ -33,7 +33,7 @@ create table piace (
 
 create table notifica (
      id int not null AUTO_INCREMENT,
-     data_notifica date not null,
+     data_notifica datetime not null,
      messaggio char(255) not null,
      visualizzato char not null,
      nickname_riceve char(20) not null,
@@ -47,7 +47,7 @@ create table post (
      testo char(255),
      n_like int not null,
      n_commenti int not null,
-     data_post date not null,
+     data_post datetime not null,
      nickname char(20) not null,
      constraint IDPOST primary key (id));
 
