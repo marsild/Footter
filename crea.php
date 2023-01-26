@@ -1,7 +1,9 @@
 <?php
 
 require_once("bootstrap.php");
-
+if(!isUserLoggedIn()){
+    header('Location: ./index.php');
+}
 if (isset($_POST["textarea"])) {
     $id_post = $dbh->insertPost($_POST["imgpost"], $_POST["textarea"], $_SESSION["username"]);
     if (isset($_POST["second-squad"])) {

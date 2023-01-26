@@ -36,9 +36,18 @@
             <div class="form-notch-trailing"></div>
         </div>
     </div>
-
+    <div class="col-12 my-4 text-danger">
+        <?php
+        if(isset($templateParams["messaggio_errore_email"])){
+            echo $templateParams["messaggio_errore_email"];
+        }
+        if(isset($templateParams["messaggio_errore_password"])){
+            echo $templateParams["messaggio_errore_password"];
+        }
+        ?>
+    </div>
     <!-- Continua button -->
     <div class="d-grid col-5">
         <input type="submit" value="Continua" class="btn btn-primary btn-block w-20">
-    </div>
+    </div>    
 </form>

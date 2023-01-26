@@ -1,7 +1,9 @@
 <?php
  
 require_once("bootstrap.php");
-
+if(!isUserLoggedIn()){
+    header('Location: ./index.php');
+}
 if(isset($_POST["textcommento"], $_POST["usr"])){
     $dbh->insertComment($_POST["textcommento"],$_SESSION["username"],$_GET["idpost"]);
     $dbh->increaseCommentsNumber($_GET["idpost"]);

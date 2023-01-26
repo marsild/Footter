@@ -1,6 +1,9 @@
 <?php
- 
 require_once("bootstrap.php");
+if(!isUserLoggedIn()){
+    header('Location: ./index.php');
+}
+
     /*Se si sta tentando di eliminare un post */
     if(isset($_POST["eliminazione_post"])){
         // elimina commenti
