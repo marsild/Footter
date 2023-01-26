@@ -10,6 +10,7 @@ if(isset($_POST["reg_email"])){
         $correttezza_email = false;
     }
     //controlla il formato password
+    /*
     $uppercase = preg_match('@[A-Z]@', $_POST["reg_password"]);
     $lowercase = preg_match('@[a-z]@', $_POST["reg_password"]);
     $number = preg_match('@[0-9]@',$_POST["reg_password"]);
@@ -18,6 +19,7 @@ if(isset($_POST["reg_email"])){
         $templateParams["messaggio_errore_password"]="Formato password non corretto (Minimo 8 caratteri di cui: 1 maiuscola, 1 numero e 1 carattere speciale.)";
         $correttezza_password = false;
     }
+    */
     //controlla username già preso
     if (in_array($_POST["reg_username"], flatArray($dbh->getUsernames(), "nickname"))) {
         $templateParams["messaggio_errore_username"]="Username già utilizzato.";
