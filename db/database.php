@@ -232,7 +232,7 @@ class DatabaseHelper{
         return $stmt->execute();
     }
     public function getUsernames(){
-        $stmt = $this->db->prepare("SELECT nickname FROM utente");
+        $stmt = $this->db->prepare("SELECT nickname, immagine FROM utente");
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
@@ -248,16 +248,7 @@ class DatabaseHelper{
         $stmt = $this->db->prepare("UPDATE notifica SET visualizzato=1 WHERE nickname_riceve=?");
         $stmt->bind_param("s", $username);
         return $stmt->execute();
-    }
-    public function getUser($nickname){
-        $stmt = $this->db->prepare("SELECT nickname FROM utente where nome=?");
-        $stmt->bind_param('s',$nickname);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC);
-
-    }
-    
+    }    
     public function getUsernameFromPost($id_post){
         $stmt = $this->db->prepare("SELECT nickname FROM post WHERE id=? ");
         $stmt->bind_param("i", $id_post);
