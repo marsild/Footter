@@ -256,6 +256,13 @@ class DatabaseHelper{
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    public function getNotificheNonVisualizzate($username){
+        $stmt = $this->db->prepare("SELECT count(*) as nr FROM notifica WHERE nickname_riceve=? AND visualizzato=0");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 
 ?>
