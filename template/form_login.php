@@ -9,7 +9,6 @@
             <div class="form-notch-trailing"></div>
         </div>
     </div>
-
     <!-- Password input -->
     <div class="form-outline mb-4">
         <input type="password" id="password" class="form-control" placeholder="Password" name="password" required>
