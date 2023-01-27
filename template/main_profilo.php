@@ -50,10 +50,10 @@
                     <div class="row mt-2">
                         <p class="text-break px-0 my-2"><?php echo $post["testo"]; ?></p>
                     </div>
-                    <?php if(!empty($post["ImmaginePost"])){ ?>
-                    <div class="row text-center">
-                        <img class="border border-3 mx-auto img-fluid mt-2" style="max-height:500px; object-fit:contain" src="<?php echo UPLOAD_DIR . $post["ImmaginePost"]; ?>" alt="Immagine post" />
-                    </div>
+                    <?php if (!empty($post["ImmaginePost"])) { ?>
+                        <div class="row text-center">
+                            <img class="border border-3 mx-auto img-fluid mt-2" style="max-height:500px; object-fit:contain" src="<?php echo UPLOAD_DIR . $post["ImmaginePost"]; ?>" alt="Immagine post" />
+                        </div>
                     <?php } ?>
                     <div class="row">
                         <div class="col text-start ps-0">
@@ -82,7 +82,7 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
                                             <form action="profilo.php" method="POST">
-                                                <input type="hidden" id="eliminazione_post" name="eliminazione_post" value="<?php echo $post["id"];?>">
+                                                <input type="hidden" id="eliminazione_post" name="eliminazione_post" value="<?php echo $post["id"]; ?>">
                                                 <input type="submit" value="Conferma" class="btn btn-primary">
                                             </form>
                                         </div>
@@ -92,10 +92,7 @@
 
                         <?php } ?>
                         <div class="col text-end pe-0">
-                        <form action="commenti.php?idpost=<?php echo $post["id"] ?>" method="POST" id="commenti_post">
-                                <input type="hidden" id="usr" name="usr" value="<?php echo $post["nickname"]; ?>">
-                                </form>
-                                <button type="submit" class="btn px-0" form="commenti_post" value="Submit"><?php echo $post["n_commenti"]; ?> <em class="bi bi-chat-dots fs-4"></em></button>
+                            <a href="commenti.php?idpost=<?php echo $post["id"] ?>" class="btn px-0"><?php echo $post["n_commenti"]; ?> <em class="bi bi-chat-dots fs-4"></em></a>
                         </div>
                     </div>
                 </div>
@@ -103,18 +100,18 @@
                 </div>
             </div>
         </article>
-        <?php $count = $count + 1;?>
+        <?php $count = $count + 1; ?>
         <hr class="text-dark">
     <?php } ?>
 <?php endforeach; ?>
 <?php if ($count == 0) { ?>
     <div class="row mx-2">
         <div class="col-12 mt-4 text-center">
-        <?php if ($templateParams["testoPulsante"] == "Modifica") { ?>
-            <a href="crea.php" class="text-break">Crea il tuo primo post.</a>
-        <?php } else { ?>
-            <p>Ancora nessun post pubblicato.</p>
-        <?php } ?>
+            <?php if ($templateParams["testoPulsante"] == "Modifica") { ?>
+                <a href="crea.php" class="text-break">Crea il tuo primo post.</a>
+            <?php } else { ?>
+                <p>Ancora nessun post pubblicato.</p>
+            <?php } ?>
         </div>
     </div>
 <?php } ?>

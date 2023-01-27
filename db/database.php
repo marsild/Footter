@@ -252,9 +252,19 @@ class DatabaseHelper{
     public function getUser($nickname){
         $stmt = $this->db->prepare("SELECT nickname FROM utente where nome=?");
         $stmt->bind_param('s',$nickname);
-        return $stmt->execute();
-    }
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
 
+    }
+    
+    public function getUsernameFromPost($id_post){
+        $stmt = $this->db->prepare("SELECT nickname FROM post WHERE id=? ");
+        $stmt->bind_param("i", $id_post);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 
 ?>
