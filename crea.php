@@ -4,7 +4,7 @@ require_once("bootstrap.php");
 if(!isUserLoggedIn()){
     header('Location: ./index.php');
 }
-if(isset($_GET["result"])){
+if(isset($_GET["result"]) && $_GET["result"]=="successful"){
     
     $templateParams["creato"] = "post creato con successo";
 }

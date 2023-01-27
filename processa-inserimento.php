@@ -74,7 +74,7 @@ if(isset($_POST["aggiorna_preferiti"])){
             $dbh->insertPreferiti($squadra["nome"],$_SESSION["username"]);
         }
     }
-    header('Location: ./preferiti.php');
+    header('Location: ./preferiti.php?result=successful');
 
 }
 
