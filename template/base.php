@@ -77,7 +77,7 @@
                     </a>
                     <!--PULSANTE NOTIFICHE-->
                     <a class="nav-link<?php if($templateParams["active"]=="Notifiche"){echo ' active" aria-current="page';}?>" href="notifiche.php" title="notifiche">
-                        <em class="bi bi-bell"></em>
+                        <em class="bi bi-bell<?php if ($templateParams["active"]!="Notifiche" && $dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"]>0){echo "-fill text-warning";} ?>"></em>
                     </a>
                     <!--PULSANTE CREA-->
                     <a class="nav-link<?php if($templateParams["active"]=="Crea"){echo ' active" aria-current="page';}?>" href="crea.php" title="crea">
@@ -94,7 +94,6 @@
                 <a class="text-decoration-none text-white fs-4" href="index.php">Footter</a>
             </header>
         </div>
-
         <div class="row">
             <!--ASIDE (NAVBAR) DESKTOP-->
             <div class="desktop d-none d-sm-block col-sm-3 bg-dark px-0">
@@ -110,7 +109,7 @@
                             <a class="nav-link<?php if($templateParams["active"]=="Cerca"){echo ' active" aria-current="page';}?>" href="cerca.php"><em class="bi bi-search"></em> Cerca</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Notifiche"){echo ' active" aria-current="page';}?>" href="notifiche.php"><em class="bi bi-bell"></em> Notifiche</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Notifiche"){echo ' active" aria-current="page';}elseif($dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"]){echo ' text-warning"';}?>" href="notifiche.php"><em class="bi bi-bell<?php if ($templateParams["active"]!="Notifiche" && $dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"]>0){echo "-fill text-warning";} ?>"></em> Notifiche</a>
                         </li>
                         <li class="nav-item w-100">
                             <a class="nav-link<?php if($templateParams["active"]=="Crea"){echo ' active" aria-current="page';}?>" href="crea.php"><em class="bi bi-pencil-square"></em> Crea</a>
