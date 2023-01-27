@@ -70,9 +70,10 @@ if(!isUserLoggedIn()){
         $templateParams["actionPulsante"]="impostazioni.php";
         $templateParams["active"]="Profilo";
     }
+    $templateParams["aside"]="aside_personalizza.php";
+    $templateParams["pulsante_offcanvas"]="offcanvas_personalizza.php";
     $templateParams["getPosts"]= $dbh->getPosts();
     $templateParams["nome"]="main_profilo.php";
-
     require("template/base.php");
 
 

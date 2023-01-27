@@ -26,6 +26,20 @@
 <?php $count = 0; ?>
 <?php foreach ($templateParams["getPosts"] as $post) : ?>
     <?php if ($post["nickname"] == $templateParams["profilo"]["nickname"]) { ?>
+
+        <?php
+        $showpost = true;
+        if (isset($_GET["filtra"]) && $_GET["filtra"] == "preferiti") {
+            $showpost = false;
+            foreach ($dbh->getSquadreTaggate($post["id"]) as $squadra) {
+                if (in_array($squadra["nome"], flatArray($dbh->getPreferiti($_SESSION["username"]), "squadra"))) {
+                    $showpost = true;
+                }
+            }
+        }
+        ?>
+        <?php if ($showpost == true) { ?>
+
         <article class="bg-white">
             <div class="row mx-4 mx-lg-2">
                 <div class="d-none d-lg-block col-lg-1 mt-3"></div>
@@ -103,14 +117,31 @@
         <?php $count = $count + 1; ?>
         <hr class="text-dark">
     <?php } ?>
+    <?php } ?>
 <?php endforeach; ?>
 <?php if ($count == 0) { ?>
     <div class="row mx-2">
         <div class="col-12 mt-4 text-center">
             <?php if ($templateParams["testoPulsante"] == "Modifica") { ?>
-                <a href="crea.php" class="text-break">Crea il tuo primo post.</a>
+                <?php if (isset($_GET["filtra"]) && $_GET["filtra"] == "preferiti") { ?>
+                    <p class="text-break"> 
+                        Non hai ancora pubblicato nulla sui tuoi preferiti. <br/>
+                        <a href="crea.php" class="text-break">Crea un post ora</a> <br/>
+                        oppure <br/>
+                        <a href="preferiti.php" class="text-break">Aggiorna i preferiti</a>
+                    </p>
+                <?php } else { ?>
+                    <a href="crea.php" class="text-break">Crea il tuo primo post.</a>
+                <?php } ?>
             <?php } else { ?>
-                <p>Ancora nessun post pubblicato.</p>
+                <?php if (isset($_GET["filtra"]) && $_GET["filtra"] == "preferiti") { ?>
+                    <p class="text-break"> 
+                        Nessun post riguarda i tuoi preferiti. <br/>
+                        <a href="preferiti.php" class="text-break">Aggiorna i preferiti</a>
+                    </p>
+                <?php } else { ?>
+                    <p>Ancora nessun post pubblicato.</p>
+                <?php } ?>
             <?php } ?>
         </div>
     </div>
