@@ -13,25 +13,39 @@
     <?php } else { ?>
         <div class="row bg-light">
     <?php } ?>
-    <div class="col-12 my-2">
-            <div class="row mx-4">
-                <div class="col-12">
-                     <span class="small"><?php echo $notifica["data_notifica"];?></span>
+            <div class="col-12 my-2">
+                <div class="row mx-4">
+                    <div class="col-10 px-0 align-self-center">
+                        <span class="small"><?php echo $notifica["data_notifica"];?></span>
+                    </div>
+                    <div class="col-2 px-0 text-end">
+                    <button class="btn p-0" type="button" id="menuNotifica<?php echo $notifica["id"];?>" data-bs-toggle="dropdown" aria-expanded="false">
+                            <em class="bi bi-three-dots"></em>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="menuNotifica<?php echo $notifica["id"];?>">
+                            <li>
+                            <form action="notifiche.php" method="POST" id="form_eliminazione_notifica">
+                                <input type="hidden" id="eliminazione_notifica" name="eliminazione_notifica" value="<?php echo $notifica["id"]; ?>">
+                            </form>
+                            <button type="submit" class="btn" form="form_eliminazione_notifica" value="Submit"><em class="bi bi-trash"></em> Elimina</button>
+
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="row mx-4">
-                <div class="col-12">
-                    <?php
-                        if($notifica["messaggio"] == "Benvenuto su Footter!"){
-                            echo $notifica["messaggio"];
-                        } else { ?>
-                            <a href="profilo.php?usr=<?php echo $notifica["nickname_causa"]?>"><?php echo $notifica["nickname_causa"]."</a> ".$notifica["messaggio"];
-                        }
-                    ?>
+                <div class="row mx-4">
+                    <div class="col-12 px-0">
+                        <?php
+                            if($notifica["messaggio"] == "Benvenuto su Footter!"){
+                                echo $notifica["messaggio"];
+                            } else { ?>
+                                <a href="profilo.php?usr=<?php echo $notifica["nickname_causa"]?>"><?php echo $notifica["nickname_causa"]."</a> ".$notifica["messaggio"];
+                            }
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     <hr class="text-dark my-0">
 <?php endforeach; ?>
 

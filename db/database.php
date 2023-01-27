@@ -238,7 +238,7 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     public function getNotifiche($username){
-        $stmt = $this->db->prepare("SELECT data_notifica, messaggio, nickname_causa, visualizzato, id_post FROM notifica WHERE nickname_riceve=? ORDER BY data_notifica desc");
+        $stmt = $this->db->prepare("SELECT id, data_notifica, messaggio, nickname_causa, visualizzato, id_post FROM notifica WHERE nickname_riceve=? ORDER BY data_notifica desc");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -262,6 +262,12 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    public function deleteNotifica($id){
+        $query = "DELETE FROM notifica WHERE id=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $id);
+        return $stmt->execute();
     }
 }
 
