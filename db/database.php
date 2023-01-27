@@ -269,6 +269,12 @@ class DatabaseHelper{
         $stmt->bind_param('i', $id);
         return $stmt->execute();
     }
+    public function azzeraPreferiti($username){
+        $query = "DELETE FROM preferiti WHERE nickname=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $username);
+        return $stmt->execute();
+    }
 }
 
 ?>

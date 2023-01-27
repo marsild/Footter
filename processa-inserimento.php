@@ -65,4 +65,18 @@ if(isset($_POST["textcommento"], $_POST["usr"])){
     header('Location: ./commenti.php?idpost='.$_GET["idpost"]);
 }
 
+//aggiorna preferiti
+if(isset($_POST["aggiorna_preferiti"])){
+    $dbh->azzeraPreferiti($_SESSION["username"]);
+    foreach($dbh->getSquads() as $squadra){
+        if(isset($_POST["box".$squadra["nome"]])){
+            var_dump($_POST["box".$squadra["nome"]]);
+            $dbh->insertPreferiti($squadra["nome"],$_SESSION["username"]);
+        }
+    }
+    header('Location: ./preferiti.php');
+
+}
+
+
 ?>

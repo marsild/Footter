@@ -2,17 +2,18 @@
     <!-- Username input -->
     <div class="form-outline mb-4">
         <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>
-        <label class="form-label" for="username" style="margin-left: 0px;" hidden>Username</label>
+        <label class="form-label" for="username" hidden>Username</label>
         <div class="form-notch">
             <div class="form-notch-leading" style="width: 9px;"></div>
             <div class="form-notch-middle" style="width: 88px;"></div>
             <div class="form-notch-trailing"></div>
         </div>
     </div>
+    
     <!-- Password input -->
     <div class="form-outline mb-4">
         <input type="password" id="password" class="form-control" placeholder="Password" name="password" required>
-        <label class="form-label" for="password" style="margin-left: 0px;" hidden>Password</label>
+        <label class="form-label" for="password" hidden>Password</label>
         <div class="form-notch">
             <div class="form-notch-leading" style="width: 9px;"></div>
             <div class="form-notch-middle" style="width: 64px;"></div>
