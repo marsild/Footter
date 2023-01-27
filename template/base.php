@@ -72,7 +72,7 @@
                         <em class="bi bi-house"></em>
                     </a>
                     <!--PULSANTE SEARCH-->
-                    <a class="nav-link<?php if($templateParams["active"]=="Cerca"){echo ' active" aria-current="page';}?>" href="#" title="cerca">
+                    <a class="nav-link<?php if($templateParams["active"]=="Cerca"){echo ' active" aria-current="page';}?>" href="cerca.php" title="cerca">
                         <em class="bi bi-search"></em>
                     </a>
                     <!--PULSANTE NOTIFICHE-->
@@ -107,7 +107,7 @@
                             <a class="nav-link<?php if($templateParams["active"]=="Home"){echo ' active" aria-current="page';}?>" href="index.php"><em class="bi bi-house"></em> Home</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Cerca"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-search"></em> Cerca</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Cerca"){echo ' active" aria-current="page';}?>" href="cerca.php"><em class="bi bi-search"></em> Cerca</a>
                         </li>
                         <li class="nav-item w-100">
                             <a class="nav-link<?php if($templateParams["active"]=="Notifiche"){echo ' active" aria-current="page';}?>" href="notifiche.php"><em class="bi bi-bell"></em> Notifiche</a>

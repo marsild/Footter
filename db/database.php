@@ -249,6 +249,11 @@ class DatabaseHelper{
         $stmt->bind_param("s", $username);
         return $stmt->execute();
     }
+    public function getUser($nickname){
+        $stmt = $this->db->prepare("SELECT nickname FROM utente where nome=?");
+        $stmt->bind_param('s',$nickname);
+        return $stmt->execute();
+    }
 
 }
 
