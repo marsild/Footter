@@ -37,7 +37,6 @@ if (isset($_POST["textarea"])) {
     } else {
         $dbh->insertSquadsPost($id_post, $_POST["first-squad"], null);
     }
-    $templateParams["creato"] = "post creato con successo";
     //per ogni follower 
     foreach($dbh->getFollowers($_SESSION["username"]) as $utente){
         $notifica = false;
@@ -54,7 +53,7 @@ if (isset($_POST["textarea"])) {
             $dbh->createNotify("ha caricato un post su una delle tue squadre preferite.",$utente["username"],$_SESSION["username"],$id_post);
         }
     }
-    header('Location: ./crea.php');
+    header('Location: ./crea.php?result=successful');
     
 }
 
