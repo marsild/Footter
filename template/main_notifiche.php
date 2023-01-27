@@ -1,5 +1,5 @@
 <div class="row mx-4">
-    <div class="col-12 mt-3 text-center">
+    <div class="col-12 mt-4 text-center">
         Notifiche
     </div>
 </div>
