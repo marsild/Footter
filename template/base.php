@@ -37,10 +37,10 @@
                                     <a class="nav-link<?php if($templateParams["active"]=="Profilo"){echo ' active" aria-current="page';}?>" href="profilo.php"><em class="bi bi-person-circle"></em> Profilo</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link<?php if($templateParams["active"]=="Preferiti"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-star"></em> Preferiti</a>
+                                    <a class="nav-link<?php if($templateParams["active"]=="Preferiti"){echo ' active" aria-current="page';}?>" href="preferiti.php"><em class="bi bi-star"></em> Preferiti</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link<?php if($templateParams["active"]=="Impostazioni"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-gear"></em> Impostazioni</a>
+                                    <a class="nav-link<?php if($templateParams["active"]=="Impostazioni"){echo ' active" aria-current="page';}?>" href="impostazioni.php"><em class="bi bi-gear"></em> Impostazioni</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="logout.php"><em class="bi bi-box-arrow-left"></em> Esci</a>
@@ -115,10 +115,10 @@
                             <a class="nav-link<?php if($templateParams["active"]=="Crea"){echo ' active" aria-current="page';}?>" href="crea.php"><em class="bi bi-pencil-square"></em> Crea</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Preferiti"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-star"></em> Preferiti</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Preferiti"){echo ' active" aria-current="page';}?>" href="preferiti.php"><em class="bi bi-star"></em> Preferiti</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Impostazioni"){echo ' active" aria-current="page';}?>" href="#"><em class="bi bi-gear"></em> Impostazioni</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Impostazioni"){echo ' active" aria-current="page';}?>" href="impostazioni.php"><em class="bi bi-gear"></em> Impostazioni</a>
                         </li>
                         <li class="nav-item w-100">
                             <a class="nav-link" href="logout.php"><em class="bi bi-box-arrow-left"></em> Esci</a>
