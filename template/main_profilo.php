@@ -71,8 +71,8 @@
                     <?php } ?>
                     <div class="row">
                         <div class="col text-start ps-0">
-                            <button type="button" class="btn px-0">
-                                <em class="bi bi-heart fs-4"></em> <?php echo $post["n_like"]; ?>
+                            <button type="button" class="btn px-0" onclick="updateLikes(<?php echo $post['id'] ?>)">
+                                <em id="like-heart<?php echo $post["id"] ?>" class="bi bi-heart<?php if ($dbh->hasLiked($post['id'], $_SESSION["username"])[0]["nr"] > 0) {echo "-fill text-danger";} ?> fs-4"></em> <span id="numero-like<?php echo $post["id"] ?>"><?php echo $post["n_like"]; ?></span>
                             </button>
                         </div>
                         <?php if ($templateParams["profilo"]["nickname"] == $_SESSION["username"]) { ?>
@@ -146,3 +146,20 @@
         </div>
     </div>
 <?php } ?>
+
+
+<script>
+    function updateLikes(val) {
+        const icon = document.getElementById("like-heart" + val);
+        const numeroLike = document.getElementById("numero-like" + val);
+        if (icon.className == "bi bi-heart fs-4") {
+            icon.className = "bi bi-heart-fill text-danger fs-4";
+            numeroLike.innerText = parseInt(numeroLike.innerText) + 1;
+            $.ajax({url: "processa-like.php", type: 'GET', data: { id_like: val, user_like: "<?php echo $_SESSION["username"];?>"}});    
+        } else {
+            icon.className = "bi bi-heart fs-4";
+            numeroLike.innerText = parseInt(numeroLike.innerText) - 1;
+            $.ajax({url: "processa-like.php", type: 'GET', data: { id_dislike: val, user_dislike: "<?php echo $_SESSION["username"];?>"}});
+        }
+    }
+</script>

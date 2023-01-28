@@ -109,7 +109,7 @@
                             <a class="nav-link<?php if($templateParams["active"]=="Cerca"){echo ' active" aria-current="page';}?>" href="cerca.php"><em class="bi bi-search"></em> Cerca</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Notifiche"){echo ' active" aria-current="page';}elseif($dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"]){echo ' text-warning"';}?>" href="notifiche.php"><em class="bi bi-bell<?php if ($templateParams["active"]!="Notifiche" && $dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"]>0){echo "-fill text-warning";} ?>"></em> Notifiche</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Notifiche"){echo ' active" aria-current="page';}elseif($dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"] > 0){echo ' text-warning"';}?>" href="notifiche.php"><em class="bi bi-bell<?php if ($templateParams["active"]!="Notifiche" && $dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"]>0){echo "-fill text-warning";} ?>"></em> Notifiche</a>
                         </li>
                         <li class="nav-item w-100">
                             <a class="nav-link<?php if($templateParams["active"]=="Crea"){echo ' active" aria-current="page';}?>" href="crea.php"><em class="bi bi-pencil-square"></em> Crea</a>
@@ -153,6 +153,7 @@
             </div>
         </div>
     </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>

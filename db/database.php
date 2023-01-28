@@ -275,6 +275,32 @@ class DatabaseHelper{
         $stmt->bind_param('s', $username);
         return $stmt->execute();
     }
+    public function insertLike($id_post, $username){
+        $query = "INSERT INTO piace (id, nickname) VALUES (?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('is',$id_post, $username);
+        $stmt->execute();
+
+        $stmt1 = $this->db->prepare("UPDATE post SET n_like=n_like + 1 WHERE id=?");
+        $stmt1->bind_param("i", $id_post);
+        return $stmt1->execute();
+    }
+    public function removeLike($id_post, $username){
+        $query = "DELETE FROM piace WHERE id=? AND nickname=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('is',$id_post, $username);
+        $stmt->execute();
+        $stmt1 = $this->db->prepare("UPDATE post SET n_like=n_like - 1 WHERE id=?");
+        $stmt1->bind_param("i", $id_post);
+        return $stmt1->execute();
+    }
+    public function hasLiked($id_post, $username){
+        $stmt = $this->db->prepare("SELECT count(*) as nr FROM piace WHERE id=? AND nickname=?");
+        $stmt->bind_param('is',$id_post, $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 
 ?>
