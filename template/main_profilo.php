@@ -1,6 +1,6 @@
 <div class="row mx-2">
     <div class="col-4 my-auto text-center my-3">
-        <img class="rounded-circle border border-1" style="max-height: 80px;" src="<?php echo UPLOAD_DIR . $templateParams["profilo"]["immagine"]; ?>" alt="Immagine profilo">
+        <img class="rounded-circle border border-1" style="max-height: 80px;" src="<?php if($post["ImmagineUtente"] == null){echo UPLOAD_DIR . "pfp.png";}else{ echo "data:image/jpg;charset=utf8;base64,".base64_encode($post["ImmagineUtente"]);} ?>" alt="Immagine profilo">
     </div>
     <div class="col-8 my-3">
         <p><?php echo $templateParams["profilo"]["nome"]; ?> <?php echo $templateParams["profilo"]["cognome"]; ?> <br /> @<?php echo $templateParams["profilo"]["nickname"]; ?> </p>
@@ -43,8 +43,8 @@
         <article class="bg-white">
             <div class="row mx-4 mx-lg-2">
                 <div class="d-none d-lg-block col-lg-1 mt-3"></div>
-                <div class="col-2 col-lg-1 px-0 text-end align-self-center mt-3">
-                    <img style="max-height:50px" class="rounded-circle border border-1" src="<?php echo UPLOAD_DIR . $post["ImmagineUtente"]; ?>" alt="Immagine profilo utente">
+                <div class="col-2 col-lg-1 px-0 text-end align-self-center mt-3"> 
+                    <img style="max-height:50px" class="rounded-circle border border-1" src="<?php if($post["ImmagineUtente"] == null){echo UPLOAD_DIR . "pfp.png"; }else{ echo "data:image/jpg;charset=utf8;base64,".base64_encode($post["ImmagineUtente"]);}?>" alt="Immagine profilo utente">
                 </div>
                 <div class="col-6 col-md-7 pe-0 align-self-center mt-3">
                     <a class="text-break text-black" href="profilo.php?usr=<?php echo $post["nickname"]; ?>"><?php echo $post["nickname"]; ?></a><br />
@@ -66,7 +66,7 @@
                     </div>
                     <?php if (!empty($post["ImmaginePost"])) { ?>
                         <div class="row text-center">
-                            <img class="border border-3 mx-auto img-fluid mt-2" style="max-height:500px; object-fit:contain" src="<?php echo UPLOAD_DIR . $post["ImmaginePost"]; ?>" alt="Immagine post" />
+                            <img class="border border-3 mx-auto img-fluid mt-2" style="max-height:500px; object-fit:contain" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post["ImmaginePost"]); ?>" alt="Immagine post" />
                         </div>
                     <?php } ?>
                     <div class="row">
@@ -77,13 +77,13 @@
                         </div>
                         <?php if ($templateParams["profilo"]["nickname"] == $_SESSION["username"]) { ?>
                             <div class="col text-center">
-                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#confirmModal">
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#confirmModal<?php echo $post["id"];?>">
                                     <em class="bi bi-trash3 fs-4 text-danger"></em>
                                 </button>
                             </div>
 
                             <!-- Modal -->
-                            <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="confirmModal<?php echo $post["id"];?>" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">

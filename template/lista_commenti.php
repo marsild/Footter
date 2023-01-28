@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-10">
                     <div>
-                    <img class="image rounded-circle border border-1 my-2" src="<?php echo UPLOAD_DIR . $commento["immagine"]; ?>" alt="ImmagineUtente">
+                    <img class="image rounded-circle border border-1" src="<?php if($commento["immagine"] == null){echo UPLOAD_DIR."pfp.png";}else{ echo "data:image/jpg;charset=utf8;base64,".base64_encode($commento["immagine"]);}?>" alt="ImmagineUtente">
 
                 </div>
                 <div class="alignme">

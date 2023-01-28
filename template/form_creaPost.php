@@ -1,4 +1,4 @@
-<form action="processa-inserimento.php" method="POST">
+<form action="processa-inserimento.php" method="POST" enctype="multipart/form-data">
     <?php if (isset($templateParams["creato"])) { ?>
         <div class="row mx-3">
             <div class="col-12">

@@ -21,7 +21,7 @@
             <?php if(str_contains(strtolower($utente["nickname"]),strtolower($_GET["search"]))){ ?>
                 <li class="list-group-item" aria-current="true">
                     <div>
-                    <img class="image rounded-circle border border-1" src="<?php echo UPLOAD_DIR.$utente["immagine"];?>" alt="ImmagineUtente">
+                    <img class="image rounded-circle border border-1" src="<?php if($utente["immagine"] == null){echo UPLOAD_DIR."pfp.png";}else{ echo "data:image/jpg;charset=utf8;base64,".base64_encode($utente["immagine"]);}?>" alt="ImmagineUtente">
                     </div>
                     <div class="alignme">
                         <a class="text-black mx-2" href="profilo.php?usr=<?php echo $utente["nickname"]?>"><?php echo $utente["nickname"]?></a>

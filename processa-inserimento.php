@@ -27,7 +27,25 @@ if(isset($_POST["reg_username"])){
 
 //se si sta crando un post
 if (isset($_POST["textarea"])) {
-    $id_post = $dbh->insertPost($_POST["imgpost"], $_POST["textarea"], $_SESSION["username"]);
+    if(!empty($_FILES["imgpost"]["name"])) { 
+        // Get file info 
+        $fileName = basename($_FILES["imgpost"]["name"]); 
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+         
+        // Allow certain file formats 
+        $allowTypes = array('jpg','png','jpeg','gif'); 
+        if(in_array($fileType, $allowTypes)){ 
+            $image = $_FILES['imgpost']['tmp_name']; 
+            $imgContent = file_get_contents($image); 
+            $id_post = $dbh->insertPost($imgContent, $_POST["textarea"], $_SESSION["username"]);
+        }else{ 
+            //non caricare immagine
+            unset($_POST["imgpost"]);
+            $id_post = $dbh->insertPost($_POST["imgpost"], $_POST["textarea"], $_SESSION["username"]);
+        } 
+    } else {
+        $id_post = $dbh->insertPost($_POST["imgpost"], $_POST["textarea"], $_SESSION["username"]);
+    }
     if (isset($_POST["second-squad"])) {
         if ($_POST["first-squad"] != $_POST["second-squad"]) {
             $dbh->insertSquadsPost($id_post, $_POST["first-squad"], $_POST["second-squad"]);

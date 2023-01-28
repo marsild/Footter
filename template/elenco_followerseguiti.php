@@ -8,7 +8,7 @@
 <?php foreach($templateParams["elenco"] as $utente):?>
 <div class="row mx-3 my-3">
     <div class="col-2 text-end">
-        <img class="rounded-circle border border-1" style="max-height: 30px;" src="<?php echo UPLOAD_DIR.$utente["immagine"];?>" alt="ImmagineProfilo">
+        <img class="rounded-circle border border-1" style="max-height: 30px;" src="<?php if($utente["immagine"] == null){echo UPLOAD_DIR."pfp.png";}else{ echo "data:image/jpg;charset=utf8;base64,".base64_encode($utente["immagine"]);}?>" alt="ImmagineProfilo">
     </div>
     <div class="col-10 align-self-center">
         <a href="profilo.php?usr=<?php echo $utente["username"];?>" class="text-dark"><?php echo $utente["username"];?></a>

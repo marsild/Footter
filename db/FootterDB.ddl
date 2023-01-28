@@ -43,7 +43,7 @@ create table notifica (
 
 create table post (
      id int not null AUTO_INCREMENT,
-     immagine char(50),
+     immagine longblob,
      testo char(255),
      n_like int not null,
      n_commenti int not null,
@@ -76,7 +76,7 @@ create table utente (
      cognome char(20) not null,
      psw char(20) not null,
      email char(50) not null,
-     immagine char(50),
+     immagine longblob,
      n_follower int not null,
      n_seguiti int not null,
      nickname char(20) not null,

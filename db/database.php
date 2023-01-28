@@ -64,10 +64,9 @@ class DatabaseHelper{
     }
 
     public function insertUtente($nickname, $nome, $cognome, $psw, $email){
-        $pfp = "pfp.png";
-        $query = "INSERT INTO utente (nickname, nome, cognome, psw, email, immagine, n_follower, n_seguiti) VALUES (?, ?, ?, ?, ?, ?, 0, 0)";
+        $query = "INSERT INTO utente (nickname, nome, cognome, psw, email, n_follower, n_seguiti) VALUES (?, ?, ?, ?, ?, 0, 0)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssssss',$nickname, $nome, $cognome, $psw, $email, $pfp);
+        $stmt->bind_param('sssss',$nickname, $nome, $cognome, $psw, $email);
         return $stmt->execute();
     }
 
@@ -163,9 +162,15 @@ class DatabaseHelper{
     }
     public function insertPost($immagine, $testo, $nickname){
         $dataattuale = date("Y-m-d H:i:s");
-        $query = "INSERT INTO post (immagine, testo, n_like, n_commenti, data_post, nickname) VALUES (?, ?, 0, 0, ?, ?)";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssss',$immagine, $testo, $dataattuale, $nickname);
+        if($immagine == null){
+            $query = "INSERT INTO post (testo, n_like, n_commenti, data_post, nickname) VALUES (?, 0, 0, ?, ?)";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('sss', $testo, $dataattuale, $nickname);
+        } else {
+            $query = "INSERT INTO post (immagine, testo, n_like, n_commenti, data_post, nickname) VALUES (?, ?, 0, 0, ?, ?)";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('ssss',$immagine, $testo, $dataattuale, $nickname);
+        }
         $stmt->execute();
         return $stmt->insert_id;
     }
