@@ -19,18 +19,19 @@
                         <span class="small"><?php echo $notifica["data_notifica"];?></span>
                     </div>
                     <div class="col-2 px-0 text-end">
-                    <button class="btn p-0" type="button" id="menuNotifica<?php echo $notifica["id"];?>" data-bs-toggle="dropdown" aria-expanded="false">
-                            <em class="bi bi-three-dots"></em>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="menuNotifica<?php echo $notifica["id"];?>">
-                            <li>
-                            <form action="notifiche.php" method="POST" id="form_eliminazione_notifica">
-                                <input type="hidden" id="eliminazione_notifica" name="eliminazione_notifica" value="<?php echo $notifica["id"]; ?>">
-                            </form>
-                            <button type="submit" class="btn" form="form_eliminazione_notifica" value="Submit"><em class="bi bi-trash"></em> Elimina</button>
-
-                            </li>
-                        </ul>
+                        <div class="dropdown">
+                            <button class="btn" type="button" id="dropdownMenuButton<?php echo $notifica["id"];?>" data-bs-toggle="dropdown" aria-expanded="false">
+                                <em class="bi bi-three-dots"></em>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton<?php echo $notifica["id"];?>">
+                                <li>
+                                    <form action="notifiche.php" method="POST" id="form_eliminazione_notifica<?php echo $notifica["id"];?>">
+                                        <input type="hidden" id="eliminazione_notifica" name="eliminazione_notifica" value="<?php echo $notifica["id"]; ?>">
+                                    </form>
+                                    <button type="submit" class="dropdown-item" form="form_eliminazione_notifica<?php echo $notifica["id"];?>" value="Submit"><em class="bi bi-trash"></em> Elimina</button>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="row mx-4">
