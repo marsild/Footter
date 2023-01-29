@@ -10,20 +10,32 @@
         </form>
     </div>
 </div>
-<hr class="text-dark mt-0">
-<div class="row mx-2 g-1">
-    <div class="col text-center">
-        <a href="elenco.php?d=Followers&u=<?php echo $templateParams["profilo"]["nickname"]; ?>"><?php echo $templateParams["profilo"]["n_follower"]; ?> <br /> follower </a>
+<div class="row g-1">
+    <div class="col text-center py-2 ps-2 <?php echo $templateParams["bg-followers"];?>">
+        <a class="text-dark" href="profilo.php?usr=<?php echo $templateParams["profilo"]["nickname"]; ?>&view=followers"><?php echo $templateParams["profilo"]["n_follower"]; ?> <br /> follower </a>
     </div>
-    <div class="col text-center">
-        <a href="elenco.php?d=Seguiti&u=<?php echo $templateParams["profilo"]["nickname"]; ?>"><?php echo $templateParams["profilo"]["n_seguiti"]; ?> <br /> seguiti </a>
+    <div class="col text-center py-2 <?php echo $templateParams["bg-seguiti"];?>">
+        <a class="text-dark" href="profilo.php?usr=<?php echo $templateParams["profilo"]["nickname"]; ?>&view=seguiti"><?php echo $templateParams["profilo"]["n_seguiti"]; ?> <br /> seguiti </a>
     </div>
-    <div class="col text-center">
-        <p><?php echo $templateParams["n_post"]["total"]; ?> <br /> post </p>
+    <div class="col text-center py-2 pe-2 <?php echo $templateParams["bg-post"];?>">
+        <a class="text-dark" href="profilo.php?usr=<?php echo $templateParams["profilo"]["nickname"]; ?>"><?php echo $templateParams["n_post"]["total"]; ?> <br /> post </a>
     </div>
 </div>
-<hr class="text-dark my-0">
-<?php $count = 0; ?>
+<!-- <div class="bg-light"> -->
+<?php if(isset($templateParams["elenco"])){?>
+    <?php foreach($templateParams["elenco"] as $utente):?>
+<div class="row mx-3 my-3">
+    <div class="col-2 text-end">
+        <img class="rounded-circle border border-1" style="max-height: 30px;" src="<?php if($utente["immagine"] == null){echo UPLOAD_DIR."pfp.png";}else{ echo "data:image/jpg;charset=utf8;base64,".base64_encode($utente["immagine"]);}?>" alt="ImmagineProfilo">
+    </div>
+    <div class="col-10 align-self-center">
+        <a href="profilo.php?usr=<?php echo $utente["username"];?>" class="text-dark"><?php echo $utente["username"];?></a>
+    </div>
+</div>
+<hr class="text-dark my-1">
+<?php endforeach;?>
+<?php } else { ?>
+    <?php $count = 0; ?>
 <?php foreach ($templateParams["getPosts"] as $post) : ?>
     <?php if ($post["nickname"] == $templateParams["profilo"]["nickname"]) { ?>
 
@@ -146,3 +158,5 @@
         </div>
     </div>
 <?php } ?>
+<?php } ?>
+<!-- </div> -->

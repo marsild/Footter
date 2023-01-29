@@ -1,8 +1,8 @@
 <?php
-require_once("bootstrap.php");
-if(!isUserLoggedIn()){
-    header('Location: ./index.php');
-}
+    require_once("bootstrap.php");
+    if(!isUserLoggedIn()){
+        header('Location: ./index.php');
+    }
 
     /*Se si sta tentando di eliminare un post */
     if(isset($_POST["eliminazione_post"])){
@@ -70,11 +70,28 @@ if(!isUserLoggedIn()){
         $templateParams["actionPulsante"]="impostazioni.php";
         $templateParams["active"]="Profilo";
     }
+
+    
+    $templateParams["bg-followers"]="bg-light border-bottom border-top";
+    $templateParams["bg-seguiti"]="bg-light border-bottom border-top border-start border-end";
+    $templateParams["bg-post"]="bg-light border-bottom border-top";
+    if(isset($_GET["view"])&& ($_GET["view"]=="followers" || $_GET["view"]=="seguiti")){
+        if($_GET["view"]=="followers"){
+            $templateParams["elenco"] = $dbh->getFollowers($templateParams["profilo"]["nickname"]);
+            $templateParams["bg-followers"]="bg-white border-top";
+            $templateParams["actionPulsante"] = $templateParams["actionPulsante"]."&view=followers";
+        } else {
+            $templateParams["elenco"] = $dbh->getUtentiSeguiti($templateParams["profilo"]["nickname"]);
+            $templateParams["bg-seguiti"]="bg-white border-top border-start border-end";
+            $templateParams["actionPulsante"] = $templateParams["actionPulsante"]."&view=seguiti";
+        }
+        } else {
+            $templateParams["bg-post"]="bg-white border-top";
+        }
     $templateParams["aside"]="aside_personalizza.php";
     $templateParams["pulsante_offcanvas"]="offcanvas_personalizza.php";
     $templateParams["getPosts"]= $dbh->getPosts();
     $templateParams["nome"]="main_profilo.php";
     require("template/base.php");
-
 
 ?>
