@@ -71,10 +71,12 @@
         $templateParams["active"]="Profilo";
     }
 
-    
+    /* style di base dei pulsanti followers/seguiti/post */
     $templateParams["bg-followers"]="bg-light border-bottom border-top";
     $templateParams["bg-seguiti"]="bg-light border-bottom border-top border-start border-end";
     $templateParams["bg-post"]="bg-light border-bottom border-top";
+
+    /*se siamo in followers o seguiti, cambia background del rispettivo pulsante e cambia link/elenco */
     if(isset($_GET["view"])&& ($_GET["view"]=="followers" || $_GET["view"]=="seguiti")){
         if($_GET["view"]=="followers"){
             $templateParams["elenco"] = $dbh->getFollowers($templateParams["profilo"]["nickname"]);
@@ -86,11 +88,22 @@
             $templateParams["actionPulsante"] = $templateParams["actionPulsante"]."&view=seguiti";
         }
         } else {
-            $templateParams["bg-post"]="bg-white border-top";
+            /* se siamo in post,
+            o stiamo visualizzando l'elenco di tutti i post: in questo caso cambia background
+            o stiamo visualizzando il post relativo di una notifica: cambia background solo se il nr di post totali è = 1*/
+            if(!isset($_GET["post"]) || $templateParams["n_post"]["total"] == 1){
+                $templateParams["bg-post"]="bg-white border-top";
+            }
         }
     $templateParams["aside"]="aside_personalizza.php";
     $templateParams["pulsante_offcanvas"]="offcanvas_personalizza.php";
-    $templateParams["getPosts"]= $dbh->getPosts();
+
+    //se stiamo arrivando da una notifica, carica solo la notifica del post nell'elenco dei post
+    if(isset($_GET["post"])){
+        $templateParams["getPosts"]= $dbh->getPost($_GET["post"]);
+    } else {
+        $templateParams["getPosts"]= $dbh->getPosts();
+    }
     $templateParams["nome"]="main_profilo.php";
     require("template/base.php");
 

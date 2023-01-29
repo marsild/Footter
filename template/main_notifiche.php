@@ -40,9 +40,17 @@
                             if($notifica["messaggio"] == "Benvenuto su Footter!"){
                                 echo $notifica["messaggio"];
                             } else { ?>
-                                <a href="profilo.php?usr=<?php echo $notifica["nickname_causa"]?>"><?php echo $notifica["nickname_causa"]."</a> ".$notifica["messaggio"];
-                            }
-                        ?>
+                                <a href="profilo.php?usr=<?php echo $notifica["nickname_causa"]?>"><?php echo $notifica["nickname_causa"];?></a>
+                                <?php if($notifica["messaggio"] == "ha caricato un post su una delle tue squadre preferite."){ ?>
+                                    <?php echo 'ha caricato un <a href="profilo.php?usr='.$notifica["nickname_causa"].'&post='.$notifica["id_post"].'">post</a> su una delle tue squadre preferite.'; ?>
+                                <?php } else if($notifica["messaggio"] == "ha messo mi piace al tuo post."){ ?>
+                                    <?php echo 'ha messo mi piace al tuo <a href="profilo.php?usr='.$_SESSION["username"].'&post='.$notifica["id_post"].'">post</a>'; ?>.
+                                <?php } else if($notifica["messaggio"] == "ha commentato il tuo post."){ ?>
+                                    <?php echo 'ha commentato il tuo <a href="profilo.php?usr='.$_SESSION["username"].'&post='.$notifica["id_post"].'">post</a>'; ?>.
+                                <?php } else { ?>
+                                    <?php echo $notifica["messaggio"]; ?>
+                                <?php } ?>
+                            <?php } ?>
                     </div>
                 </div>
             </div>
@@ -51,8 +59,11 @@
 <?php endforeach; ?>
 
 <!--
-"ha iniziato a seguirti."
-"ha commentato il tuo post."
+
 "Benvenuto su Footter!"
 "ha caricato un post su una delle tue squadre preferite."
+"ha messo mi piace al tuo post."
+"ha commentato il tuo post."
+"ha iniziato a seguirti."
+
 -->
