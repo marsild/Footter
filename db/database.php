@@ -312,6 +312,13 @@ class DatabaseHelper{
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    public function getLikes($id_post){
+        $stmt = $this->db->prepare("SELECT p.nickname as username, u.immagine FROM piace as p, utente as u WHERE p.id = ? AND p.nickname = u.nickname");
+        $stmt->bind_param("i", $id_post);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 
 ?>
