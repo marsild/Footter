@@ -1,6 +1,6 @@
 <div class="row mx-2">
     <div class="col-4 my-auto text-center my-3">
-        <img class="rounded-circle border border-1" style="max-height: 80px;" src="<?php if($post["ImmagineUtente"] == null){echo UPLOAD_DIR . "pfp.png";}else{ echo "data:image/jpg;charset=utf8;base64,".base64_encode($post["ImmagineUtente"]);} ?>" alt="Immagine profilo">
+        <img class="rounded-circle border border-1" style="max-height: 80px;" src="<?php if($templateParams["profilo"]["immagine"] == null){echo UPLOAD_DIR . "pfp.png";}else{ echo "data:image/jpg;charset=utf8;base64,".base64_encode($templateParams["profilo"]["immagine"]);} ?>" alt="Immagine profilo">
     </div>
     <div class="col-8 my-3">
         <p><?php echo $templateParams["profilo"]["nome"]; ?> <?php echo $templateParams["profilo"]["cognome"]; ?> <br /> @<?php echo $templateParams["profilo"]["nickname"]; ?> </p>
