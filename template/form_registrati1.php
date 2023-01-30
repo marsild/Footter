@@ -39,7 +39,7 @@
         <button type="button" class="btn px-0" data-bs-toggle="popover" title="Requisiti" data-bs-content="8 caratteri di cui:<br />1 maiuscola<br />1 minuscola<br />1 numero<br />1 carattere speciale" data-bs-html="true"><em class="bi bi-info-circle"></em></button>
         </div>
     </div>
-    <div class="col-12 my-4 text-danger">
+    <div class="col-12 mb-4 text-danger">
         <?php
         if(isset($templateParams["messaggio_errore_password"])){
             echo $templateParams["messaggio_errore_password"];
