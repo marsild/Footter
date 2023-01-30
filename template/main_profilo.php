@@ -1,6 +1,6 @@
 <div class="row mx-2">
     <div class="col-4 my-auto text-center my-3">
-        <img class="rounded-circle border border-1" style="max-height: 80px;" src="<?php if ($templateParams["profilo"]["immagine"] == null) {
+        <img class="rounded-circle border border-1" style="width: 80px; height: 80px; object-fit:contain" src="<?php if ($templateParams["profilo"]["immagine"] == null) {
                                                                                         echo UPLOAD_DIR . "pfp.png";
                                                                                     } else {
                                                                                         echo "data:image/jpg;charset=utf8;base64," . base64_encode($templateParams["profilo"]["immagine"]);
@@ -31,7 +31,7 @@
     <?php foreach ($templateParams["elenco"] as $utente) : ?>
         <div class="row mx-3 my-3">
             <div class="col-2 text-end">
-                <img class="rounded-circle border border-1" style="max-height: 30px;" src="<?php if ($utente["immagine"] == null) {
+                <img class="rounded-circle border border-1" style="width: 30px; height: 30px; object-fit:contain" src="<?php if ($utente["immagine"] == null) {
                                                                                                 echo UPLOAD_DIR . "pfp.png";
                                                                                             } else {
                                                                                                 echo "data:image/jpg;charset=utf8;base64," . base64_encode($utente["immagine"]);
@@ -69,7 +69,7 @@
                     <div class="row mx-4 mx-lg-2">
                         <div class="d-none d-lg-block col-lg-1 mt-3"></div>
                         <div class="col-2 col-lg-1 px-0 text-end align-self-center mt-3">
-                            <img style="max-height:50px" class="rounded-circle border border-1" src="<?php if ($post["ImmagineUtente"] == null) {
+                            <img style="width: 50px; height: 50px; object-fit:contain" class="rounded-circle border border-1" src="<?php if ($post["ImmagineUtente"] == null) {
                                                                                                             echo UPLOAD_DIR . "pfp.png";
                                                                                                         } else {
                                                                                                             echo "data:image/jpg;charset=utf8;base64," . base64_encode($post["ImmagineUtente"]);
@@ -161,7 +161,7 @@
                                                     <?php foreach ($dbh->getLikes($post["id"]) as $utente) : ?>
                                                         <div class="row my-3">
                                                             <div class="col-2 text-end">
-                                                                <img class="rounded-circle border border-1" style="max-height: 30px;" src="<?php if ($utente["immagine"] == null) {
+                                                                <img class="rounded-circle border border-1" style="width: 30px; height: 30px; object-fit:contain" src="<?php if ($utente["immagine"] == null) {
                                                                                                                                                 echo UPLOAD_DIR . "pfp.png";
                                                                                                                                             } else {
                                                                                                                                                 echo "data:image/jpg;charset=utf8;base64," . base64_encode($utente["immagine"]);

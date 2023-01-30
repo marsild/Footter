@@ -1,12 +1,15 @@
-<form action="impostazioni.php" method="POST" >
+<form action="impostazioni.php" method="POST" enctype="multipart/form-data">
     <div class="row mx-1">
         <div class="col-1"></div>
         <div class="col-10 my-4 px-0">
             <h1 class="fs-5 pl-2">Dati Personali</h1>
             <div class="row ">
-                <div class="col-2"></div>
-                <div class="col-3 ml-5">
-                    <img src="upload/atalanta.png" style="max-height: 92px;" alt="">
+                <div class="col-5 ml-5 text-center">
+                    <img src="<?php if ($templateParams["profilo"]["immagine"] == null) {
+                                                                                        echo UPLOAD_DIR . "pfp.png";
+                                                                                    } else {
+                                                                                        echo "data:image/jpg;charset=utf8;base64," . base64_encode($templateParams["profilo"]["immagine"]);
+                                                                                    } ?>" class="rounded-circle border border-1" style="width: 92px; height: 92px; object-fit:contain" alt="immagineUtente">
                 </div>
                 <div class="col-7">
                     <div class="mb-3">
@@ -15,6 +18,11 @@
                     <div class="mb-3">
                         <input type="text" class="form-control" id="cognome" name="cognome"placeholder="Pasini">
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 class text-center">
+                    <input type="file" class=" form-control btn btn-outline-dark" name="imgutente" id="imgutente" value="Inserisci un'immagine..">
                 </div>
             </div>
             <hr class="text-black-50">
@@ -48,7 +56,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="input-group mb-3">
-                        <input type="mail" class="form-control is-invalid" id="email" name="email" placeholder="Email.." aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="mail" class="form-control" id="email" name="email" placeholder="Email.." aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <hr class="text-black-50">

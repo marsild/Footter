@@ -28,16 +28,24 @@ if(isset($_POST["reg_username"])){
 //se si sta crando un post
 if (isset($_POST["textarea"])) {
     if(!empty($_FILES["imgpost"]["name"])) { 
+        $maxKB=500;
         // Get file info 
         $fileName = basename($_FILES["imgpost"]["name"]); 
-        $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
-         
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
         // Allow certain file formats 
         $allowTypes = array('jpg','png','jpeg','gif'); 
         if(in_array($fileType, $allowTypes)){ 
             $image = $_FILES['imgpost']['tmp_name']; 
             $imgContent = file_get_contents($image); 
-            $id_post = $dbh->insertPost($imgContent, $_POST["textarea"], $_SESSION["username"]);
+             
+            if($_FILES["imgpost"]["size"]<($maxKB*1024)){
+                $id_post = $dbh->insertPost($imgContent, $_POST["textarea"], $_SESSION["username"]);
+            } else{
+                //non carica
+                $imgpostnull = NULL;
+                $id_post = $dbh->insertPost($imgpostnull, $_POST["textarea"], $_SESSION["username"]);
+
+            }
         }else{ 
             //non caricare immagine
             unset($_POST["imgpost"]);

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10 mt-4 mb-3">
-            <div class="input-group mb-3">
+            <div class="z-1 input-group mb-3">
                 <button class="btn btn-outline-info" form="cerca_utente" type="submit" id="button_search" name="button_search"><i class="bi bi-search"></i></button>
                 <input type="text" name="search" id="search" class="form-control btn btn-outline-light border border-b-1 text-dark" placeholder="Cerca i tuoi amici" aria-label="Example text with button addon" aria-describedby="button-addon2">
 
@@ -21,7 +21,7 @@
             <?php if(str_contains(strtolower($utente["nickname"]),strtolower($_GET["search"]))){ ?>
                 <li class="list-group-item" aria-current="true">
                     <div>
-                    <img class="image rounded-circle border border-1" src="<?php if($utente["immagine"] == null){echo UPLOAD_DIR."pfp.png";}else{ echo "data:image/jpg;charset=utf8;base64,".base64_encode($utente["immagine"]);}?>" alt="ImmagineUtente">
+                    <img class="image rounded-circle border border-1" style="width: 50px; height: 50px; object-fit:contain" src="<?php if($utente["immagine"] == null){echo UPLOAD_DIR."pfp.png";}else{ echo "data:image/jpg;charset=utf8;base64,".base64_encode($utente["immagine"]);}?>" alt="ImmagineUtente">
                     </div>
                     <div class="alignme">
                         <a class="text-black mx-2" href="profilo.php?usr=<?php echo $utente["nickname"]?>"><?php echo $utente["nickname"]?></a>

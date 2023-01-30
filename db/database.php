@@ -328,6 +328,11 @@ class DatabaseHelper{
         $stmt1->bind_param("i", $id_post);
         return $stmt1->execute();
     }
+    public function updateProfile($username,$immagine){
+        $stmt = $this->db->prepare("UPDATE utente SET immagine=? WHERE nickname=?");
+        $stmt->bind_param("ss", $immagine,$username);
+        return $stmt->execute();
+    }
 }
 
 ?>
