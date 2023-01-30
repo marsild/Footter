@@ -12,7 +12,7 @@
     </div>
     <!-- Email input -->
     <div class="form-outline mb-4">
-        <input type="text" maxlength="50" id="reg_email" name="reg_email" class="form-control" placeholder="Email" required>
+        <input type="email" maxlength="50" id="reg_email" name="reg_email" class="form-control" placeholder="Email" required>
         <label class="form-label" for="reg_email" style="margin-left: 0px;" hidden>Email</label>
         <div class="form-notch">
             <div class="form-notch-leading" style="width: 9px;"></div>
@@ -41,10 +41,6 @@
     </div>
     <div class="col-12 my-4 text-danger">
         <?php
-        if(isset($templateParams["messaggio_errore_email"])){
-            echo $templateParams["messaggio_errore_email"];
-            echo "<br/>";
-        }
         if(isset($templateParams["messaggio_errore_password"])){
             echo $templateParams["messaggio_errore_password"];
             echo "<br/>";

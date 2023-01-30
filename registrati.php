@@ -1,14 +1,8 @@
 <?php
 require_once("bootstrap.php");
 if(isset($_POST["reg_email"])){
-    //controlla il formato email
-    $correttezza_email = true;
     $correttezza_password = true;
     $correttezza_username = true;
-    if(!filter_var($_POST["reg_email"], FILTER_VALIDATE_EMAIL)){
-        $templateParams["messaggio_errore_email"]="Formato email non valido.";
-        $correttezza_email = false;
-    }
     //controlla il formato password
     /*
     $uppercase = preg_match('@[A-Z]@', $_POST["reg_password"]);
@@ -26,7 +20,7 @@ if(isset($_POST["reg_email"])){
         $correttezza_username = false;
     }
     //se va tutto bene passa oltre
-    if($correttezza_email == true && $correttezza_password == true && $correttezza_username == true){
+    if($correttezza_password == true && $correttezza_username == true){
         $templateParams["intestazione_loginregistrati"]="Crea il tuo account (2/2)";
         $templateParams["form_loginregistrati"]="form_registrati2.php";
     } else {
