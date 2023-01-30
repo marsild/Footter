@@ -3,14 +3,20 @@ require_once("bootstrap.php");
 
 /* Se un utente sta facendo il login */
 if(isset($_POST["username"]) && isset($_POST["password"])){
-    $login_result = $dbh->checkLogin($_POST["username"], $_POST["password"]);
-    
-    if(count($login_result)==0){
-        //Login fallito
-        $templateParams["errorelogin"] = "Errore! Username e/o password sbagliata.";
-    }
-    else{
-        registerLoggedUser($login_result[0]);
+    $utente = $dbh->getUtente($_POST["username"]);
+    if(!empty($utente)){
+        $psw_hash = hash("sha512", $_POST["password"].$utente[0]["salt"]);
+        $login_result = $dbh->checkLogin($_POST["username"], $psw_hash);
+        if(count($login_result)==0){
+            //Login fallito: PASSWORD sbagliata
+            $templateParams["errorelogin"] = "Errore! Username e/o password errata.";
+        }
+        else{
+            registerLoggedUser($login_result[0]);
+        }
+    } else {
+        //Login fallito: USERNAME non trovato
+        $templateParams["errorelogin"] = "Errore! Username e/o password errata.";
     }
 }
 

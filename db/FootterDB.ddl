@@ -74,7 +74,8 @@ create table squadra (
 create table utente (
      nome char(20) not null,
      cognome char(20) not null,
-     psw char(20) not null,
+     psw char(128) not null,
+     salt char(128) not null,
      email char(50) not null,
      immagine longblob,
      n_follower int not null,

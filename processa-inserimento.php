@@ -3,7 +3,12 @@
 require_once("bootstrap.php");
 /* Se un utente si è appena registrato */
 if(isset($_POST["reg_username"])){
-    $dbh->insertUtente($_POST["reg_username"], $_POST["reg_nome"], $_POST["reg_cognome"], $_POST["reg_password"], $_POST["reg_email"]);
+    // Crea un hash random.
+    $random_hash = hash("sha512", uniqid(mt_rand(1, mt_getrandmax()), true));
+    // Utiliza l'hash appena creato assieme alla password inserita per generare la password hash da salvare nel db.
+    $psw_hash = hash("sha512", $_POST["reg_password"].$random_hash);
+
+    $dbh->insertUtente($_POST["reg_username"], $_POST["reg_nome"], $_POST["reg_cognome"], $psw_hash, $random_hash, $_POST["reg_email"]);
 
     foreach($dbh->getSquads() as $squadra){
         $id_squadra = "checkbox";
@@ -13,7 +18,7 @@ if(isset($_POST["reg_username"])){
         }
     }
     $dbh->createNotificaIniziale("Benvenuto su Footter!", $_POST["reg_username"]);
-    $login_result = $dbh->checkLogin($_POST["reg_username"], $_POST["reg_password"]);
+    $login_result = $dbh->checkLogin($_POST["reg_username"], $psw_hash);
     
     if(count($login_result)==0){
         $templateParams["errorelogin"] = "Errore durante la registrazione.";

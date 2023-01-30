@@ -69,10 +69,10 @@ class DatabaseHelper{
         return $stmt->execute();
     }
 
-    public function insertUtente($nickname, $nome, $cognome, $psw, $email){
-        $query = "INSERT INTO utente (nickname, nome, cognome, psw, email, n_follower, n_seguiti) VALUES (?, ?, ?, ?, ?, 0, 0)";
+    public function insertUtente($nickname, $nome, $cognome, $psw, $salt, $email){
+        $query = "INSERT INTO utente (nickname, nome, cognome, psw, salt, email, n_follower, n_seguiti) VALUES (?, ?, ?, ?, ?, ?, 0, 0)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('sssss',$nickname, $nome, $cognome, $psw, $email);
+        $stmt->bind_param('ssssss',$nickname, $nome, $cognome, $psw, $salt, $email);
         return $stmt->execute();
     }
 
@@ -108,7 +108,7 @@ class DatabaseHelper{
     }
     
     public function getUtente($username){
-        $stmt = $this->db->prepare("SELECT nome, cognome, email, immagine, n_follower, n_seguiti, nickname FROM utente WHERE nickname=?");
+        $stmt = $this->db->prepare("SELECT nome, cognome, email, immagine, n_follower, n_seguiti, nickname, salt FROM utente WHERE nickname=?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
