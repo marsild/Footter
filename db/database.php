@@ -108,7 +108,7 @@ class DatabaseHelper{
     }
     
     public function getUtente($username){
-        $stmt = $this->db->prepare("SELECT nome, cognome, email, immagine, n_follower, n_seguiti, nickname, salt FROM utente WHERE nickname=?");
+        $stmt = $this->db->prepare("SELECT psw,nome, cognome, email, immagine, n_follower, n_seguiti, nickname, salt FROM utente WHERE nickname=?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -328,9 +328,9 @@ class DatabaseHelper{
         $stmt1->bind_param("i", $id_post);
         return $stmt1->execute();
     }
-    public function updateProfile($username,$immagine,$nome,$cognome,$password,$email,$nickname){
-        $stmt = $this->db->prepare("UPDATE utente SET immagine=? ,username=? ,nome=? , cognome=?, passowrd=?, email=? WHERE nickname=?");
-        $stmt->bind_param("ssssss", $immagine,$username,$nome,$cognome,$password,$email,$nickname);
+    public function updateProfile($immagine,$nome,$cognome,$password,$email,$nickname){
+        $stmt = $this->db->prepare("UPDATE utente SET immagine=?, nome=?, cognome=?, psw=?, email=? WHERE nickname=?");
+        $stmt->bind_param("ssssss", $immagine,$nome,$cognome,$password,$email,$nickname);
         return $stmt->execute();
     }
 }

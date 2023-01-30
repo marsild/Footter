@@ -4,45 +4,76 @@ require_once("bootstrap.php");
 if (!isUserLoggedIn()) {
     header('Location: ./index.php');
 }
+$templateParams["profilo"] = $dbh->getUtente($_SESSION["username"])[0];
 
-if (!empty($_FILES["imgutente"]["name"])) {
-    // Get file info 
-    $fileName = basename($_FILES["imgutente"]["name"]);
-    $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+if(isset($_POST["premuto"])){
 
-    $maxKB = 500;
-    // Allow certain file formats 
-    $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
-    if (in_array($fileType, $allowTypes) && $_FILES["imgutente"]["size"] < ($maxKB * 1024)) {
-        $image = $_FILES['imgutente']['tmp_name'];
-        $imgContent = file_get_contents($image);
-     /*   if (!isset($_POST["username"])) {
-            $_POST["username"] = $templateParams["utente"]["username"];
-        }
-        if (!isset($_POST["nome"])) {
-            $_POST["nome"] = $templateParams["utente"]["nome"];
-        }
-        if (!isset($_POST["cognome"])) {
-            $_POST["cognome"] = $templateParams["utente"]["cognome"];
-        }
-        if (!isset($_POST["password"])) {
-            $_POST["password"] = $templateParams["utente"]["password"];
-        }
-        if (!isset($_POST["email"])) {
-            $_POST["email"] = $templateParams["utente"]["email"];
-        }
-        if (!isset($imgContent)) {
-            $imgContent = $templateParams["utente"]["immagine"];
+    $psw;
+    $email;
+    $nome;
+    $cognome;
+    if (empty($_POST["nome"])) {
+        $nome = $templateParams["profilo"]["nome"];
+    } else {
+        $nome = $_POST["nome"];
+    }
+    if (empty($_POST["cognome"])) {
+        $cognome = $templateParams["profilo"]["cognome"];
+    } else {
+        $cognome = $_POST["cognome"];
+    }
+    if (empty($_POST["agg_password"])) {
+        $psw = $templateParams["profilo"]["psw"];
+    } else {
+         //controlla il formato password
+         $correttezza_password = true;
+        /*
+        $uppercase = preg_match('@[A-Z]@', $_POST["password"]);
+        $lowercase = preg_match('@[a-z]@', $_POST["password"]);
+        $number = preg_match('@[0-9]@',$_POST["password"]);
+        $specialChars = preg_match('@[^\w]@', $_POST["password"]);
+        if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($_POST["password"]) < 8) {
+            //$templateParams["messaggio_errore_password"]="Formato password non corretto.";
+            $correttezza_password = false;
         }
         */
-        
-
-        $dbh->updateProfile($_POST["username"], $imgContent, $_POST["nome"], $_POST["cognome"], $_POST["password"], $_POST["email"], $_SESSION["username"]);
-    } else {
-        //non caricare immagine
+    if($correttezza_password==true){
+    
+        $utente = $dbh->getUtente($_SESSION["username"]);
+        $psw = hash("sha512", $_POST["agg_password"].$utente[0]["salt"]);
+    }else{
+        $psw = $templateParams["profilo"]["psw"];
+    
     }
+        
+    }
+    if (empty($_POST["email"])) {
+        $email = $templateParams["profilo"]["email"];
+    } else {
+        $email = $_POST["email"];
+    }
+    if (empty($_FILES["imgutente"]["name"])) {
+        $imgContent = $templateParams["profilo"]["immagine"];
+    } else {
+        // Get file info 
+        $fileName = basename($_FILES["imgutente"]["name"]);
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+        $maxKB = 500;
+        // Allow certain file formats 
+        $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+        if (in_array($fileType, $allowTypes) && $_FILES["imgutente"]["size"] < ($maxKB * 1024)) {
+            $image = $_FILES['imgutente']['tmp_name'];
+            $imgContent = file_get_contents($image);
+        } else {
+            $imgContent = $templateParams["profilo"]["immagine"];
+        }
+    }
+    $dbh->updateProfile($imgContent, $nome, $cognome,$psw ,$email, $_SESSION["username"]);
+    $templateParams["profilo"] = $dbh->getUtente($_SESSION["username"])[0];
+
 }
+
+
 $templateParams["active"] = "Impostazioni";
 $templateParams["nome"] = "form_impostazioni.php";
-$templateParams["profilo"] = $dbh->getUtente($_SESSION["username"])[0];
 require("template/base.php");

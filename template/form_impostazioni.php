@@ -29,18 +29,7 @@
                 </div>
             </div>
             <hr class="text-black-50">
-            <div class="col-12">
-                <h1 class="fs-5">Username</h1>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">@</span>
-                        <input type="text" class="form-control" placeholder="<?php echo $templateParams["profilo"]["nickname"]; ?>" id="username" name="username" aria-label="Username" aria-describedby="basic-addon1">
-                    </div>
-                </div>
-                <hr class="text-black-50">
-            </div>
+
             <div class="col-12">
                 <h1 class="fs-5">Password</h1>
             </div>
@@ -65,7 +54,7 @@
                         <input type="mail" class="form-control" id="email" name="email" placeholder="<?php echo $templateParams["profilo"]["email"] ?>" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
-                <hr class="text-black-50">
+                <input type="hidden" id="premuto" name="premuto" value="true">
                 <input class="btn btn-info" type="submit" value="Conferma">
             </div>
 
