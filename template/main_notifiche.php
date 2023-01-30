@@ -1,10 +1,3 @@
-<div class="row mx-4">
-    <div class="col-12 mt-4 text-center">
-        Notifiche
-    </div>
-</div>
-<hr class="text-dark mb-0">
-
 <?php foreach($templateParams["notifiche"] as $notifica):?>
     <?php if($notifica["visualizzato"]==1) { ?>
         <div class="row bg-white">
