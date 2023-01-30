@@ -47,7 +47,7 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     } 
     public function getComments($id_post){
-        $stmt = $this->db->prepare("SELECT c.data_commento, c.nickname, c.testo, u.immagine FROM commento as c, utente as u WHERE id_post=? and c.nickname=u.nickname ORDER BY c.data_commento desc");
+        $stmt = $this->db->prepare("SELECT c.id_post,c.id,c.data_commento, c.nickname, c.testo, u.immagine FROM commento as c, utente as u WHERE id_post=? and c.nickname=u.nickname ORDER BY c.data_commento desc");
         $stmt->bind_param("i", $id_post);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -318,6 +318,15 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    public function deleteComment($id,$id_post){
+        $query = "DELETE FROM commento WHERE id=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+        $stmt1 = $this->db->prepare("UPDATE post SET n_commenti=n_commenti - 1 WHERE id=?");
+        $stmt1->bind_param("i", $id_post);
+        return $stmt1->execute();
     }
 }
 

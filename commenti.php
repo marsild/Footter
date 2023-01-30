@@ -6,6 +6,11 @@ if(!isUserLoggedIn()){
 }
 
 
+if(isset($_POST["eliminazione_commento"])){
+    $dbh->deleteComment($_POST["eliminazione_commento"],$_GET["idpost"]);
+}
+
+
     $templateParams["active"]="Commenti";
     $templateParams["nome"]="lista_commenti.php";
     $templateParams["getComments"]= $dbh->getComments($_GET["idpost"]);
