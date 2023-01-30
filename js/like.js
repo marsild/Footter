@@ -16,3 +16,18 @@ function updateLikes(val, username_attivo, username_post) {
 $(function () {
     $('[data-bs-toggle="popover"]').popover()
 })
+
+function switchPasswordVisibility() {
+    var x = document.getElementById("reg_password");
+    const icon = document.getElementById("eye-icon");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+    if (icon.className == "bi bi-eye-slash") {
+        icon.className = "bi bi-eye";  
+    } else {
+        icon.className = "bi bi-eye-slash";
+    }
+  }

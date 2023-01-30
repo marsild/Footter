@@ -31,7 +31,7 @@
         <div class="col">
         <div class="input-group mb-4">
         <label for="reg_password" hidden>Password</label>
-        <button class="btn border" type="button" id="basic-addon2"><em class="bi bi-eye-slash"></em></button>
+        <button onclick="switchPasswordVisibility()" class="btn border" type="button" id="basic-addon2"><em id="eye-icon" class="bi bi-eye"></em></button>
         <input type="password" maxlength="20" minlength="8" id="reg_password" name="reg_password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" required>
         </div>
         </div>
