@@ -6,23 +6,26 @@
             <div class="row ">
                 <div class="col-5 ml-5 text-center">
                     <img src="<?php if ($templateParams["profilo"]["immagine"] == null) {
-                                                                                        echo UPLOAD_DIR . "pfp.png";
-                                                                                    } else {
-                                                                                        echo "data:image/jpg;charset=utf8;base64," . base64_encode($templateParams["profilo"]["immagine"]);
-                                                                                    } ?>" class="rounded-circle border border-1" style="width: 92px; height: 92px; object-fit:contain" alt="immagineUtente">
+                                    echo UPLOAD_DIR . "pfp.png";
+                                } else {
+                                    echo "data:image/jpg;charset=utf8;base64," . base64_encode($templateParams["profilo"]["immagine"]);
+                                } ?>" class="rounded-circle border border-1" style="width: 92px; height: 92px; object-fit:contain" alt="immagineUtente">
                 </div>
                 <div class="col-7">
                     <div class="mb-3">
-                        <input type="text" class="form-control" name="nome"id="nome" placeholder="Luca">
+                        <input type="text" class="form-control" name="nome" id="nome" placeholder="<?php echo $templateParams["profilo"]["nome"] ?>">
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="cognome" name="cognome"placeholder="Pasini">
+                        <input type="text" class="form-control" id="cognome" name="cognome" placeholder="<?php echo $templateParams["profilo"]["cognome"] ?>">
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 class text-center">
+            <div class="row g-1">
+                <div class="col-11 text-center">
                     <input type="file" class=" form-control btn btn-outline-dark" name="imgutente" id="imgutente" value="Inserisci un'immagine..">
+                </div>
+                <div class="col-1 px-0 text-center">
+                    <button type="button" class="btn px-0" data-bs-toggle="popover" title="Requisiti" data-bs-content="File ammessi: ‘jpg','png','jpeg','gif’. <br />Dimensioni massime: 500kb. <br /> I file che non rispettano questi requisiti verranno automaticamente ignorati." data-bs-html="true"><em class="bi bi-info-circle"></em></button>
                 </div>
             </div>
             <hr class="text-black-50">
@@ -33,7 +36,7 @@
                 <div class="col-12">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">@</span>
-                        <input type="text" class="form-control" placeholder="Username"id="username" name="username" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" placeholder="<?php echo $templateParams["profilo"]["nickname"]; ?>" id="username" name="username" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <hr class="text-black-50">
@@ -41,14 +44,17 @@
             <div class="col-12">
                 <h1 class="fs-5">Password</h1>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="input-group mb-3">
-                        <button class="btn btn-outline-dark" form="cerca_utente" type="button" id="button_psw" name="button_psw"><i class="bi bi-eye-slash"></i></button>
-                        <input type="text" class="form-control" placeholder="Password" id="password" name="password"aria-label="Username" aria-describedby="basic-addon1">
+            <div class="row g-1">
+                <div class="col">
+                    <div class="input-group mb-4">
+                        <label for="reg_password" hidden>Password</label>
+                        <button onclick='switchPasswordVisibility("agg_password")' class="btn border" type="button" id="basic-addon2"><em id="eye-icon" class="bi bi-eye"></em></button>
+                        <input type="password" maxlength="20" minlength="8" id="agg_password" name="agg_password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2">
                     </div>
                 </div>
-                <hr class="text-black-50">
+                <div class="col-1 px-0 text-center">
+                    <button type="button" class="btn px-0" data-bs-toggle="popover" title="Requisiti" data-bs-content="8 caratteri di cui:<br />1 maiuscola<br />1 minuscola<br />1 numero<br />1 carattere speciale" data-bs-html="true"><em class="bi bi-info-circle"></em></button>
+                </div>
             </div>
             <div class="col-12">
                 <h1 class="fs-5">Mail</h1>
@@ -56,7 +62,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="input-group mb-3">
-                        <input type="mail" class="form-control" id="email" name="email" placeholder="Email.." aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="mail" class="form-control" id="email" name="email" placeholder="<?php echo $templateParams["profilo"]["email"] ?>" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <hr class="text-black-50">

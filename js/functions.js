@@ -17,17 +17,17 @@ $(function () {
     $('[data-bs-toggle="popover"]').popover()
 })
 
-function switchPasswordVisibility() {
-    var x = document.getElementById("reg_password");
+function switchPasswordVisibility(val) {
+    var x = document.getElementById(val);
     const icon = document.getElementById("eye-icon");
     if (x.type === "password") {
       x.type = "text";
     } else {
       x.type = "password";
     }
-    if (icon.className == "bi bi-eye-slash") {
+    if (icon.className == "bi bi-eye-slash-fill") {
         icon.className = "bi bi-eye";  
     } else {
-        icon.className = "bi bi-eye-slash";
+        icon.className = "bi bi-eye-slash-fill";
     }
   }

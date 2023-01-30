@@ -157,7 +157,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/like.js"></script>
+    <script src="js/functions.js"></script>
 </body>
 
 </html>

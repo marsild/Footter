@@ -328,9 +328,9 @@ class DatabaseHelper{
         $stmt1->bind_param("i", $id_post);
         return $stmt1->execute();
     }
-    public function updateProfile($username,$immagine){
-        $stmt = $this->db->prepare("UPDATE utente SET immagine=? WHERE nickname=?");
-        $stmt->bind_param("ss", $immagine,$username);
+    public function updateProfile($username,$immagine,$nome,$cognome,$password,$email,$nickname){
+        $stmt = $this->db->prepare("UPDATE utente SET immagine=? ,username=? ,nome=? , cognome=?, passowrd=?, email=? WHERE nickname=?");
+        $stmt->bind_param("ssssss", $immagine,$username,$nome,$cognome,$password,$email,$nickname);
         return $stmt->execute();
     }
 }
