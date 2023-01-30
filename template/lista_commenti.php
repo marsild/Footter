@@ -23,7 +23,7 @@
                         <div class="col-12">
                   <?php  } ?>
                     <div>
-                        <img class="image rounded-circle border border-1" src="<?php if ($commento["immagine"] == null) {
+                        <img class="image rounded-circle border border-1 my-2" src="<?php if ($commento["immagine"] == null) {
                                                                                     echo UPLOAD_DIR . "pfp.png";
                                                                                 } else {
                                                                                     echo "data:image/jpg;charset=utf8;base64," . base64_encode($commento["immagine"]);
