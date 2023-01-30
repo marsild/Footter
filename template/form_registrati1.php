@@ -3,16 +3,16 @@
     <div class="mb-4 row g-3">
         <div class="col">
             <label for="reg_nome" hidden>Nome:</label> 
-            <input type="text" class="form-control" id="reg_nome" name="reg_nome" placeholder="Nome" aria-label="Nome" required>
+            <input type="text" maxlength="20" class="form-control" id="reg_nome" name="reg_nome" placeholder="Nome" aria-label="Nome" required>
         </div>
         <div class="col">
             <label for="reg_cognome" hidden>Cognome:</label> 
-            <input type="text" class="form-control" id="reg_cognome" name="reg_cognome" placeholder="Cognome" aria-label="Cognome" required>
+            <input type="text" maxlength="20" class="form-control" id="reg_cognome" name="reg_cognome" placeholder="Cognome" aria-label="Cognome" required>
         </div>
     </div>
     <!-- Email input -->
     <div class="form-outline mb-4">
-        <input type="text" id="reg_email" name="reg_email" class="form-control" placeholder="Email" required>
+        <input type="text" maxlength="50" id="reg_email" name="reg_email" class="form-control" placeholder="Email" required>
         <label class="form-label" for="reg_email" style="margin-left: 0px;" hidden>Email</label>
         <div class="form-notch">
             <div class="form-notch-leading" style="width: 9px;"></div>
@@ -24,16 +24,19 @@
     <div class="input-group mb-4">
         <label for="reg_username" hidden>Username:</label> 
         <span class="input-group-text" id="basic-addon1">@</span>
-        <input type="text" class="form-control" id="reg_username" name="reg_username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
+        <input type="text" maxlength="20" class="form-control" id="reg_username" name="reg_username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
     </div>
     <!-- Password input -->
-    <div class="form-outline mb-4">
-        <input type="password" id="reg_password" name="reg_password" class="form-control" placeholder="Password" required>
-        <label class="form-label" for="reg_password" style="margin-left: 0px;" hidden>Password</label>
-        <div class="form-notch">
-            <div class="form-notch-leading" style="width: 9px;"></div>
-            <div class="form-notch-middle" style="width: 64px;"></div>
-            <div class="form-notch-trailing"></div>
+    <div class="row g-1">
+        <div class="col">
+        <div class="input-group mb-4">
+        <label for="reg_password" hidden>Password</label>
+        <button class="btn border" type="button" id="basic-addon2"><em class="bi bi-eye-slash"></em></button>
+        <input type="password" maxlength="20" id="reg_password" name="reg_password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" required>
+        </div>
+        </div>
+        <div class="col-1 px-0 text-center">
+        <button type="button" class="btn px-0"><em class="bi bi-info-circle"></em></button>
         </div>
     </div>
     <div class="col-12 my-4 text-danger">
