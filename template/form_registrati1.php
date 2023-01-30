@@ -32,11 +32,11 @@
         <div class="input-group mb-4">
         <label for="reg_password" hidden>Password</label>
         <button class="btn border" type="button" id="basic-addon2"><em class="bi bi-eye-slash"></em></button>
-        <input type="password" maxlength="20" id="reg_password" name="reg_password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" required>
+        <input type="password" maxlength="20" minlength="8" id="reg_password" name="reg_password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" required>
         </div>
         </div>
         <div class="col-1 px-0 text-center">
-        <button type="button" class="btn px-0"><em class="bi bi-info-circle"></em></button>
+        <button type="button" class="btn px-0" data-bs-toggle="popover" title="Requisiti" data-bs-content="8 caratteri di cui:<br />1 maiuscola<br />1 minuscola<br />1 numero<br />1 carattere speciale" data-bs-html="true"><em class="bi bi-info-circle"></em></button>
         </div>
     </div>
     <div class="col-12 my-4 text-danger">

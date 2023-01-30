@@ -10,7 +10,7 @@ if(isset($_POST["reg_email"])){
     $number = preg_match('@[0-9]@',$_POST["reg_password"]);
     $specialChars = preg_match('@[^\w]@', $_POST["reg_password"]);
     if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($_POST["reg_password"]) < 8) {
-        $templateParams["messaggio_errore_password"]="Formato password non corretto (Minimo 8 caratteri di cui: 1 maiuscola, 1 numero e 1 carattere speciale.)";
+        $templateParams["messaggio_errore_password"]="Formato password non corretto.";
         $correttezza_password = false;
     }
     */

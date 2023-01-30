@@ -13,3 +13,6 @@ function updateLikes(val, username_attivo, username_post) {
     }
 }
 
+$(function () {
+    $('[data-bs-toggle="popover"]').popover()
+})
