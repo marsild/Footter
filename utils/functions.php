@@ -17,4 +17,12 @@ function flatArray($array_in, $msg){
     }
     return $array_out;
 }
+
+function formatDate($data){
+    list($annocompleto, $mese, $resto) = explode("-", $data);
+    list($giorno, $orario) = explode(" ", $resto);
+    list($ora, $min, $sec) = explode(":", $orario);
+    $anno = substr($annocompleto, -2);
+    return $giorno."/".$mese."/".$anno." ".$ora.":".$min;
+}
 ?>

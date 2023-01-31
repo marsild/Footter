@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-6 col-md-7 pe-0 align-self-center mt-3">
                         <a class="text-break text-black" href="profilo.php?usr=<?php echo $post["nickname"]; ?>"><?php echo $post["nickname"]; ?></a><br />
-                        <span class="small"><?php echo $post["data_post"]; ?></span>
+                        <span class="small"><?php echo formatDate($post["data_post"]); ?></span>
                     </div>
                     <div class="col-4 col-md-3 col-lg-2 text-end align-self-center mt-3 text-end px-0">
                         <?php foreach ($dbh->getSquadreTaggate($post["id"]) as $squadra) : ?>

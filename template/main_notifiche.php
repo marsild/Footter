@@ -11,7 +11,7 @@
                     <div class="col-12 my-2">
                         <div class="row mx-4">
                             <div class="col-10 px-0 align-self-center">
-                                <span class="small"><?php echo $notifica["data_notifica"];?></span>
+                                <span class="small"><?php echo  formatDate($notifica["data_notifica"]); ?></span>
                             </div>
                             <div class="col-2 px-0 text-end">
                                 <div class="dropdown">
