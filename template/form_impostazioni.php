@@ -1,5 +1,5 @@
 <form action="impostazioni.php?result=successful" method="POST" enctype="multipart/form-data">
-    <div class="row mx-1">
+    <div class="row mx-2">
         <div class="col-1"></div>
         <div class="z-1 col-10 my-4 px-0">
             <h1 class="fs-5 pl-2">Dati Personali</h1>
@@ -39,7 +39,7 @@
             <div class="row g-1">
                 <div class="col">
                     <div class="input-group mb-4">
-                        <label for="agg_password" hidden>Password</label>
+                        <label for="agg_password" hidden>Passwrgord</label>
                         <button onclick='switchPasswordVisibility("agg_password")' class="btn border" type="button" id="basic-addon2"><span id="eye-icon" class="bi bi-eye"></span></button>
                         <input type="password" maxlength="20" minlength="8" id="agg_password" name="agg_password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2">
                     </div>
