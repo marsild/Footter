@@ -98,9 +98,9 @@
                             <a class="text-break text-black" href="profilo.php?usr=<?php echo $post["nickname"]; ?>"><?php echo $post["nickname"]; ?></a><br />
                             <span class="small"><?php echo $post["data_post"]; ?></span>
                         </div>
-                        <div class="col-4 col-md-3 col-lg-2 text-end align-self-center mt-3 text-end">
+                        <div class="col-4 col-md-3 col-lg-2 text-end align-self-center mt-3 text-end px-0">
                             <?php foreach ($dbh->getSquadreTaggate($post["id"]) as $squadra) : ?>
-                                <img style="max-height:30px" src="<?php echo UPLOAD_DIR . $squadra["logo"]; ?>" alt="<?php echo $squadra["nome"]; ?>">
+                                <img style="width: 30px; height: 30px; object-fit:contain" src="<?php echo UPLOAD_DIR . $squadra["logo"]; ?>" alt="<?php echo $squadra["nome"]; ?>">
                             <?php endforeach; ?>
                         </div>
                         <div class="d-none d-lg-block col-lg-1 mt-3"></div>
