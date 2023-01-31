@@ -46,7 +46,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton<?php echo $commento["id"]; ?>">
                                     <li>
                                         <form action="commenti.php?idpost=<?php echo $commento["id_post"]; ?>" method="POST" id="form_eliminazione_commento<?php echo $commento["id"]; ?>">
-                                            <input type="hidden" id="eliminazione_commento" name="eliminazione_commento" value="<?php echo $commento["id"]; ?>">
+                                            <input type="hidden" id="eliminazione_commento<?php echo $commento["id"]; ?>" name="eliminazione_commento" value="<?php echo $commento["id"]; ?>">
                                         </form>
                                         <button type="submit" class="dropdown-item" form="form_eliminazione_commento<?php echo $commento["id"]; ?>" value="Submit"><span class="bi bi-trash"></span> Elimina</button>
                                     </li>
