@@ -161,7 +161,7 @@
             <!--MAIN-->
             <div class="col-12 col-sm-6 px-0 bg-white border">
 
-                <main class="overflow-auto mx-2 vh-100 bg-white">
+                <main class="overflow-auto vh-100 bg-white">
                     <div class="mt-5 mb-4 overflow-hidden">
                         <?php
                         if (isset($templateParams["nome"])) {
