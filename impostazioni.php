@@ -11,6 +11,7 @@ if(isset($_POST["premuto"])){
     if(isset($_GET["result"]) && $_GET["result"]=="successful"){
         $templateParams["creato"] = "Dati personali modificati con successo";
     }
+    
     $psw;
     $email;
     $nome;

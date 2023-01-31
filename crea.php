@@ -6,7 +6,7 @@ if(!isUserLoggedIn()){
 }
 if(isset($_GET["result"]) && $_GET["result"]=="successful"){
     
-    $templateParams["creato"] = "post creato con successo";
+    $templateParams["creato"] = 'Post pubblicato con successo. Visualizzalo nel tuo <a href="profilo.php">profilo</a>.';
 }
 $templateParams["active"] = "Crea";
 $templateParams["nome"] = "form_creaPost.php";
