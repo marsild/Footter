@@ -1,4 +1,4 @@
-<form style="width: 22rem;" action="index.php" method="POST">
+<form class="form_style" action="index.php" method="POST">
     <!-- Username input -->
     <div class="form-outline mb-4">
         <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>

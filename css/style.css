@@ -48,3 +48,15 @@ img{
 a{
   text-decoration: none;
 }
+.alert_successo{
+  display: none;
+}
+.form_style{
+  width: 22rem;
+}
+.fs_small{
+  font-size:small;
+}
+.fs_medium{
+  font-size:medium;
+}

@@ -1,4 +1,4 @@
-<form style="width: 22rem;" action="registrati.php" method="POST">
+<form class="form_style" action="registrati.php" method="POST">
     <!-- Nome Cognome input -->
     <div class="mb-4 row g-3">
         <div class="col">

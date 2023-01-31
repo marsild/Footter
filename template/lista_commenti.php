@@ -1,5 +1,5 @@
 <section class="w-100 p-4 d-flex justify-content-center pb-4">
-    <form style="width: 22rem;" action="processa-inserimento.php?idpost=<?php echo $_GET["idpost"]; ?>" method="POST">
+    <form class="form_style" action="processa-inserimento.php?idpost=<?php echo $_GET["idpost"]; ?>" method="POST">
         <!-- Password input -->
         <div class="form-outline mb-2">
             <div class="input-group mb-3">
