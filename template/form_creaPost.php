@@ -26,6 +26,7 @@
     </div>
     <div class="row mx-3 mb-4">
         <div class="col-11 ">
+            <label for="imgpost" hidden>immagine post</label>
             <input type="file" class=" form-control btn btn-outline-dark" name="imgpost" id="imgpost" value="Inserisci un'immagine..">
         </div>
         <div class="col-1 px-0 text-center">
@@ -34,7 +35,8 @@
     </div>
     <div class="row mx-3 mb-2">
         <div class="col-12 ">
-            <select class="form-select form-select-sm" name="first-squad" aria-label="Default select example" required>
+            <label for="first-squad" hidden>prima squadra</label>
+            <select class="form-select form-select-sm" name="first-squad" id="first-squad" aria-label="Default select example" required>
                 <option selected disabled value="">Inserisci una squadra</option>
                 <?php foreach ($templateParams["squadre"] as $squadra) : ?>
                     <option value=<?php echo $squadra["nome"] ?>><?php echo $squadra["nome"];  ?></option>
@@ -44,7 +46,9 @@
     </div>
     <div class="row mx-3 mb-5">
         <div class="col-12 ">
-            <select class="form-select form-select-sm" name="second-squad" aria-label="Default select example">
+            <label for="second-squad" hidden>seconda squadra</label>
+            <select class="form-select form-select-sm" name="second-squad" id="second-squad" aria-label="Default select example">
+
                 <option selected disabled value="">Inserisci un'altra squadra</option>
                 <?php foreach ($templateParams["squadre"] as $squadra) : ?>
                     <option value=<?php echo $squadra["nome"] ?>><?php echo $squadra["nome"];  ?></option>

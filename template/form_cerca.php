@@ -4,6 +4,7 @@
         <div class="col-10 mt-4 mb-3">
             <div class="z-1 input-group mb-3">
                 <button class="btn btn-outline-info" form="cerca_utente" type="submit"><span class="bi bi-search"></span></button>
+                <label for="search"hidden>input cerca</label>
                 <input type="text" name="search" id="search" class="form-control btn btn-outline-light border border-b-1 text-dark" placeholder="Cerca i tuoi amici" aria-label="Example text with button addon" aria-describedby="button-addon2">
 
 
