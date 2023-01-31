@@ -21,7 +21,7 @@
                     <!--PULSANTE UTENTE-->
                     <button class="btn btn-link text-white" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <em class="bi bi-list"></em>
+                        <span class="bi bi-list"></span>
                     </button>
                     <!--MENU UTENTE-->
                     <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasNavbar">
@@ -34,16 +34,16 @@
                             <hr class="text-white-50">
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li class="nav-item">
-                                    <a class="nav-link<?php if($templateParams["active"]=="Profilo"){echo ' active" aria-current="page';}?>" href="profilo.php"><em class="bi bi-person-circle"></em> Profilo</a>
+                                    <a class="nav-link<?php if($templateParams["active"]=="Profilo"){echo ' active" aria-current="page';}?>" href="profilo.php"><span class="bi bi-person-circle"></span> Profilo</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link<?php if($templateParams["active"]=="Preferiti"){echo ' active" aria-current="page';}?>" href="preferiti.php"><em class="bi bi-star"></em> Preferiti</a>
+                                    <a class="nav-link<?php if($templateParams["active"]=="Preferiti"){echo ' active" aria-current="page';}?>" href="preferiti.php"><span class="bi bi-star"></span> Preferiti</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link<?php if($templateParams["active"]=="Impostazioni"){echo ' active" aria-current="page';}?>" href="impostazioni.php"><em class="bi bi-gear"></em> Impostazioni</a>
+                                    <a class="nav-link<?php if($templateParams["active"]=="Impostazioni"){echo ' active" aria-current="page';}?>" href="impostazioni.php"><span class="bi bi-gear"></span> Impostazioni</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="logout.php"><em class="bi bi-box-arrow-left"></em> Esci</a>
+                                    <a class="nav-link" href="logout.php"><span class="bi bi-box-arrow-left"></span> Esci</a>
                                 </li>
                             </ul>
                         </div>
@@ -56,7 +56,7 @@
                     if(isset($templateParams["pulsante_offcanvas"])){
                         require($templateParams["pulsante_offcanvas"]);
                     } else {
-                        echo '<button class="btn" type="button" disabled><em class="bi bi-stars"></em></button>';
+                        echo '<button class="btn" type="button" disabled><span class="bi bi-stars"></span></button>';
                     }
                     ?>
                 </nav>
@@ -69,19 +69,19 @@
                 <nav class="z-1 fixed-bottom navbar navbar-dark bg-dark px-5 ">
                     <!--PULSANTE HOME-->
                     <a class="nav-link<?php if($templateParams["active"]=="Home"){echo ' active" aria-current="page';}?>" href="index.php" title="home">
-                        <em class="bi bi-house"></em>
+                        <span class="bi bi-house"></span>
                     </a>
                     <!--PULSANTE SEARCH-->
                     <a class="nav-link<?php if($templateParams["active"]=="Cerca"){echo ' active" aria-current="page';}?>" href="cerca.php" title="cerca">
-                        <em class="bi bi-search"></em>
+                        <span class="bi bi-search"></span>
                     </a>
                     <!--PULSANTE NOTIFICHE-->
                     <a class="nav-link<?php if($templateParams["active"]=="Notifiche"){echo ' active" aria-current="page';}?>" href="notifiche.php" title="notifiche">
-                        <em class="bi bi-bell<?php if ($templateParams["active"]!="Notifiche" && $dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"]>0){echo "-fill text-warning";} ?>"></em>
+                        <span class="bi bi-bell<?php if ($templateParams["active"]!="Notifiche" && $dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"]>0){echo "-fill text-warning";} ?>"></span>
                     </a>
                     <!--PULSANTE CREA-->
                     <a class="nav-link<?php if($templateParams["active"]=="Crea"){echo ' active" aria-current="page';}?>" href="crea.php" title="crea">
-                        <em class="bi bi-pencil-square"></em>
+                        <span class="bi bi-pencil-square"></span>
                     </a>
                 </nav>
             </div>
@@ -100,28 +100,28 @@
                 <aside class="mt-5">
                     <ul class="nav">
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Profilo"){echo ' active" aria-current="page';}?>" href="profilo.php"><em class="bi bi-person-circle"></em> Profilo</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Profilo"){echo ' active" aria-current="page';}?>" href="profilo.php"><span class="bi bi-person-circle"></span> Profilo</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Home"){echo ' active" aria-current="page';}?>" href="index.php"><em class="bi bi-house"></em> Home</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Home"){echo ' active" aria-current="page';}?>" href="index.php"><span class="bi bi-house"></span> Home</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Cerca"){echo ' active" aria-current="page';}?>" href="cerca.php"><em class="bi bi-search"></em> Cerca</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Cerca"){echo ' active" aria-current="page';}?>" href="cerca.php"><span class="bi bi-search"></span> Cerca</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Notifiche"){echo ' active" aria-current="page';}elseif($dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"] > 0){echo ' text-warning"';}?>" href="notifiche.php"><em class="bi bi-bell<?php if ($templateParams["active"]!="Notifiche" && $dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"]>0){echo "-fill text-warning";} ?>"></em> Notifiche</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Notifiche"){echo ' active" aria-current="page';}elseif($dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"] > 0){echo ' text-warning"';}?>" href="notifiche.php"><span class="bi bi-bell<?php if ($templateParams["active"]!="Notifiche" && $dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"]>0){echo "-fill text-warning";} ?>"></span> Notifiche</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Crea"){echo ' active" aria-current="page';}?>" href="crea.php"><em class="bi bi-pencil-square"></em> Crea</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Crea"){echo ' active" aria-current="page';}?>" href="crea.php"><span class="bi bi-pencil-square"></span> Crea</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Preferiti"){echo ' active" aria-current="page';}?>" href="preferiti.php"><em class="bi bi-star"></em> Preferiti</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Preferiti"){echo ' active" aria-current="page';}?>" href="preferiti.php"><span class="bi bi-star"></span> Preferiti</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link<?php if($templateParams["active"]=="Impostazioni"){echo ' active" aria-current="page';}?>" href="impostazioni.php"><em class="bi bi-gear"></em> Impostazioni</a>
+                            <a class="nav-link<?php if($templateParams["active"]=="Impostazioni"){echo ' active" aria-current="page';}?>" href="impostazioni.php"><span class="bi bi-gear"></span> Impostazioni</a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link" href="logout.php"><em class="bi bi-box-arrow-left"></em> Esci</a>
+                            <a class="nav-link" href="logout.php"><span class="bi bi-box-arrow-left"></span> Esci</a>
                         </li>
                     </ul>
                 </aside>

@@ -25,7 +25,7 @@
                     <input type="file" class=" form-control btn btn-outline-dark" name="imgutente" id="imgutente" value="Inserisci un'immagine..">
                 </div>
                 <div class="col-1 px-0 text-center">
-                    <button type="button" class="btn px-0" data-bs-toggle="popover" title="Requisiti" data-bs-content="File ammessi: ‘jpg','png','jpeg','gif’. <br />Dimensioni massime: 500kb. <br /> I file che non rispettano questi requisiti verranno automaticamente ignorati." data-bs-html="true"><em class="bi bi-info-circle"></em></button>
+                    <button type="button" class="btn px-0" data-bs-toggle="popover" title="Requisiti" data-bs-content="File ammessi: 'jpg','png','jpeg','gif’. <br />Dimensioni massime: 500kb. <br /> I file che non rispettano questi requisiti verranno automaticamente ignorati." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
                 </div>
             </div>
             <hr class="text-black-50">
@@ -37,12 +37,12 @@
                 <div class="col">
                     <div class="input-group mb-4">
                         <label for="reg_password" hidden>Password</label>
-                        <button onclick='switchPasswordVisibility("agg_password")' class="btn border" type="button" id="basic-addon2"><em id="eye-icon" class="bi bi-eye"></em></button>
+                        <button onclick='switchPasswordVisibility("agg_password")' class="btn border" type="button" id="basic-addon2"><span id="eye-icon" class="bi bi-eye"></span></button>
                         <input type="password" maxlength="20" minlength="8" id="agg_password" name="agg_password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2">
                     </div>
                 </div>
                 <div class="col-1 px-0 text-center">
-                    <button type="button" class="btn px-0" data-bs-toggle="popover" title="Requisiti" data-bs-content="8 caratteri di cui:<br />1 maiuscola<br />1 minuscola<br />1 numero<br />1 carattere speciale" data-bs-html="true"><em class="bi bi-info-circle"></em></button>
+                    <button type="button" class="btn px-0" data-bs-toggle="popover" title="Requisiti" data-bs-content="8 caratteri di cui:<br />1 maiuscola<br />1 minuscola<br />1 numero<br />1 carattere speciale" data-bs-html="true"><span class="bi bi-info-circle"></span></button>
                 </div>
             </div>
             <div class="col-12">
@@ -61,7 +61,7 @@
                 <div class="col-3">
                     <input type="hidden" id="premuto" name="premuto" value="true">
                     <input class="btn btn-info" type="submit" value="Conferma">
-                    <button type="button" class="btn px-0" data-bs-toggle="popover" title="Attenzione" data-bs-content="Verranno cambiati solo i campi modificati." data-bs-html="true"><em class="bi bi-info-circle"></em></button>
+                    <button type="button" class="btn px-0" data-bs-toggle="popover" title="Attenzione" data-bs-content="Verranno cambiati solo i campi modificati." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
 
                 </div>
 

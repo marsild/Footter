@@ -45,11 +45,11 @@
                         <div class="row">
                             <div class="col text-start ps-0">
                                 <button type="button" class="btn px-0" onclick="updateLikes(<?php echo $post['id'] ?>, '<?php echo $_SESSION['username'] ?>', '<?php echo $post['nickname'] ?>')">
-                                    <em id="like-heart<?php echo $post["id"] ?>" class="bi bi-heart<?php if ($dbh->hasLiked($post['id'], $_SESSION["username"])[0]["nr"] > 0) {echo "-fill text-danger";} ?> fs-4"></em> <span id="numero-like<?php echo $post["id"] ?>"><?php echo $post["n_like"]; ?></span>
+                                    <span id="like-heart<?php echo $post["id"] ?>" class="bi bi-heart<?php if ($dbh->hasLiked($post['id'], $_SESSION["username"])[0]["nr"] > 0) {echo "-fill text-danger";} ?> fs-4"></span> <span id="numero-like<?php echo $post["id"] ?>"><?php echo $post["n_like"]; ?></span>
                                 </button>
                             </div>
                             <div class="col text-end pe-0">
-                                <a href="commenti.php?idpost=<?php echo $post["id"] ?>" class="btn px-0"><?php echo $post["n_commenti"]; ?> <em class="bi bi-chat-dots fs-4"></em></a>
+                                <a href="commenti.php?idpost=<?php echo $post["id"] ?>" class="btn px-0"><?php echo $post["n_commenti"]; ?> <span class="bi bi-chat-dots fs-4"></span></a>
                             </div>
                         </div>
                     </div>

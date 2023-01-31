@@ -1,5 +1,5 @@
 <!--PULSANTE PERSONALIZZA-->
-<button class="btn btn-link text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2"><em class="bi bi-stars"></em></button>
+<button class="btn btn-link text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2"><span class="bi bi-stars"></span></button>
 <!--MENU PERSONALIZZA-->
 <div class="offcanvas offcanvas-end text-bg-dark " tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
     <div class="offcanvas-header pb-0">

@@ -16,14 +16,14 @@
                             <div class="col-2 px-0 text-end">
                                 <div class="dropdown">
                                     <button class="btn" type="button" id="dropdownMenuButton<?php echo $notifica["id"];?>" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <em class="bi bi-three-dots"></em>
+                                        <span class="bi bi-three-dots"></span>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton<?php echo $notifica["id"];?>">
                                         <li>
                                             <form action="notifiche.php" method="POST" id="form_eliminazione_notifica<?php echo $notifica["id"];?>">
                                                 <input type="hidden" id="eliminazione_notifica" name="eliminazione_notifica" value="<?php echo $notifica["id"]; ?>">
                                             </form>
-                                            <button type="submit" class="dropdown-item" form="form_eliminazione_notifica<?php echo $notifica["id"];?>" value="Submit"><em class="bi bi-trash"></em> Elimina</button>
+                                            <button type="submit" class="dropdown-item" form="form_eliminazione_notifica<?php echo $notifica["id"];?>" value="Submit"><span class="bi bi-trash"></span> Elimina</button>
                                         </li>
                                     </ul>
                                 </div>
