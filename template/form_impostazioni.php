@@ -9,7 +9,7 @@
                                     echo UPLOAD_DIR . "pfp.png";
                                 } else {
                                     echo "data:image/jpg;charset=utf8;base64," . base64_encode($templateParams["profilo"]["immagine"]);
-                                } ?>" class="rounded-circle border border-1" style="width: 92px; height: 92px;" alt="immagineUtente">
+                                } ?>" class="rounded-circle border border-1 img90" alt="immagineUtente">
                 </div>
                 <div class="col-7">
                     <div class="mb-3">
