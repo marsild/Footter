@@ -6,13 +6,6 @@
   color: white;
 }
 
-a{
-    text-decoration: none;
-}
-
-.image { float:left;
-    max-height: 50px;  }
-
 .alignme {
 	margin:10px 0;
 }
