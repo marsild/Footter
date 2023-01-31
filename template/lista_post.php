@@ -17,7 +17,7 @@
                 <div class="row mx-4 mx-lg-2">
                     <div class="d-none d-lg-block col-lg-1 mt-3"></div>
                     <div class="col-2 col-lg-1 px-0 text-end align-self-center mt-3">
-                        <img style="width: 50px; height: 50px;" class="rounded-circle border border-1" src="<?php if($post["ImmagineUtente"] == null){echo UPLOAD_DIR . "pfp.png";}else{ echo "data:image/jpg;charset=utf8;base64,".base64_encode($post["ImmagineUtente"]);} ?>" alt="Immagine profilo utente">
+                        <img class="img50 rounded-circle border border-1" src="<?php if($post["ImmagineUtente"] == null){echo UPLOAD_DIR . "pfp.png";}else{ echo "data:image/jpg;charset=utf8;base64,".base64_encode($post["ImmagineUtente"]);} ?>" alt="Immagine profilo utente">
                     </div>
                     <div class="col-6 col-md-7 pe-0 align-self-center mt-3">
                         <a class="text-break text-black" href="profilo.php?usr=<?php echo $post["nickname"]; ?>"><?php echo $post["nickname"]; ?></a><br />
@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-4 col-md-3 col-lg-2 text-end align-self-center mt-3 text-end px-0">
                         <?php foreach ($dbh->getSquadreTaggate($post["id"]) as $squadra) : ?>
-                            <img style="width: 30px; height: 30px;" src="<?php echo UPLOAD_DIR . $squadra["logo"]; ?>" alt="<?php echo $squadra["nome"]; ?>">
+                            <img class="img30" src="<?php echo UPLOAD_DIR . $squadra["logo"]; ?>" alt="<?php echo $squadra["nome"]; ?>">
                         <?php endforeach; ?>
                     </div>
                     <div class="d-none d-lg-block col-lg-1 mt-3"></div>
@@ -39,7 +39,7 @@
                         </div>
                         <?php if (!empty($post["ImmaginePost"])) { ?>
                             <div class="row text-center">
-                                <img class="border border-3 mx-auto img-fluid mt-2" style="max-height:500px;" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post["ImmaginePost"]); ?>" alt="Immagine post" />
+                                <img class="border border-3 mx-auto img-fluid mt-2 imgpost" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post["ImmaginePost"]); ?>" alt="Immagine post" />
                             </div>
                         <?php } ?>
                         <div class="row">

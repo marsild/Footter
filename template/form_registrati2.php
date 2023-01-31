@@ -10,7 +10,7 @@
         <div class="form-check form-check-inline mx-0 my-1 col-6 ">
             <input class="form-check-input" type="checkbox" value="<?php echo $squadra["nome"];?>" id="checkbox<?php echo $squadra["nome"];?>" name="checkbox<?php echo $squadra["nome"];?>">
             <label style="font-size:small" class="form-check-label" for="checkbox<?php echo $squadra["nome"];?>">
-                <img src="<?php echo UPLOAD_DIR.$squadra["logo"];?>" alt="<?php echo $squadra["nome"];?>" style="height: 20px; width: 20px;">
+                <img src="<?php echo UPLOAD_DIR.$squadra["logo"];?>" alt="<?php echo $squadra["nome"];?>" class="img20">
                 <?php echo $squadra["nome"];?>
             </label>
         </div>

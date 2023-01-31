@@ -1,6 +1,6 @@
 <div class="row mx-2">
     <div class="col-4 my-auto text-center my-3">
-        <img class="rounded-circle border border-1" style="width: 80px; height: 80px;" src="<?php if ($templateParams["profilo"]["immagine"] == null) {
+        <img class="rounded-circle border border-1 img80" src="<?php if ($templateParams["profilo"]["immagine"] == null) {
                                                                                         echo UPLOAD_DIR . "pfp.png";
                                                                                     } else {
                                                                                         echo "data:image/jpg;charset=utf8;base64," . base64_encode($templateParams["profilo"]["immagine"]);
@@ -49,7 +49,7 @@
     <?php foreach ($templateParams["elenco"] as $utente) : ?>
         <div class="row mx-3 my-3">
             <div class="col-2 text-end">
-                <img class="rounded-circle border border-1" style="width: 30px; height: 30px;" src="<?php if ($utente["immagine"] == null) {
+                <img class="rounded-circle border border-1 img30" src="<?php if ($utente["immagine"] == null) {
                                                                                                 echo UPLOAD_DIR . "pfp.png";
                                                                                             } else {
                                                                                                 echo "data:image/jpg;charset=utf8;base64," . base64_encode($utente["immagine"]);
@@ -88,7 +88,7 @@
                     <div class="row mx-4 mx-lg-2">
                         <div class="d-none d-lg-block col-lg-1 mt-3"></div>
                         <div class="col-2 col-lg-1 px-0 text-end align-self-center mt-3">
-                            <img style="width: 50px; height: 50px;" class="rounded-circle border border-1" src="<?php if ($post["ImmagineUtente"] == null) {
+                            <img class="img50 rounded-circle border border-1" src="<?php if ($post["ImmagineUtente"] == null) {
                                                                                                             echo UPLOAD_DIR . "pfp.png";
                                                                                                         } else {
                                                                                                             echo "data:image/jpg;charset=utf8;base64," . base64_encode($post["ImmagineUtente"]);
@@ -100,7 +100,7 @@
                         </div>
                         <div class="col-4 col-md-3 col-lg-2 text-end align-self-center mt-3 text-end px-0">
                             <?php foreach ($dbh->getSquadreTaggate($post["id"]) as $squadra) : ?>
-                                <img style="width: 30px; height: 30px;" src="<?php echo UPLOAD_DIR . $squadra["logo"]; ?>" alt="<?php echo $squadra["nome"]; ?>">
+                                <img class="img30" src="<?php echo UPLOAD_DIR . $squadra["logo"]; ?>" alt="<?php echo $squadra["nome"]; ?>">
                             <?php endforeach; ?>
                         </div>
                         <div class="d-none d-lg-block col-lg-1 mt-3"></div>
@@ -114,7 +114,7 @@
                             </div>
                             <?php if (!empty($post["ImmaginePost"])) { ?>
                                 <div class="row text-center">
-                                    <img class="border border-3 mx-auto img-fluid mt-2" style="max-height:500px; " src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post["ImmaginePost"]); ?>" alt="Immagine post" />
+                                    <img class="imgpost border border-3 mx-auto img-fluid mt-2" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post["ImmaginePost"]); ?>" alt="Immagine post" />
                                 </div>
                             <?php } ?>
                             <div class="row">
@@ -180,7 +180,7 @@
                                                     <?php foreach ($dbh->getLikes($post["id"]) as $utente) : ?>
                                                         <div class="row my-3">
                                                             <div class="col-2 text-end">
-                                                                <img class="rounded-circle border border-1" style="width: 30px; height: 30px;" src="<?php if ($utente["immagine"] == null) {
+                                                                <img class="img30 rounded-circle border border-1" src="<?php if ($utente["immagine"] == null) {
                                                                                                                                                 echo UPLOAD_DIR . "pfp.png";
                                                                                                                                             } else {
                                                                                                                                                 echo "data:image/jpg;charset=utf8;base64," . base64_encode($utente["immagine"]);
