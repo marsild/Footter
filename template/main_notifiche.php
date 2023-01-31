@@ -21,7 +21,7 @@
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton<?php echo $notifica["id"];?>">
                                         <li>
                                             <form action="notifiche.php" method="POST" id="form_eliminazione_notifica<?php echo $notifica["id"];?>">
-                                                <input type="hidden" id="eliminazione_notifica" name="eliminazione_notifica" value="<?php echo $notifica["id"]; ?>">
+                                                <input type="hidden" id="eliminazione_notifica<?php echo $notifica["id"];?>" name="eliminazione_notifica" value="<?php echo $notifica["id"]; ?>">
                                             </form>
                                             <button type="submit" class="dropdown-item" form="form_eliminazione_notifica<?php echo $notifica["id"];?>" value="Submit"><span class="bi bi-trash"></span> Elimina</button>
                                         </li>
