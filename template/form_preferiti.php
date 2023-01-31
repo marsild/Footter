@@ -13,7 +13,7 @@
                                                                                                                                                                                             echo "checked";
                                                                                                                                                                                         } ?>>
                 <label style="font-size:small" class="form-check-label" for="box<?php echo $squadra["nome"]; ?>">
-                    <img src="<?php echo UPLOAD_DIR . $squadra["logo"]; ?>" alt="<?php echo $squadra["nome"]; ?>" style="max-height: 20px; ">
+                    <img src="<?php echo UPLOAD_DIR . $squadra["logo"]; ?>" alt="<?php echo $squadra["nome"]; ?>" style="height: 20px; width: 20px; object-fit:contain">
                     <?php echo $squadra["nome"]; ?>
                 </label>
             </div>

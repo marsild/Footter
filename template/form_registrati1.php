@@ -21,22 +21,29 @@
         </div>
     </div>
     <!-- Username input -->
-    <div class="input-group mb-4">
-        <label for="reg_username" hidden>Username:</label> 
-        <span class="input-group-text" id="basic-addon1">@</span>
-        <input type="text" maxlength="20" class="form-control" id="reg_username" name="reg_username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
+    <div class="row g-1">
+        <div class="col">
+            <div class="input-group mb-4">
+                <label for="reg_username" hidden>Username:</label> 
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" maxlength="20" class="form-control" id="reg_username" name="reg_username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
+            </div>
+        </div>
+        <div class="col-1 px-0 text-center">
+            <button type="button" class="btn px-0" data-bs-toggle="popover" title="Attenzione!" data-bs-content="L'username non può essere cambiato. Sceglilo attentamente." data-bs-html="true"><em class="bi bi-info-circle"></em></button>
+        </div>
     </div>
     <!-- Password input -->
     <div class="row g-1">
         <div class="col">
-        <div class="input-group mb-4">
-        <label for="reg_password" hidden>Password</label>
-        <button onclick='switchPasswordVisibility("reg_password")' class="btn border" type="button" id="basic-addon2"><em id="eye-icon" class="bi bi-eye"></em></button>
-        <input type="password" maxlength="20" minlength="8" id="reg_password" name="reg_password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" required>
-        </div>
+            <div class="input-group mb-4">
+                <label for="reg_password" hidden>Password</label>
+                <button onclick='switchPasswordVisibility("reg_password")' class="btn border" type="button" id="basic-addon2"><em id="eye-icon" class="bi bi-eye"></em></button>
+                <input type="password" maxlength="20" minlength="8" id="reg_password" name="reg_password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" required>
+            </div>
         </div>
         <div class="col-1 px-0 text-center">
-        <button type="button" class="btn px-0" data-bs-toggle="popover" title="Requisiti" data-bs-content="8 caratteri di cui:<br />1 maiuscola<br />1 minuscola<br />1 numero<br />1 carattere speciale" data-bs-html="true"><em class="bi bi-info-circle"></em></button>
+            <button type="button" class="btn px-0" data-bs-toggle="popover" title="Requisiti" data-bs-content="8 caratteri di cui:<br />1 maiuscola<br />1 minuscola<br />1 numero<br />1 carattere speciale" data-bs-html="true"><em class="bi bi-info-circle"></em></button>
         </div>
     </div>
     <div class="col-12 mb-4 text-danger">

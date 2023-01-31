@@ -15,19 +15,37 @@
     </div>
 </div>
 <div class="row g-1">
-    <div class="col text-center py-2 ps-2 <?php echo $templateParams["bg-followers"]; ?>">
-        <a class="text-dark" href="profilo.php?usr=<?php echo $templateParams["profilo"]["nickname"]; ?>&view=followers"><?php echo $templateParams["profilo"]["n_follower"]; ?> <br /> follower </a>
+    <div class="col text-center ps-2 <?php echo $templateParams["bg-followers"]; ?>">
+        <a class="text-dark" href="profilo.php?usr=<?php echo $templateParams["profilo"]["nickname"]; ?>&view=followers">
+            <div class="row">
+                <div class="col-12 py-2">
+                    <?php echo $templateParams["profilo"]["n_follower"]; ?> <br /> follower
+                </div>
+            </div>
+        </a>
     </div>
-    <div class="col text-center py-2 <?php echo $templateParams["bg-seguiti"]; ?>">
-        <a class="text-dark" href="profilo.php?usr=<?php echo $templateParams["profilo"]["nickname"]; ?>&view=seguiti"><?php echo $templateParams["profilo"]["n_seguiti"]; ?> <br /> seguiti </a>
+    <div class="col text-center <?php echo $templateParams["bg-seguiti"]; ?>">
+        <a class="text-dark" href="profilo.php?usr=<?php echo $templateParams["profilo"]["nickname"]; ?>&view=seguiti">
+            <div class="row">
+                <div class="col-12 py-2">
+                    <?php echo $templateParams["profilo"]["n_seguiti"]; ?> <br /> seguiti
+                </div>
+            </div>
+        </a>
     </div>
-    <div class="col text-center py-2 pe-2 <?php echo $templateParams["bg-post"]; ?>">
-        <a class="text-dark" href="profilo.php?usr=<?php echo $templateParams["profilo"]["nickname"]; ?>"><?php echo $templateParams["n_post"]["total"]; ?> <br /> post </a>
+    <div class="col text-center pe-2 <?php echo $templateParams["bg-post"]; ?>">
+        <a class="text-dark" href="profilo.php?usr=<?php echo $templateParams["profilo"]["nickname"]; ?>">
+            <div class="row">
+                <div class="col-12 py-2">
+                    <?php echo $templateParams["n_post"]["total"]; ?> <br /> post
+                </div>
+            </div>
+        </a>
     </div>
 </div>
+<!-- Se siamo nella pagina followers oppure seguiti-->
 <?php if (isset($templateParams["elenco"])) { ?>
     <?php $count = 0; ?>
-
     <?php foreach ($templateParams["elenco"] as $utente) : ?>
         <div class="row mx-3 my-3">
             <div class="col-2 text-end">
@@ -47,6 +65,7 @@
     <?php if ($count == 0) { 
         echo '<div class="row mx-3 my-3"><div class="col-12 text-center">Nessun utente trovato.</div></div>';
     }?>
+<!-- Se siamo nella pagina dei post -->
 <?php } else { ?>
     <?php $count = 0; ?>
     <?php foreach ($templateParams["getPosts"] as $post) : ?>
