@@ -23,7 +23,7 @@
                         <div class="col-12">
                   <?php  } ?>
                     <div>
-                        <img class="float-start rounded-circle border border-1 my-2" style="width: 50px; height: 50px; object-fit:contain" src="<?php if ($commento["immagine"] == null) {
+                        <img class="float-start rounded-circle border border-1 my-2" style="width: 50px; height: 50px;" src="<?php if ($commento["immagine"] == null) {
                                                                                     echo UPLOAD_DIR . "pfp.png";
                                                                                 } else {
                                                                                     echo "data:image/jpg;charset=utf8;base64," . base64_encode($commento["immagine"]);

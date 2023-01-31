@@ -9,3 +9,11 @@
 .alignme {
 	margin:10px 0;
 }
+
+img{
+  object-fit: contain;
+}
+
+a{
+  text-decoration: none;
+}
