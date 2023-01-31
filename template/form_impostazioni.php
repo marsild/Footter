@@ -1,7 +1,7 @@
 <form action="impostazioni.php?result=successful" method="POST" enctype="multipart/form-data">
     <div class="row mx-1">
         <div class="col-1"></div>
-        <div class="col-10 my-4 px-0">
+        <div class="z-1 col-10 my-4 px-0">
             <h1 class="fs-5 pl-2">Dati Personali</h1>
             <div class="row ">
                 <div class="col-5 ml-5 text-center">
@@ -62,7 +62,7 @@
             </div>
 
             <div class="row">
-                <div class="col-3">
+                <div class="col-12">
                     <label for="premuto"hidden>premuto</label>
                     <input type="hidden" id="premuto" name="premuto" value="true">
                     <input class="btn btn-info" type="submit" value="Conferma">

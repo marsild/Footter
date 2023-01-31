@@ -5,7 +5,7 @@
             <div class="input-group mb-3">
                 <input type="hidden" id="usr" name="usr" value="<?php echo $dbh->getUsernameFromPost($_GET["idpost"])[0]["nickname"]; ?>">
                 <label hidden for="textcommento">commento</label>
-                <input type="text" class="form-control" id="textcommento" name="textcommento" placeholder="Inserisci il tuo commento" aria-describedby="button-addon2" required>
+                <input type="text" class="form-control" autocomplete="off" id="textcommento" name="textcommento" placeholder="Inserisci il tuo commento" aria-describedby="button-addon2" required>
                 <input value="invia" class=" z-1btn btn-outline-primary" type="submit" id="button-addon2">
             </div>
 
@@ -23,7 +23,7 @@
                         <div class="col-12">
                   <?php  } ?>
                     <div>
-                        <img class="img50 float-start rounded-circle border border-1 my-2" src="<?php if ($commento["immagine"] == null) {
+                        <img class="float-start rounded-circle border border-1 my-2" style="width: 50px; height: 50px;" src="<?php if ($commento["immagine"] == null) {
                                                                                     echo UPLOAD_DIR . "pfp.png";
                                                                                 } else {
                                                                                     echo "data:image/jpg;charset=utf8;base64," . base64_encode($commento["immagine"]);
