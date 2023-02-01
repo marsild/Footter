@@ -14,11 +14,11 @@
                 <div class="col-7">
                     <div class="mb-3">
                         <label for="nome"hidden>nome</label>
-                        <input type="text" class="form-control" name="nome" id="nome" placeholder="<?php echo $templateParams["profilo"]["nome"] ?>">
+                        <input type="text" class="form-control" maxlength="20" name="nome" id="nome" placeholder="<?php echo $templateParams["profilo"]["nome"] ?>">
                     </div>
                     <div class="mb-3">
                         <label for="cognome"hidden>cognome</label>
-                        <input type="text" class="form-control" id="cognome" name="cognome" placeholder="<?php echo $templateParams["profilo"]["cognome"] ?>">
+                        <input type="text" class="form-control" id="cognome" maxlength="20" name="cognome" placeholder="<?php echo $templateParams["profilo"]["cognome"] ?>">
                     </div>
                 </div>
             </div>
