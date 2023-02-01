@@ -32,7 +32,7 @@
                         <div class="alignme">
                             <a class="text-black px-2" href="profilo.php?usr=<?php echo $commento["nickname"]; ?>"><?php echo $commento["nickname"]; ?></a>
                             <br />
-                            <span class="small text-black px-2"><?php echo $commento["data_commento"]; ?></span>
+                            <span class="small text-black px-2"><?php echo formatDate($commento["data_commento"]); ?></span>
                         </div>
                         </div>
                         <?php if ($_SESSION["username"] == $commento["nickname"]) { ?>
