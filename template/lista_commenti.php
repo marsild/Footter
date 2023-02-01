@@ -1,18 +1,16 @@
+<form id="form_commento" action="processa-inserimento.php?idpost=<?php echo $_GET["idpost"]; ?>" method="POST">
+    <div class="row mx-4">
 
-   <form id="form_commento" action="processa-inserimento.php?idpost=<?php echo $_GET["idpost"]; ?>" method="POST">
-   <div class="row mx-4">
-
-            <div class="col-12 mt-4 px-0 text-center">
-                <div class="input-group mb-3">
-                    <button class="btn btn-outline-secondary" value="Submit" form="form_commento" type="submit" id="button-addon2">Invia</button>
-                    <input type="hidden" id="usr" name="usr" value="<?php echo $dbh->getUsernameFromPost($_GET["idpost"])[0]["nickname"]; ?>">
-                    <label hidden for="textcommento">commento</label>
-                    <input type="text" class="form-control " name="textcommento" id="textcommento" placeholder="Inserisci il tuo commento.." autocomplete="off" aria-label="Recipient's username" aria-describedby="button-addon2">
-                </div>
+        <div class="col-12 mt-4 px-0 text-center">
+            <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary" value="Submit" form="form_commento" type="submit" id="button-addon2">Invia</button>
+                <input type="hidden" id="usr" name="usr" value="<?php echo $dbh->getUsernameFromPost($_GET["idpost"])[0]["nickname"]; ?>">
+                <label hidden for="textcommento">commento</label>
+                <input type="text" class="form-control " name="textcommento" maxlength="255" id="textcommento" placeholder="Inserisci il tuo commento.." autocomplete="off" aria-label="Recipient's username" aria-describedby="button-addon2">
             </div>
-            </div>
-
-    </form>
+        </div>
+    </div>
+</form>
 <?php foreach ($templateParams["getComments"] as $commento) : ?>
     <article class="bg-white">
         <div class="px-4">
@@ -34,7 +32,7 @@
                         <div class="alignme">
                             <a class="text-black px-2" href="profilo.php?usr=<?php echo $commento["nickname"]; ?>"><?php echo $commento["nickname"]; ?></a>
                             <br />
-                            <span class="small text-black px-2"><?php echo formatDate($commento["data_commento"]); ?></span>
+                            <span class="small text-black px-2"><?php echo $commento["data_commento"]; ?></span>
                         </div>
                         </div>
                         <?php if ($_SESSION["username"] == $commento["nickname"]) { ?>
