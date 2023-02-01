@@ -14,11 +14,11 @@
         </form>
     </div>
 </div>
-<div class="row g-1">
+<div class="row g-0">
     <div class="col text-center ps-2 <?php echo $templateParams["bg-followers"]; ?>">
         <a class="text-dark" href="profilo.php?usr=<?php echo $templateParams["profilo"]["nickname"]; ?>&view=followers">
-            <div class="row">
-                <div class="col-12 py-2">
+            <div class="row mx-0">
+                <div class="col-12 py-2 px-0">
                     <?php echo $templateParams["profilo"]["n_follower"]; ?> <br /> follower
                 </div>
             </div>
@@ -26,8 +26,8 @@
     </div>
     <div class="col text-center <?php echo $templateParams["bg-seguiti"]; ?>">
         <a class="text-dark" href="profilo.php?usr=<?php echo $templateParams["profilo"]["nickname"]; ?>&view=seguiti">
-            <div class="row">
-                <div class="col-12 py-2">
+            <div class="row mx-0">
+                <div class="col-12 py-2 px-0">
                     <?php echo $templateParams["profilo"]["n_seguiti"]; ?> <br /> seguiti
                 </div>
             </div>
@@ -35,8 +35,8 @@
     </div>
     <div class="col text-center pe-2 <?php echo $templateParams["bg-post"]; ?>">
         <a class="text-dark" href="profilo.php?usr=<?php echo $templateParams["profilo"]["nickname"]; ?>">
-            <div class="row">
-                <div class="col-12 py-2">
+            <div class="row mx-0">
+                <div class="col-12 py-2 px-0">
                     <?php echo $templateParams["n_post"]["total"]; ?> <br /> post
                 </div>
             </div>
