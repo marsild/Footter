@@ -21,7 +21,7 @@
     <div class="row mx-3 mb-4 text-center">
         <div class="col-12 mt-4 ">
             <label for="textarea" class="form-label" hidden>Testo post:</label>
-            <textarea class="form-control " minlength="2" maxlength="255" name="textarea" id="textarea" placeholder="Inserisci il testo.." rows="3"></textarea>
+            <textarea class="form-control " required maxlength="255" name="textarea" id="textarea" placeholder="Inserisci il testo.." rows="3"></textarea>
         </div>
     </div>
     <div class="row mx-3 mb-4">
