@@ -13,14 +13,10 @@
 
 
     
-    <div class="form-outline mb-4">
-        <input type="password" id="password" class="form-control" placeholder="Password" name="password" required>
+    <div class="input-group mb-4">
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" required>
         <label class="form-label" for="password" hidden>Password</label>
-        <div class="form-notch">
-            <div class="form-notch-leading" style="width: 9px;"></div>
-            <div class="form-notch-middle" style="width: 64px;"></div>
-            <div class="form-notch-trailing"></div>
-        </div>
+        <button onclick='switchPasswordVisibility("password")' class="btn border" type="button" id="basic-addon2"><span id="eye-icon" class="bi bi-eye"></span></button>
     </div>
 
     <!-- 2 column grid layout for inline styling -->

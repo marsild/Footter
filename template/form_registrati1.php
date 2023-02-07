@@ -24,8 +24,8 @@
     <div class="row g-1">
         <div class="col">
             <div class="input-group mb-4">
-                <label for="reg_username" hidden>Username:</label> 
                 <span class="input-group-text" id="basic-addon1">@</span>
+                <label for="reg_username" hidden>Username:</label> 
                 <input type="text" maxlength="20" class="form-control" id="reg_username" name="reg_username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
             </div>
         </div>
@@ -37,8 +37,8 @@
     <div class="row g-1">
         <div class="col">
             <div class="input-group mb-4">
-                <label for="reg_password" hidden>Password</label>
                 <button onclick='switchPasswordVisibility("reg_password")' class="btn border" type="button" id="basic-addon2"><span id="eye-icon" class="bi bi-eye"></span></button>
+                <label for="reg_password" hidden>Password</label>
                 <input type="password" maxlength="20" minlength="8" id="reg_password" name="reg_password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" required>
             </div>
         </div>
