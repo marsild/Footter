@@ -39,8 +39,8 @@
             <div class="row g-1">
                 <div class="col">
                     <div class="input-group mb-4">
-                        <label for="agg_password" hidden>Passwrgord</label>
                         <button onclick='switchPasswordVisibility("agg_password")' class="btn border" type="button" id="basic-addon2"><span id="eye-icon" class="bi bi-eye"></span></button>
+                        <label for="agg_password" hidden>Password</label>
                         <input type="password" maxlength="20" minlength="8" id="agg_password" name="agg_password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2">
                     </div>
                 </div>
@@ -52,12 +52,10 @@
                 <h1 class="fs-5">Mail</h1>
             </div>
 
-            <div class="row mb-3">
+            <div class="row mb-4">
                 <div class="col-12">
-                    <div class="input-group mb-3">
                         <label for="email"hidden>mail</label>
                         <input type="mail" class="form-control" id="email" name="email" placeholder="<?php echo $templateParams["profilo"]["email"] ?>" aria-label="Username" aria-describedby="basic-addon1">
-                    </div>
                 </div>
             </div>
 

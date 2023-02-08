@@ -1,11 +1,36 @@
-.nav-link{
+.mobile .nav-link{
   color: gray;
 }
 
-.active{
+.mobile .nav-link:focus{
+  color: gray;
+}
+
+.mobile .offcanvas .nav-link:hover{
+  font-size: large;
+}
+
+
+
+.mobile .active{
   color: white;
 }
 
+.desktop .nav-link{
+  color: gray;
+}
+
+.desktop .nav-link:focus{
+  color: gray;
+}
+
+.desktop .nav-link:hover{
+  font-size: large;
+}
+
+.desktop .active{
+  color: white;
+}
 .alignme {
 	margin:10px 0;
 }
@@ -59,4 +84,7 @@ a{
 }
 .fs_medium{
   font-size:medium;
+}
+.input-group>button:hover{
+  background-color:rgba(248, 249, 250,0.6);
 }
