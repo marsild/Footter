@@ -127,3 +127,13 @@ input[type="file"]:hover{
     visibility: hidden;
   }
 }
+
+.notifica_visualizzata{
+  background-color: white;
+}
+.notifica_non_visualizzata{
+  background-color: rgba(211, 211, 211,0.3);
+}
+.notifica_speciale{
+  background: linear-gradient(to right,  rgba(187, 254, 255, 0), rgba(187, 254, 255, 1));
+}

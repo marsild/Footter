@@ -2,11 +2,11 @@
     <div class="col-12 mb-5">
         <?php foreach($templateParams["notifiche"] as $notifica):?>
             <?php if($notifica["visualizzato"]==1) { ?>
-                <div class="row bg-white">
+                <div class="row notifica_visualizzata">
             <?php } elseif($notifica["messaggio"] == "ha caricato un post su una delle tue squadre preferite.") { ?>
-                <div class="row bg-info">
+                <div class="row notifica_speciale">
             <?php } else { ?>
-                <div class="row bg-light">
+                <div class="row notifica_non_visualizzata">
             <?php } ?>
                     <div class="col-12 my-2">
                         <div class="row mx-4">
