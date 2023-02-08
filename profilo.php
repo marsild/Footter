@@ -72,9 +72,9 @@
     }
 
     /* style di base dei pulsanti followers/seguiti/post */
-    $templateParams["bg-followers"]="bg-light border-bottom border-top";
-    $templateParams["bg-seguiti"]="bg-light border-bottom border-top border-start border-end";
-    $templateParams["bg-post"]="bg-light border-bottom border-top";
+    $templateParams["bg-followers"]="fol_seg_bg border-bottom border-top";
+    $templateParams["bg-seguiti"]="fol_seg_bg border-bottom border-top border-start border-end";
+    $templateParams["bg-post"]="fol_seg_bg border-bottom border-top";
 
     /*se siamo in followers o seguiti, cambia background del rispettivo pulsante e cambia link/elenco */
     if(isset($_GET["view"])&& ($_GET["view"]=="followers" || $_GET["view"]=="seguiti")){

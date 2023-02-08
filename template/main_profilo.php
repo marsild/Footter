@@ -46,6 +46,7 @@
 <!-- Se siamo nella pagina followers oppure seguiti-->
 <?php if (isset($templateParams["elenco"])) { ?>
     <?php $count = 0; ?>
+    <div class="mb-3">
     <?php foreach ($templateParams["elenco"] as $utente) : ?>
         <div class="row mx-3 my-3">
             <div class="col-2 text-end">
@@ -62,6 +63,7 @@
         <hr class="text-dark my-1">
         <?php $count = $count + 1; ?>
     <?php endforeach; ?>
+    </div>
     <?php if ($count == 0) {
         echo '<div class="row mx-3 my-3"><div class="col-12 text-center">Nessun utente trovato.</div></div>';
     } ?>
