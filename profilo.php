@@ -81,11 +81,15 @@
         if($_GET["view"]=="followers"){
             $templateParams["elenco"] = $dbh->getFollowers($templateParams["profilo"]["nickname"]);
             $templateParams["bg-followers"]="bg-white border-top";
-            $templateParams["actionPulsante"] = $templateParams["actionPulsante"]."&view=followers";
+            if($templateParams["actionPulsante"]!="impostazioni.php"){
+                $templateParams["actionPulsante"] = $templateParams["actionPulsante"]."&view=followers";
+            }
         } else {
             $templateParams["elenco"] = $dbh->getUtentiSeguiti($templateParams["profilo"]["nickname"]);
             $templateParams["bg-seguiti"]="bg-white border-top border-start border-end";
-            $templateParams["actionPulsante"] = $templateParams["actionPulsante"]."&view=seguiti";
+            if($templateParams["actionPulsante"]!="impostazioni.php"){
+                $templateParams["actionPulsante"] = $templateParams["actionPulsante"]."&view=seguiti";
+            }
         }
         } else {
             /* se siamo in post,
