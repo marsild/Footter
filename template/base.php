@@ -102,14 +102,14 @@
 
         <!-- DESKTOP HEADER -->
         <div class="desktop d-none d-sm-block col-sm-12">
-            <header class="bg-dark py-2 fixed-top text-center">
+            <header class="bg-dark bg-gradient py-2 fixed-top text-center">
                 <!--TESTO CENTRALE FOOTTER ⚽️⚽️-->
                 <a class="text-decoration-none text-white fs-4" href="index.php">Footter</a>
             </header>
         </div>
         <div class="row">
             <!--ASIDE (NAVBAR) DESKTOP-->
-            <div class="desktop d-none d-sm-block col-sm-3 bg-dark px-0 text-end">
+            <div class="desktop d-none d-sm-block col-sm-3 bg-dark px-0 text-end mt-1">
                 <aside class="mt-5">
                     <ul class="nav">
                         <li class="nav-item w-100">
@@ -159,7 +159,7 @@
             </div>
 
             <!--MAIN-->
-            <div class="col-12 col-sm-6 px-0 bg-white border">
+            <div class="col-12 col-sm-6 px-0 bg-white">
 
                 <main class="overflow-auto vh-100 bg-white">
                     <div class="mt-5 mb-4 overflow-hidden">
@@ -173,7 +173,7 @@
             </div>
 
             <!--ASIDE (PERSONALIZZA) DESKTOP-->
-            <div class="desktop d-none d-sm-block col-sm-3 bg-dark">
+            <div class="desktop d-none d-sm-block col-sm-3 bg-dark mt-1">
                 <aside class="mt-5">
                     <div class="pt-1">
                         <?php
