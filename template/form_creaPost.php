@@ -21,7 +21,7 @@
     <div class="row mx-3 mb-4 text-center">
         <div class="col-12 mt-4 ">
             <label for="textarea" class="form-label" hidden>Testo post:</label>
-            <textarea class="form-control " required maxlength="255" name="textarea" id="textarea" placeholder="Inserisci il testo.." rows="3"></textarea>
+            <textarea class="form-control " required maxlength="255" name="textarea" id="textarea" placeholder="Inserisci un testo con un massimo di 255 caratteri" rows="3"></textarea>
         </div>
     </div>
     <div class="row mx-3 mb-4">
@@ -61,7 +61,7 @@
             <a href="index.php">Annulla</a>
         </div>
         <div class="col text-center">
-            <input class="btn btn-info" type="submit" value="Pubblica">
+            <input class="btn btn-primary" type="submit" value="Pubblica">
         </div>
     </div>
 </form>

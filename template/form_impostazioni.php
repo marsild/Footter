@@ -63,7 +63,7 @@
                 <div class="col-12">
                     <label for="premuto"hidden>premuto</label>
                     <input type="hidden" id="premuto" name="premuto" value="true">
-                    <input class="btn btn-info" type="submit" value="Conferma">
+                    <input class="btn btn-primary" type="submit" value="Conferma">
                     <button type="button" class="btn px-0" data-bs-toggle="popover" title="Attenzione" data-bs-content="Verranno cambiati solo i campi modificati." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
 
                 </div>

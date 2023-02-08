@@ -117,3 +117,8 @@ a{
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+input[type="file"]:hover{
+  background-color: rgba(248, 249, 250,0.6);
+  color: black;
+}
