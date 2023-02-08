@@ -67,12 +67,12 @@
         <div class="col-12 mt-4 text-center">
             <?php if (isset($_SESSION["filtra"]) && $_SESSION["filtra"] == "preferiti") { ?>
                 <p class="text-break">Nessun post riguarda i tuoi preferiti. <br />
-                    <a href="cerca.php" class="text-break">Segui di più</a> <br />
+                    <a href="cerca.php" class="text-break btn btn-info my-2">Segui di più</a> <br />
                     oppure <br />
-                    <a href="preferiti.php" class="text-break">Aggiungi squadre preferite</a>
+                    <a href="preferiti.php" class="text-break btn btn-info my-2">Aggiungi squadre preferite</a>
                 </p>
             <?php } else { ?>
-                <a href="cerca.php" class="text-break">Inizia a seguire utenti per vedere post!</a>
+                <a href="cerca.php" class="text-break btn btn-info my-2">Inizia a seguire utenti per vedere post!</a>
             <?php } ?>
         </div>
     </div>

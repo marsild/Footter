@@ -7,10 +7,10 @@
                                                                 } ?>" alt="Immagine profilo">
     </div>
     <div class="col-8 my-3">
-        <p><?php echo $templateParams["profilo"]["nome"]; ?> <?php echo $templateParams["profilo"]["cognome"]; ?> <br /> @<?php echo $templateParams["profilo"]["nickname"]; ?> </p>
+        <p class="mb-2"><?php echo $templateParams["profilo"]["nome"]; ?> <?php echo $templateParams["profilo"]["cognome"]; ?> <br /> @<?php echo $templateParams["profilo"]["nickname"]; ?> </p>
         <form action="<?php echo $templateParams["actionPulsante"]; ?>" method="POST">
             <input type="hidden" id="un_follow" name="un_follow" value="<?php echo $templateParams["testoPulsante"]; ?>">
-            <input type="submit" value="<?php echo $templateParams["testoPulsante"]; ?>" class="btn btn-light border">
+            <input type="submit" value="<?php echo $templateParams["testoPulsante"]; ?>" class="btn btn-primary border">
         </form>
     </div>
 </div>
@@ -225,18 +225,18 @@
                     <?php if (isset($_GET["filtra"]) && $_GET["filtra"] == "preferiti") { ?>
                         <p class="text-break">
                             Non hai ancora pubblicato nulla sui tuoi preferiti. <br />
-                            <a href="crea.php" class="text-break">Crea un post ora</a> <br />
+                            <a href="crea.php" class="text-break btn btn-info my-2">Crea un post ora</a> <br />
                             oppure <br />
-                            <a href="preferiti.php" class="text-break">Aggiorna i preferiti</a>
+                            <a href="preferiti.php" class="text-break btn btn-info my-2">Aggiorna i preferiti</a>
                         </p>
                     <?php } else { ?>
-                        <a href="crea.php" class="text-break">Crea il tuo primo post.</a>
+                        <a href="crea.php" class="text-break btn btn-info my-2">Crea il tuo primo post</a>
                     <?php } ?>
                 <?php } else { ?>
                     <?php if (isset($_GET["filtra"]) && $_GET["filtra"] == "preferiti") { ?>
                         <p class="text-break">
                             Nessun post riguarda i tuoi preferiti. <br />
-                            <a href="preferiti.php" class="text-break">Aggiorna i preferiti</a>
+                            <a href="preferiti.php" class="text-break btn btn-info my-2">Aggiorna i preferiti</a>
                         </p>
                     <?php } else { ?>
                         <p>Ancora nessun post pubblicato.</p>
