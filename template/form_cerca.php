@@ -20,7 +20,7 @@
     <?php if(isset($templateParams["user"])){ ?>
         <?php foreach($templateParams["user"] as $utente) : ?>
             <?php if(str_contains(strtolower($utente["nickname"]),strtolower($_GET["search"]))){ ?>
-                <li class="list-group-item" aria-current="true">
+                <li class="list-group-item profili" aria-current="true">
                     <div>
                     <img class="float-start img50 rounded-circle border border-1" src="<?php if($utente["immagine"] == null){echo UPLOAD_DIR."pfp.png";}else{ echo "data:image/jpg;charset=utf8;base64,".base64_encode($utente["immagine"]);}?>" alt="ImmagineUtente">
                     </div>

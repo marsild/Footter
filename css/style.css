@@ -1,3 +1,8 @@
+*{
+font-family:Arial, Helvetica, sans-serif
+}
+
+
 .mobile .nav-link{
   color: gray;
 }
@@ -9,8 +14,26 @@
 .mobile .offcanvas .nav-link:hover{
   font-size: large;
 }
-
-
+.filtraggio{
+  color: gray;
+}
+.filtraggio_active{
+  color: white;
+}
+.filtraggio:hover{
+  font-size: large;
+  color: gray;
+}
+.filtraggio_active:hover {
+  font-size: large;
+  color: white;
+}
+.filtraggio:focus{
+  color: gray !important;
+}
+.filtraggio_active:focus{
+  color: white !important;
+}
 
 .mobile .active{
   color: white;
@@ -87,4 +110,10 @@ a{
 }
 .input-group>button:hover{
   background-color:rgba(248, 249, 250,0.6);
+}
+
+.profili:hover{
+  font-size: large;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
