@@ -137,3 +137,7 @@ input[type="file"]:hover{
 .notifica_speciale{
   background: linear-gradient(to right,  rgba(187, 254, 255, 0), rgba(187, 254, 255, 1));
 }
+
+.unused{
+  visibility: hidden;
+}

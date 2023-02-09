@@ -16,7 +16,7 @@
         <div class="mobile d-block d-sm-none col-12">
             <header class="bg-dark">
                 <!--NAVBAR-->
-                <nav class="z-2 navbar fixed-top navbar-dark bg-dark">
+                <nav class="z-2 navbar fixed-top navbar-dark bg-dark bg-gradient">
                     <!--PULSANTE UTENTE-->
                     <button class="btn btn-link text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                         <span class="bi bi-list"></span>
@@ -59,7 +59,7 @@
                     if (isset($templateParams["pulsante_offcanvas"])) {
                         require($templateParams["pulsante_offcanvas"]);
                     } else {
-                        echo '<button class="btn" type="button" disabled><span class="bi bi-stars"></span></button>';
+                        echo '<button class="btn unused" type="button" disabled><span class="bi bi-stars"></span></button>';
                     }
                     ?>
                 </nav>

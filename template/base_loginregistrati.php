@@ -14,7 +14,7 @@
     <div class="container-fluid p-0 overflow-hidden">
         <div class="row">
             <div class="col-12 ">
-                <header class="bg-dark text-center py-2 fs-4 text-white ">
+                <header class="bg-dark bg-gradient text-center py-2 fs-4 text-white ">
                     Footter
                 </header>
             </div>
