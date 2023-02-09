@@ -109,7 +109,7 @@
         </div>
         <div class="row">
             <!--ASIDE (NAVBAR) DESKTOP-->
-            <div class="desktop d-none d-sm-block col-sm-3 bg-dark px-0 text-end mt-1">
+            <div class="desktop d-none d-sm-block col-sm-1 col-md-3 bg-dark px-0 text-end mt-1">
                 <aside class="mt-5">
                     <ul class="nav">
                         <li class="nav-item w-100">
@@ -159,7 +159,7 @@
             </div>
 
             <!--MAIN-->
-            <div class="col-12 col-sm-6 px-0 bg-white">
+            <div class="col-12 col-sm-8 col-md-6 px-0 bg-white">
 
                 <main class="overflow-auto vh-100 bg-white">
                     <div class="mt-5 mb-4 overflow-hidden">

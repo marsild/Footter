@@ -121,7 +121,12 @@ input[type="file"]:hover{
   background-color: rgba(248, 249, 250,0);
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 768px) {
+  .desktop aside .nav-link{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-left: 5px;
+  }
   .testo-icona {
     font-size: xx-small;
     visibility: hidden;
