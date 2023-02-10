@@ -115,44 +115,44 @@
                         <li class="nav-item w-100">
                             <a class="nav-link<?php if ($templateParams["active"] == "Profilo") {
                                                     echo ' active" aria-current="page';
-                                                } ?>" href="profilo.php"><span class="testo-icona">Profilo</span> <span class="bi bi-person-circle"></span></a>
+                                                } ?>" href="profilo.php" title="Profilo"><span class="testo-icona">Profilo</span> <span class="bi bi-person-circle"></span></a>
                         </li>
                         <li class="nav-item w-100">
                             <a class="nav-link<?php if ($templateParams["active"] == "Home") {
                                                     echo ' active" aria-current="page';
-                                                } ?>" href="index.php"><span class="testo-icona">Home</span> <span class="bi bi-house"></span></a>
+                                                } ?>" href="index.php" title="Home"><span class="testo-icona">Home</span> <span class="bi bi-house"></span></a>
                         </li>
                         <li class="nav-item w-100">
                             <a class="nav-link<?php if ($templateParams["active"] == "Cerca") {
                                                     echo ' active" aria-current="page';
-                                                } ?>" href="cerca.php"><span class="testo-icona">Cerca</span> <span class="bi bi-search"></span></a>
+                                                } ?>" href="cerca.php" title="Cerca"><span class="testo-icona">Cerca</span> <span class="bi bi-search"></span></a>
                         </li>
                         <li class="nav-item w-100">
                             <a class="nav-link<?php if ($templateParams["active"] == "Notifiche") {
                                                     echo ' active" aria-current="page';
                                                 } elseif ($dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"] > 0) {
                                                     echo ' text-warning"';
-                                                } ?>" href="notifiche.php"><span class="testo-icona">Notifiche</span> <span class="bi bi-bell<?php if ($templateParams["active"] != "Notifiche" && $dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"] > 0) {
+                                                } ?>" href="notifiche.php" title="Notifiche"><span class="testo-icona">Notifiche</span> <span class="bi bi-bell<?php if ($templateParams["active"] != "Notifiche" && $dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"] > 0) {
                                                                                                                                                                                                                                                                                                         echo "-fill text-warning";
                                                                                                                                                                                                                                                                                                     } ?>"></span></a>
                         </li>
                         <li class="nav-item w-100">
                             <a class="nav-link<?php if ($templateParams["active"] == "Crea") {
                                                     echo ' active" aria-current="page';
-                                                } ?>" href="crea.php"><span class="testo-icona">Crea</span> <span class="bi bi-pencil-square"></span></a>
+                                                } ?>" href="crea.php" title="Crea"><span class="testo-icona">Crea</span> <span class="bi bi-pencil-square"></span></a>
                         </li>
                         <li class="nav-item w-100">
                             <a class="nav-link<?php if ($templateParams["active"] == "Preferiti") {
                                                     echo ' active" aria-current="page';
-                                                } ?>" href="preferiti.php"><span class="testo-icona">Preferiti</span> <span class="bi bi-star"></span></a>
+                                                } ?>" href="preferiti.php" title="Preferiti"><span class="testo-icona">Preferiti</span> <span class="bi bi-star"></span></a>
                         </li>
                         <li class="nav-item w-100">
                             <a class="nav-link<?php if ($templateParams["active"] == "Impostazioni") {
                                                     echo ' active" aria-current="page';
-                                                } ?>" href="impostazioni.php"><span class="testo-icona">Impostazioni</span> <span class="bi bi-gear"></span></a>
+                                                } ?>" href="impostazioni.php" title="Impostazioni"><span class="testo-icona">Impostazioni</span> <span class="bi bi-gear"></span></a>
                         </li>
                         <li class="nav-item w-100">
-                            <a class="nav-link" href="logout.php"><span class="testo-icona">Esci</span> <span class="bi bi-box-arrow-left"></span></a>
+                            <a class="nav-link" href="logout.php" title="Esci"><span class="testo-icona">Esci</span> <span class="bi bi-box-arrow-left"></span></a>
                         </li>
                     </ul>
                 </aside>
