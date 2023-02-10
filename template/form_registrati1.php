@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="col-1 px-0 text-center">
-            <button type="button" class="btn px-0" data-bs-toggle="popover" title="Attenzione!" data-bs-content="L'username non può essere cambiato. Sceglilo attentamente." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
+            <button type="button" class="btn px-0" data-bs-toggle="popover" data-bs-trigger="focus" title="Attenzione!" data-bs-content="L'username non può essere cambiato. Sceglilo attentamente." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
         </div>
     </div>
     <!-- Password input -->
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="col-1 px-0 text-center">
-            <button type="button" class="btn px-0" data-bs-toggle="popover" title="Requisiti" data-bs-content="8 caratteri di cui:<br />1 maiuscola<br />1 minuscola<br />1 numero<br />1 carattere speciale" data-bs-html="true"><span class="bi bi-info-circle"></span></button>
+            <button type="button" class="btn px-0" data-bs-toggle="popover" data-bs-trigger="focus" title="Requisiti" data-bs-content="8 caratteri di cui:<br />1 maiuscola<br />1 minuscola<br />1 numero<br />1 carattere speciale" data-bs-html="true"><span class="bi bi-info-circle"></span></button>
         </div>
     </div>
     <div class="col-12 mb-4 text-danger">

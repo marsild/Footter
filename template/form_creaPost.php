@@ -30,7 +30,7 @@
             <input type="file" class=" form-control btn btn-outline-dark" name="imgpost" id="imgpost" value="Inserisci un'immagine..">
         </div>
         <div class="col-1 px-0 text-center">
-            <button type="button" class="btn px-0" data-bs-toggle="popover" title="Requisiti" data-bs-content="File ammessi: ‘jpg','png','jpeg','gif’. <br />Dimensioni massime: 500kb. <br /> I file che non rispettano questi requisiti verranno automaticamente ignorati." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
+            <button type="button" class="btn px-0" data-bs-toggle="popover" data-bs-trigger="focus" title="Requisiti" data-bs-content="File ammessi: ‘jpg','png','jpeg','gif’. <br />Dimensioni massime: 500kb. <br /> I file che non rispettano questi requisiti verranno automaticamente ignorati." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
         </div>
     </div>
     <div class="row mx-3 mb-2">

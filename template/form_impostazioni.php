@@ -28,7 +28,7 @@
                     <input type="file" class=" form-control btn btn-outline-dark" name="imgutente" id="imgutente" value="Inserisci un'immagine..">
                 </div>
                 <div class="col-1 px-0 text-center">
-                    <button type="button" class="btn px-0" data-bs-toggle="popover" title="Requisiti" data-bs-content="File ammessi: 'jpg','png','jpeg','gif’. <br />Dimensioni massime: 500kb. <br /> I file che non rispettano questi requisiti verranno automaticamente ignorati." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
+                    <button type="button" class="btn px-0" data-bs-toggle="popover" data-bs-trigger="focus" title="Requisiti" data-bs-content="File ammessi: 'jpg','png','jpeg','gif’. <br />Dimensioni massime: 500kb. <br /> I file che non rispettano questi requisiti verranno automaticamente ignorati." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
                 </div>
             </div>
             <hr class="text-black-50">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="col-1 px-0 text-center">
-                    <button type="button" class="btn px-0" data-bs-toggle="popover" title="Requisiti" data-bs-content="8 caratteri di cui:<br />1 maiuscola<br />1 minuscola<br />1 numero<br />1 carattere speciale" data-bs-html="true"><span class="bi bi-info-circle"></span></button>
+                    <button type="button" class="btn px-0" data-bs-toggle="popover" data-bs-trigger="focus" title="Requisiti" data-bs-content="8 caratteri di cui:<br />1 maiuscola<br />1 minuscola<br />1 numero<br />1 carattere speciale" data-bs-html="true"><span class="bi bi-info-circle"></span></button>
                 </div>
             </div>
             <div class="col-12">
@@ -64,7 +64,7 @@
                     <label for="premuto"hidden>premuto</label>
                     <input type="hidden" id="premuto" name="premuto" value="true">
                     <input class="btn btn-primary" type="submit" value="Conferma">
-                    <button type="button" class="btn px-0" data-bs-toggle="popover" title="Attenzione" data-bs-content="Verranno cambiati solo i campi modificati." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
+                    <button type="button" class="btn px-0" data-bs-toggle="popover" data-bs-trigger="focus" title="Attenzione" data-bs-content="Verranno cambiati solo i campi modificati." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
 
                 </div>
 

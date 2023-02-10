@@ -22,7 +22,7 @@
         <input type="submit" value="Registrati" class="btn btn-primary btn-block w-20">
     </div>
     <div class="d-grid col-1 mt-4 px-0">
-    <button type="button" class="btn px-0" data-bs-toggle="popover" title="Non preoccuparti!" data-bs-content="Solo tu potrai vedere i tuoi preferiti." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
+    <button type="button" class="btn px-0" data-bs-toggle="popover" data-bs-trigger="focus" title="Non preoccuparti!" data-bs-content="Solo tu potrai vedere i tuoi preferiti." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
 
     </div>
     </div>
