@@ -7,7 +7,7 @@
                                                                 } ?>" alt="Immagine profilo">
     </div>
     <div class="col-8 my-3">
-        <p class="mb-2"><?php echo $templateParams["profilo"]["nome"]; ?> <?php echo $templateParams["profilo"]["cognome"]; ?> <br /> @<?php echo $templateParams["profilo"]["nickname"]; ?> </p>
+        <p class="mb-2"><?php echo $templateParams["profilo"]["nome"]; ?> <?php echo $templateParams["profilo"]["cognome"]; ?> <br> @<?php echo $templateParams["profilo"]["nickname"]; ?> </p>
         <form action="<?php echo $templateParams["actionPulsante"]; ?>" method="POST">
             <input type="hidden" id="un_follow" name="un_follow" value="<?php echo $templateParams["testoPulsante"]; ?>">
             <input type="submit" value="<?php echo $templateParams["testoPulsante"]; ?>" class="btn btn-primary border">
@@ -19,7 +19,7 @@
         <a class="text-dark" href="profilo.php?usr=<?php echo $templateParams["profilo"]["nickname"]; ?>&view=followers">
             <div class="row mx-0">
                 <div class="col-12 py-2 px-0">
-                    <?php echo $templateParams["profilo"]["n_follower"]; ?> <br /> follower
+                    <?php echo $templateParams["profilo"]["n_follower"]; ?> <br> follower
                 </div>
             </div>
         </a>
@@ -28,7 +28,7 @@
         <a class="text-dark" href="profilo.php?usr=<?php echo $templateParams["profilo"]["nickname"]; ?>&view=seguiti">
             <div class="row mx-0">
                 <div class="col-12 py-2 px-0">
-                    <?php echo $templateParams["profilo"]["n_seguiti"]; ?> <br /> seguiti
+                    <?php echo $templateParams["profilo"]["n_seguiti"]; ?> <br> seguiti
                 </div>
             </div>
         </a>
@@ -37,7 +37,7 @@
         <a class="text-dark" href="profilo.php?usr=<?php echo $templateParams["profilo"]["nickname"]; ?>">
             <div class="row mx-0">
                 <div class="col-12 py-2 px-0">
-                    <?php echo $templateParams["n_post"]["total"]; ?> <br /> post
+                    <?php echo $templateParams["n_post"]["total"]; ?> <br> post
                 </div>
             </div>
         </a>
@@ -85,7 +85,7 @@
             }
             ?>
             <?php if ($showpost == true) { ?>
-                <article class="bg-white">
+                <article class="bg-white" aria-label="Post">
                     <div class="row mx-4 mx-lg-2">
                         <div class="d-none d-lg-block col-lg-1 mt-3"></div>
                         <div class="col-2 col-lg-1 px-0 text-end align-self-center mt-3">
@@ -96,7 +96,7 @@
                                                                                     } ?>" alt="Immagine profilo utente">
                         </div>
                         <div class="col-6 col-md-7 pe-0 align-self-center mt-3">
-                            <a class="text-break text-black" href="profilo.php?usr=<?php echo $post["nickname"]; ?>"><?php echo $post["nickname"]; ?></a><br />
+                            <a class="text-break text-black" href="profilo.php?usr=<?php echo $post["nickname"]; ?>"><?php echo $post["nickname"]; ?></a><br>
                             <span class="small"><?php echo formatDate($post["data_post"]); ?></span>
                         </div>
                         <div class="col-4 col-md-3 col-lg-2 text-end align-self-center mt-3 text-end px-0">
@@ -115,7 +115,7 @@
                             </div>
                             <?php if (!empty($post["ImmaginePost"])) { ?>
                                 <div class="row text-center">
-                                    <img class="imgpost border border-3 mx-auto img-fluid mt-2" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post["ImmaginePost"]); ?>" alt="Immagine post" />
+                                    <img class="imgpost border border-3 mx-auto img-fluid mt-2" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post["ImmaginePost"]); ?>" alt="Immagine post">
                                 </div>
                             <?php } ?>
                             <div class="row">
@@ -226,9 +226,9 @@
                 <?php if ($templateParams["testoPulsante"] == "Modifica") { ?>
                     <?php if (isset($_GET["filtra"]) && $_GET["filtra"] == "preferiti") { ?>
                         <p class="text-break">
-                            Non hai ancora pubblicato nulla sui tuoi preferiti. <br />
-                            <a href="crea.php" class="text-break btn btn-info my-2">Crea un post ora</a> <br />
-                            oppure <br />
+                            Non hai ancora pubblicato nulla sui tuoi preferiti. <br>
+                            <a href="crea.php" class="text-break btn btn-info my-2">Crea un post ora</a> <br>
+                            oppure <br>
                             <a href="preferiti.php" class="text-break btn btn-info my-2">Aggiorna i preferiti</a>
                         </p>
                     <?php } else { ?>
@@ -237,7 +237,7 @@
                 <?php } else { ?>
                     <?php if (isset($_GET["filtra"]) && $_GET["filtra"] == "preferiti") { ?>
                         <p class="text-break">
-                            Nessun post riguarda i tuoi preferiti. <br />
+                            Nessun post riguarda i tuoi preferiti. <br>
                             <a href="preferiti.php" class="text-break btn btn-info my-2">Aggiorna i preferiti</a>
                         </p>
                     <?php } else { ?>
