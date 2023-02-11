@@ -3,11 +3,9 @@
         <div class="col-1"></div>
         <div class="col-10 mt-4 mb-3">
             <div class="z-1 input-group mb-3">
-                <button class="btn border" form="cerca_utente" type="submit"><span class="bi bi-search"></span></button>
-                <label for="search"hidden>input cerca</label>
-                <input type="text" name="search" id="search" class=" shadow form-control btn btn-outline-light border border-b-1 text-dark" placeholder="Cerca i tuoi amici" aria-label="Example text with button addon" aria-describedby="button-addon2">
-
-
+                <button class="btn border" form="cerca_utente" type="submit" id="button-addon2"><span class="bi bi-search"></span></button>
+                <label for="search" hidden>input cerca</label>
+                <input type="text" name="search" id="search" class="shadow form-control btn btn-outline-light border border-b-1 text-dark" placeholder="Cerca i tuoi amici" aria-label="Example text with button addon" aria-describedby="button-addon2">
             </div>
         </div>
         <div class="col-1"></div>
