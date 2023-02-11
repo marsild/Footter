@@ -5,7 +5,7 @@
     <input type="hidden" id="reg_password" name="reg_password" value="<?php echo $_POST["reg_password"]?>">
     <input type="hidden" id="reg_username" name="reg_username" value="<?php echo $_POST["reg_username"]?>">
     <div class="row col-12 mx-auto">
-    <div class="text-center mb-3 col-12 fs_medium"> Supporta le tue squadre preferite! <br /></div>
+    <div class="text-center mb-3 col-12 fs_medium"> Supporta le tue squadre preferite! <br></div>
     <?php foreach($dbh->getSquads() as $squadra):?>
         <div class="form-check form-check-inline mx-0 my-1 col-6 ">
             <input class="form-check-input" type="checkbox" value="<?php echo $squadra["nome"];?>" id="checkbox<?php echo $squadra["nome"];?>" name="checkbox<?php echo $squadra["nome"];?>">

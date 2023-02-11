@@ -30,13 +30,13 @@
 
         <div class="row">
             <div class="col-12">
-                <section class="w-100 p-4 d-flex justify-content-center">
+                <div class="w-100 p-4 d-flex justify-content-center">
                     <?php
                     if (isset($templateParams["form_loginregistrati"])) {
                         require($templateParams["form_loginregistrati"]);
                     }
                     ?>
-                </section>
+                </div>
             </div>
         </div>
     </div>
