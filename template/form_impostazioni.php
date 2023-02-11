@@ -5,7 +5,7 @@
             <h1 class="fs-5 pl-2">Dati Personali</h1>
             <div class="row ">
                 <div class="col-5 ml-5 text-center">
-                    <img alt="imgutente"src="<?php if ($templateParams["profilo"]["immagine"] == null) {
+                    <img src="<?php if ($templateParams["profilo"]["immagine"] == null) {
                                     echo UPLOAD_DIR . "pfp.png";
                                 } else {
                                     echo "data:image/jpg;charset=utf8;base64," . base64_encode($templateParams["profilo"]["immagine"]);
@@ -13,19 +13,19 @@
                 </div>
                 <div class="col-7">
                     <div class="mb-3">
-                        <label for="nome"hidden>nome</label>
+                        <label for="nome" hidden>nome</label>
                         <input type="text" class="form-control" maxlength="20" name="nome" id="nome" placeholder="<?php echo $templateParams["profilo"]["nome"] ?>">
                     </div>
                     <div class="mb-3">
-                        <label for="cognome"hidden>cognome</label>
+                        <label for="cognome" hidden>cognome</label>
                         <input type="text" class="form-control" id="cognome" maxlength="20" name="cognome" placeholder="<?php echo $templateParams["profilo"]["cognome"] ?>">
                     </div>
                 </div>
             </div>
             <div class="row g-1">
                 <div class="col-11 text-center">
-                    <label for="imgutente"hidden>immagine utente</label>
-                    <input type="file" class=" form-control btn btn-outline-dark" name="imgutente" id="imgutente" value="Inserisci un'immagine..">
+                    <label for="imgutente" hidden>immagine utente</label>
+                    <input type="file" class="form-control btn btn-outline-dark" name="imgutente" id="imgutente">
                 </div>
                 <div class="col-1 px-0 text-center">
                     <button type="button" class="btn px-0" data-bs-toggle="popover" data-bs-trigger="focus" title="Requisiti" data-bs-content="File ammessi: 'jpg','png','jpeg','gif’. <br />Dimensioni massime: 500kb. <br /> I file che non rispettano questi requisiti verranno automaticamente ignorati." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
@@ -54,18 +54,16 @@
 
             <div class="row mb-4">
                 <div class="col-12">
-                        <label for="email"hidden>mail</label>
-                        <input type="mail" class="form-control" id="email" name="email" placeholder="<?php echo $templateParams["profilo"]["email"] ?>" aria-label="Username" aria-describedby="basic-addon1">
+                        <label for="email" hidden>mail</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo $templateParams["profilo"]["email"] ?>" aria-label="Username">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12">
-                    <label for="premuto"hidden>premuto</label>
                     <input type="hidden" id="premuto" name="premuto" value="true">
                     <input class="btn btn-primary" type="submit" value="Conferma">
                     <button type="button" class="btn px-0" data-bs-toggle="popover" data-bs-trigger="focus" title="Attenzione" data-bs-content="Verranno cambiati solo i campi modificati." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
-
                 </div>
 
             </div>

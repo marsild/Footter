@@ -12,7 +12,7 @@
     </div>
 </form>
 <?php foreach ($templateParams["getComments"] as $commento) : ?>
-    <article class="bg-white">
+    <article class="bg-white" aria-label="Commento del post">
         <div class="px-4">
             <div class="row">
                 <?php if ($_SESSION["username"] == $commento["nickname"]) { ?>
@@ -31,7 +31,7 @@
                         </div>
                         <div class="alignme">
                             <a class="text-black px-2" href="profilo.php?usr=<?php echo $commento["nickname"]; ?>"><?php echo $commento["nickname"]; ?></a>
-                            <br />
+                            <br>
                             <span class="small text-black px-2"><?php echo formatDate($commento["data_commento"]); ?></span>
                         </div>
                         </div>
@@ -57,7 +57,7 @@
 
                     </div>
             </div>
-            <section class="px-5">
+            <section class="px-5" aria-label="Testo del commento">
                 <p class="text-break"><?php echo $commento["testo"]; ?></p>
             </section>
             <hr class="text-black-50">
