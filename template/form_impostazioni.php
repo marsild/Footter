@@ -1,7 +1,7 @@
 <form action="impostazioni.php?result=successful" method="POST" enctype="multipart/form-data">
     <div class="row mx-2">
         <div class="col-1"></div>
-        <div class="z-1 col-10 my-4 px-0">
+        <div class="z-0 col-10 my-4 px-0">
             <h1 class="fs-5 pl-2">Dati Personali</h1>
             <div class="row ">
                 <div class="col-5 ml-5 text-center">
@@ -76,7 +76,7 @@
                                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                             </symbol>
                         </svg>
-                        <div class="alert alert-success d-flex align-items-center mt-4 mb-0" role="alert">
+                        <div class="alert alert-success d-flex align-items-center my-4" role="alert">
                             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
                                 <use xlink:href="#check-circle-fill" />
                             </svg>

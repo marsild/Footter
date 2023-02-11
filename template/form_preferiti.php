@@ -6,7 +6,7 @@
     </div>
     <input type="hidden" id="aggiorna_preferiti" name="aggiorna_preferiti" value="on">
 
-    <div class="row col-12 mx-3">
+    <div class="row col-12 mx-4">
         <?php foreach ($dbh->getSquads() as $squadra) : ?>
             <div class="form-check form-check-inline mx-0 my-1 col-6 ">
                 <input class="form-check-input" type="checkbox" value="<?php echo $squadra["nome"]; ?>" id="box<?php echo $squadra["nome"]; ?>" name="box<?php echo $squadra["nome"]; ?>" <?php if (in_array($squadra["nome"], flatArray($templateParams["preferiti"], "squadra"))) {
@@ -20,7 +20,7 @@
         <?php endforeach; ?>
     </div>
     <?php if (isset($_GET["result"]) && $_GET["result"] == "successful") { ?>
-        <div class="row mx-3">
+        <div class="row mx-4">
             <div class="col-12 px-0">
                 <svg xmlns="http://www.w3.org/2000/svg" class="alert_successo">
                     <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
@@ -39,7 +39,7 @@
         </div>
     <?php } ?>
     <!-- Submit button -->
-    <div class="row mx-3">
+    <div class="row mx-4 mb-4">
         <div class="col-12 mt-3 px-0">
             <input type="submit" value="Aggiorna" class="btn btn-primary">
         </div>

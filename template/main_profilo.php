@@ -46,7 +46,7 @@
 <!-- Se siamo nella pagina followers oppure seguiti-->
 <?php if (isset($templateParams["elenco"])) { ?>
     <?php $count = 0; ?>
-    <div class="mb-3">
+    <div class="mb-4">
     <?php foreach ($templateParams["elenco"] as $utente) : ?>
         <div class="row mx-3 my-3">
             <div class="col-2 text-end">

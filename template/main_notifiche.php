@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-12 mb-5">
+    <div class="col-12 mb-4">
         <?php foreach($templateParams["notifiche"] as $notifica):?>
             <?php if($notifica["visualizzato"]==1) { ?>
                 <div class="row notifica_visualizzata">

@@ -11,7 +11,7 @@
         <div class="col-1"></div>
     </div>
 </form>
-<div class="row">
+<div class="row mb-4">
     <div class="col-1"></div>
     <div class="col-10">
     <ul class="list-group">
