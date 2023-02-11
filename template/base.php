@@ -131,7 +131,7 @@
                             <a class="nav-link<?php if ($templateParams["active"] == "Notifiche") {
                                                     echo ' active" aria-current="page';
                                                 } elseif ($dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"] > 0) {
-                                                    echo ' text-warning"';
+                                                    echo ' text-warning';
                                                 } ?>" href="notifiche.php" title="Notifiche"><span class="testo-icona">Notifiche</span> <span class="bi bi-bell<?php if ($templateParams["active"] != "Notifiche" && $dbh->getNotificheNonVisualizzate($_SESSION["username"])[0]["nr"] > 0) {
                                                                                                                                                                                                                                                                                                         echo "-fill text-warning";
                                                                                                                                                                                                                                                                                                     } ?>"></span></a>
