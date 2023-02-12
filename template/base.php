@@ -104,7 +104,7 @@
         <div class="desktop d-none d-sm-block col-sm-12">
             <header class="bg-dark bg-gradient py-2 fixed-top text-center">
                 <!--TESTO CENTRALE FOOTTER ⚽️⚽️-->
-                <button type="button" class="p-0 btn btn-link text-decoration-none text-white fs-4" id="button_modal" >Footter</a>
+                <button type="button" class="p-0 btn btn-link text-decoration-none text-white fs-4" id="button_modal" >Footter</button>
             </header>
         </div>
         <!-- Modal (porta che si muove) -->
