@@ -31,3 +31,36 @@ function switchPasswordVisibility(val) {
         icon.className = "bi bi-eye-slash-fill";
     }
   }
+
+//minigioco
+const audio_kick = new Audio("./upload/kick.mp3");
+const audio_goal = new Audio("./upload/goal.mp3");
+const spongebob = new Audio("./upload/spongebob.mp3");
+const buttons = document.querySelectorAll("#button_modal");
+const goal_a = document.querySelectorAll("#porta_calcio");
+var modal = document.getElementById("modal_porta");
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    audio_kick.play();
+    spongebob.pause();
+    spongebob.currentTime = 0;
+    modal.style.display = "block";
+    //chiusura automatica
+    myTimeout=setTimeout(function(){
+      modal.style.display = "none";
+      spongebob.play();
+      button.disabled = false;
+    }, 5000);
+    button.disabled = true;
+  });
+});
+goal_a.forEach(porta => {
+  porta.addEventListener("click", () => {
+    audio_goal.play();
+    modal.style.display = "none";
+    buttons.forEach(button => {
+      button.disabled = false;
+    });
+    clearTimeout(myTimeout);
+  });
+});
