@@ -3,10 +3,10 @@
 
         <div class="col-12 mt-4 px-0 text-center">
             <div class="input-group mb-3">
-                <button class="btn btn-outline-secondary text-secondary z-1 " value="Submit" form="form_commento" type="submit" id="button-addon2">Invia</button>
+                <button class="btn btn-outline-secondary text-secondary z-0 " value="Submit" form="form_commento" type="submit" id="button-addon2">Invia</button>
                 <input type="hidden" id="usr" name="usr" value="<?php echo $dbh->getUsernameFromPost($_GET["idpost"])[0]["nickname"]; ?>">
                 <label hidden for="textcommento">commento</label>
-                <input type="text" class="form-control " name="textcommento" required maxlength="255" id="textcommento" placeholder="Inserisci il tuo commento.." autocomplete="off" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input type="text" class="form-control border border-secondary" name="textcommento" required maxlength="255" id="textcommento" placeholder="Inserisci il tuo commento.." autocomplete="off" aria-label="Recipient's username" aria-describedby="button-addon2">
             </div>
         </div>
     </div>
