@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-4 col-md-3 col-lg-2 text-end align-self-center mt-3 text-end px-0">
                         <?php foreach ($dbh->getSquadreTaggate($post["id"]) as $squadra) : ?>
-                            <img class="img30" src="<?php echo UPLOAD_DIR . $squadra["logo"]; ?>" alt="<?php echo $squadra["nome"]; ?>">
+                            <img class="img30" src="<?php echo UPLOAD_DIR . $squadra["logo"]; ?>" alt="<?php echo $squadra["nome"]; ?>" title="<?php echo $squadra["nome"]; ?>">
                         <?php endforeach; ?>
                     </div>
                     <div class="d-none d-lg-block col-lg-1 mt-3"></div>

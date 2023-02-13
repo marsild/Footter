@@ -18,7 +18,7 @@
                 <!--NAVBAR-->
                 <nav class="z-2 navbar fixed-top navbar-dark bg-dark bg-gradient">
                     <!--PULSANTE UTENTE-->
-                    <button class="btn btn-link text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <button class="btn btn-link text-white navbar_button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                         <span class="bi bi-list"></span>
                     </button>
                     <!--MENU UTENTE-->
@@ -53,8 +53,7 @@
                     </div>
 
                     <!--TESTO CENTRALE FOOTTER ⚽️⚽️-->
-                    <a class="text-decoration-none text-white fs-4" href="index.php">Footter</a>
-
+                    <button type="button" class="p-0 btn btn-link text-decoration-none text-white fs-4 button_modal">Footter</button>
                     <?php
                     if (isset($templateParams["pulsante_offcanvas"])) {
                         require($templateParams["pulsante_offcanvas"]);
@@ -104,7 +103,7 @@
         <div class="desktop d-none d-sm-block col-sm-12">
             <header class="bg-dark bg-gradient py-2 fixed-top text-center">
                 <!--TESTO CENTRALE FOOTTER ⚽️⚽️-->
-                <button type="button" class="p-0 btn btn-link text-decoration-none text-white fs-4" id="button_modal" >Footter</button>
+                <button type="button" class="p-0 btn btn-link text-decoration-none text-white fs-4 button_modal" >Footter</button>
             </header>
         </div>
         <!-- Modal (porta che si muove) -->
