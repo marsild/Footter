@@ -21,7 +21,7 @@
     <div class="row mx-3 mb-4 text-center">
         <div class="col-12 mt-4 ">
             <label for="textarea" class="form-label" hidden>Testo post:</label>
-            <textarea class=" shadow form-control " rows="5"  required maxlength="255" name="textarea" id="textarea" placeholder="Inserisci un testo con un massimo di 255 caratteri" rows="3"></textarea>
+            <textarea class=" shadow form-control " rows="5" required maxlength="255" name="textarea" id="textarea" placeholder="Inserisci un testo con un massimo di 255 caratteri"></textarea>
         </div>
     </div>
     <div class="row mx-3 mb-4">
@@ -33,34 +33,32 @@
             <button type="button" class="btn px-0" data-bs-toggle="popover" data-bs-trigger="focus" title="Requisiti" data-bs-content="File ammessi: ‘jpg','png','jpeg','gif’. <br />Dimensioni massime: 500kb. <br /> I file che non rispettano questi requisiti verranno automaticamente ignorati." data-bs-html="true"><span class="bi bi-info-circle"></span></button>
         </div>
     </div>
-    <div class="row mx-3 mb-2">
-        <div class="col-6 ">
-            <label for="first-squad" hidden>prima squadra</label>
+    <div class="row mx-3 mb-2 align-items-center">
+        <div class="col-12">
+        <label for="first-squad">1° squadra</label>
             <select class="form-select form-select-sm" name="first-squad" id="first-squad" aria-label="Default select example" required>
-                <option selected disabled value="">Inserisci una squadra</option>
+                <option selected disabled value="">Obbligatoria</option>
                 <?php foreach ($templateParams["squadre"] as $squadra) : ?>
                     <option value=<?php echo $squadra["nome"] ?>><?php echo $squadra["nome"];  ?></option>
                 <?php endforeach ?>
             </select>
         </div>
-        <div class="col-6" ></div>
     </div>
-    <div class="row mx-3 mb-5">
-        <div class="col-6 ">
-            <label for="second-squad" hidden>seconda squadra</label>
+    <div class="row mx-3 mb-5 align-items-center">
+        <div class="col-12">
+        <label for="second-squad">2° squadra</label>
             <select class="form-select form-select-sm" name="second-squad" id="second-squad" aria-label="Default select example">
 
-                <option selected disabled value="">Inserisci un'altra squadra</option>
+                <option selected disabled value="">Nessuna</option>
                 <?php foreach ($templateParams["squadre"] as $squadra) : ?>
                     <option value=<?php echo $squadra["nome"] ?>><?php echo $squadra["nome"];  ?></option>
                 <?php endforeach ?>
             </select>
         </div>
-        <div class="col-6"></div>
     </div>
     <div class="row mx-3">
         <div class="col text-center">
-            <a href="index.php" class="btn btn-secondary" title="home" >Annulla</a>
+            <a href="index.php" class="btn btn-secondary" title="home">Annulla</a>
         </div>
         <div class="col text-center">
             <input class="btn btn-primary" type="submit" value="Pubblica">
