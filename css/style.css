@@ -151,7 +151,7 @@ input[type="file"]:hover{
 .button_modal:hover, #porta_calcio:hover{
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>⚽️</text></svg>") 16 0,auto;
 }
-.modal {
+#modal_porta {
   display: none; /* Di default nascosto */
   position: fixed; 
   z-index: 1; /* Sopra a tutto */
@@ -166,7 +166,7 @@ input[type="file"]:hover{
   border: none;
 }
 /* contenuto del modal */
-.modal-content {
+#modal-content_minigioco {
   background-color: rgba(0,0,0,0);
   margin: auto;
   font-size: 10vw;
