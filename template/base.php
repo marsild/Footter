@@ -109,7 +109,7 @@
         <!-- Modal (porta che si muove) -->
         <div id="modal_porta" class="modal">
             <!-- Modal content -->
-            <div class="modal-content">
+            <div class="modal-content" id="modal-content_minigioco">
                 <span id="porta_calcio">🥅</span>
             </div>
         </div>
