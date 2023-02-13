@@ -36,7 +36,8 @@ function switchPasswordVisibility(val) {
 const audio_kick = new Audio("./upload/kick.mp3");
 const audio_goal = new Audio("./upload/goal.mp3");
 const spongebob = new Audio("./upload/spongebob.mp3");
-const buttons = document.querySelectorAll("#button_modal");
+const buttons = document.querySelectorAll(".button_modal");
+const buttonsNavbar = document.querySelectorAll(".navbar_button");
 const goal_a = document.querySelectorAll("#porta_calcio");
 var modal = document.getElementById("modal_porta");
 buttons.forEach(button => {
@@ -50,8 +51,14 @@ buttons.forEach(button => {
       modal.style.display = "none";
       spongebob.play();
       button.disabled = false;
+      buttonsNavbar.forEach(bn => {
+        bn.disabled = false;
+      });
     }, 5000);
     button.disabled = true;
+    buttonsNavbar.forEach(bn => {
+      bn.disabled = true;
+    });
   });
 });
 goal_a.forEach(porta => {
@@ -60,6 +67,9 @@ goal_a.forEach(porta => {
     modal.style.display = "none";
     buttons.forEach(button => {
       button.disabled = false;
+    });
+    buttonsNavbar.forEach(bn => {
+      bn.disabled = false;
     });
     clearTimeout(myTimeout);
   });
