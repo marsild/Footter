@@ -21,6 +21,7 @@ L'applicazione inoltre permette di:
 * Popolare la tabella `squadre` del DB ([inserisci_dati.sql](https://github.com/marsild/Footter/blob/main/db/inserisci_dati.sql)).
 * Per aprire il sito andare su [localhost/Footter](http://localhost/Footter/index.php).
 
+In alternativa se si vuole già avere una versione prepolata del DB utilizzare il contenuto del file [footter.sql](https://github.com/marsild/Footter/blob/main/db/footter.sql) (solamente dopo aver creato il DB con `CREATE DATABASE footter`). Le password degli utenti in generale sono composte dall'username con prima lettera maiuscola ed `1!` alla fine (es: `Username1!`). Per gli username corti `Useruser1!`.
 ## Licenza
 [GNU General Public License v3.0](https://github.com/marsild/Footter/blob/main/LICENSE)
 
