@@ -48,6 +48,7 @@
                     <button type="button" class="btn px-0" data-bs-toggle="popover" data-bs-trigger="focus" title="Requisiti" data-bs-content="8 caratteri di cui:<br />1 maiuscola<br />1 minuscola<br />1 numero<br />1 carattere speciale" data-bs-html="true"><span class="bi bi-info-circle"></span></button>
                 </div>
             </div>
+            
             <div class="col-12">
                 <h1 class="fs-5">Mail</h1>
             </div>
@@ -58,7 +59,11 @@
                         <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo $templateParams["profilo"]["email"] ?>" aria-label="Username">
                 </div>
             </div>
-
+            <?php if (isset($templateParams["messaggio_errore_password"])) { ?>
+            <div class="col-12 mt-2 mb-4 text-danger">
+                <?php echo $templateParams["messaggio_errore_password"]; ?>
+            </div>
+        <?php } ?>
             <div class="row">
                 <div class="col-12">
                     <input type="hidden" id="premuto" name="premuto" value="true">
@@ -68,7 +73,7 @@
 
             </div>
 
-            <?php if (isset($templateParams["creato"])) { ?>
+            <?php if (isset($templateParams["creato"]) && !isset($templateParams["messaggio_errore_password"])) { ?>
                 <div class="row">
                     <div class="col-12 px-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="alert_successo">

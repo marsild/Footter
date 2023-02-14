@@ -30,19 +30,16 @@ if(isset($_POST["premuto"])){
         $psw = $templateParams["profilo"]["psw"];
     } else {
          //controlla il formato password
-         $correttezza_password = true;
-        /*
-        $uppercase = preg_match('@[A-Z]@', $_POST["password"]);
-        $lowercase = preg_match('@[a-z]@', $_POST["password"]);
-        $number = preg_match('@[0-9]@',$_POST["password"]);
-        $specialChars = preg_match('@[^\w]@', $_POST["password"]);
-        if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($_POST["password"]) < 8) {
-            //$templateParams["messaggio_errore_password"]="Formato password non corretto.";
+        $correttezza_password = true;
+        $uppercase = preg_match('@[A-Z]@', $_POST["agg_password"]);
+        $lowercase = preg_match('@[a-z]@', $_POST["agg_password"]);
+        $number = preg_match('@[0-9]@',$_POST["agg_password"]);
+        $specialChars = preg_match('@[^\w]@', $_POST["agg_password"]);
+        if(!$uppercase || !$lowercase || !$number || !$specialChars) {
+            $templateParams["messaggio_errore_password"]="Formato password non corretto.";
             $correttezza_password = false;
         }
-        */
     if($correttezza_password==true){
-    
         $utente = $dbh->getUtente($_SESSION["username"]);
         $psw = hash("sha512", $_POST["agg_password"].$utente[0]["salt"]);
     }else{

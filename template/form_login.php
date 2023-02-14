@@ -18,24 +18,11 @@
         <label class="form-label" for="password" hidden>Password</label>
         <button onclick='switchPasswordVisibility("password")' class="btn border" type="button" id="basic-addon2"><span id="eye-icon" class="bi bi-eye"></span></button>
     </div>
-
-    <!-- 2 column grid layout for inline styling -->
-    <div class="row">
-        <div class="col d-flex justify-content-start">
-            <!-- Checkbox -->
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked="">
-                <label class="form-check-label" for="form2Example31"> Ricordami </label>
-            </div>
+    <?php if (isset($templateParams["errorelogin"])) { ?>
+        <div class="col-12 mt-4 text-center text-danger">
+            <?php echo $templateParams["errorelogin"]; ?>
         </div>
-    </div>
-    <div class="col-12 mt-4 text-center text-danger">
-        <?php
-        if (isset($templateParams["errorelogin"])) {
-            echo $templateParams["errorelogin"];
-        }
-        ?>
-    </div>
+    <?php } ?>
     <!-- Submit button -->
     <div class="d-grid col-5 mx-auto mt-4">
         <input type="submit" value="Accedi" class="btn btn-primary btn-block w-20">
